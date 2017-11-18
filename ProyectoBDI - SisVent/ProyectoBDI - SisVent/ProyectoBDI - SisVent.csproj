@@ -54,6 +54,12 @@
     <Compile Include="data\user.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vista\home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\home.Designer.cs">
+      <DependentUpon>home.cs</DependentUpon>
+    </Compile>
     <Compile Include="vista\italk_theme_-_c#.cs" />
     <Compile Include="vista\login.cs">
       <SubType>Form</SubType>
@@ -88,6 +94,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="vista\home.resx">
+      <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vista\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>

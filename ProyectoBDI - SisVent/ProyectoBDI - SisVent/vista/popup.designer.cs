@@ -32,47 +32,37 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(popup));
             this.icon = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtMessage = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.time = new System.Windows.Forms.Timer(this.components);
             this.show = new System.Windows.Forms.Timer(this.components);
             this.closed = new System.Windows.Forms.Timer(this.components);
             this.lista = new System.Windows.Forms.ImageList(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.txtMessage = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // icon
             // 
-            this.icon.Location = new System.Drawing.Point(10, 12);
+            this.icon.Location = new System.Drawing.Point(10, 21);
             this.icon.Name = "icon";
             this.icon.Size = new System.Drawing.Size(50, 50);
             this.icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.icon.TabIndex = 0;
             this.icon.TabStop = false;
+            this.icon.Click += new System.EventHandler(this.icon_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(308, 1);
+            this.pictureBox2.Location = new System.Drawing.Point(355, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(20, 20);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // txtMessage
-            // 
-            this.txtMessage.AutoSize = true;
-            this.txtMessage.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMessage.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtMessage.Location = new System.Drawing.Point(60, 29);
-            this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(157, 20);
-            this.txtMessage.TabIndex = 3;
-            this.txtMessage.Text = "bunifuCustomLabel1";
             // 
             // bunifuDragControl1
             // 
@@ -110,12 +100,26 @@
             this.bunifuElipse1.ElipseRadius = 10;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // txtMessage
+            // 
+            this.txtMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMessage.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtMessage.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMessage.ForeColor = System.Drawing.Color.White;
+            this.txtMessage.Location = new System.Drawing.Point(66, 32);
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.ReadOnly = true;
+            this.txtMessage.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.txtMessage.Size = new System.Drawing.Size(283, 37);
+            this.txtMessage.TabIndex = 2;
+            this.txtMessage.Text = "";
+            // 
             // popup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(80)))), ((int)(((byte)(122)))));
-            this.ClientSize = new System.Drawing.Size(330, 75);
+            this.ClientSize = new System.Drawing.Size(380, 93);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.icon);
@@ -129,19 +133,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.PictureBox icon;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Bunifu.Framework.UI.BunifuCustomLabel txtMessage;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Timer time;
         private System.Windows.Forms.Timer show;
         private System.Windows.Forms.Timer closed;
         private System.Windows.Forms.ImageList lista;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.RichTextBox txtMessage;
     }
 }
