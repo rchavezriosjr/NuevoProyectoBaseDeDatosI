@@ -21,3 +21,9 @@ C:\Users\RicardoRené\Desktop\Archivos vc\SistemaVC\SistemaVC\bin\SistemaVC.pdb
 C:\Users\RicardoRené\Desktop\Archivos vc\SistemaVC\SistemaVC\obj\Debug\SistemaVC.csprojResolveAssemblyReference.cache
 C:\Users\RicardoRené\Desktop\Archivos vc\SistemaVC\SistemaVC\obj\Debug\SistemaVC.dll
 C:\Users\RicardoRené\Desktop\Archivos vc\SistemaVC\SistemaVC\obj\Debug\SistemaVC.pdb
+C:\Users\Espinoza\Desktop\NuevoProyectoBaseDeDatosI\Sistema Venta y Compra Base De Datos I\SistemaVC\SistemaVC\bin\SistemaVC.dll.config
+C:\Users\Espinoza\Desktop\NuevoProyectoBaseDeDatosI\Sistema Venta y Compra Base De Datos I\SistemaVC\SistemaVC\bin\SistemaVC.dll
+C:\Users\Espinoza\Desktop\NuevoProyectoBaseDeDatosI\Sistema Venta y Compra Base De Datos I\SistemaVC\SistemaVC\bin\SistemaVC.pdb
+C:\Users\Espinoza\Desktop\NuevoProyectoBaseDeDatosI\Sistema Venta y Compra Base De Datos I\SistemaVC\SistemaVC\obj\Debug\SistemaVC.csprojResolveAssemblyReference.cache
+C:\Users\Espinoza\Desktop\NuevoProyectoBaseDeDatosI\Sistema Venta y Compra Base De Datos I\SistemaVC\SistemaVC\obj\Debug\SistemaVC.dll
+C:\Users\Espinoza\Desktop\NuevoProyectoBaseDeDatosI\Sistema Venta y Compra Base De Datos I\SistemaVC\SistemaVC\obj\Debug\SistemaVC.pdb
