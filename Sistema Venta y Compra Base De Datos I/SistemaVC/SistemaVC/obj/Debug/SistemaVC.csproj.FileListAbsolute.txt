@@ -1,0 +1,23 @@
+c:\users\rene\documents\visual studio 2013\Projects\SistemaVC\SistemaVC\bin\SistemaVC.dll.config
+c:\users\rene\documents\visual studio 2013\Projects\SistemaVC\SistemaVC\bin\SistemaVC.dll
+c:\users\rene\documents\visual studio 2013\Projects\SistemaVC\SistemaVC\bin\SistemaVC.pdb
+c:\users\rene\documents\visual studio 2013\Projects\SistemaVC\SistemaVC\obj\Debug\SistemaVC.csprojResolveAssemblyReference.cache
+c:\users\rene\documents\visual studio 2013\Projects\SistemaVC\SistemaVC\obj\Debug\SistemaVC.dll
+c:\users\rene\documents\visual studio 2013\Projects\SistemaVC\SistemaVC\obj\Debug\SistemaVC.pdb
+C:\Users\pc6\Documents\Visual Studio 2013\Projects\SistemaVC\SistemaVC\bin\SistemaVC.dll.config
+C:\Users\pc6\Documents\Visual Studio 2013\Projects\SistemaVC\SistemaVC\bin\SistemaVC.dll
+C:\Users\pc6\Documents\Visual Studio 2013\Projects\SistemaVC\SistemaVC\bin\SistemaVC.pdb
+C:\Users\pc6\Documents\Visual Studio 2013\Projects\SistemaVC\SistemaVC\obj\Debug\SistemaVC.csprojResolveAssemblyReference.cache
+C:\Users\pc6\Documents\Visual Studio 2013\Projects\SistemaVC\SistemaVC\obj\Debug\SistemaVC.dll
+C:\Users\pc6\Documents\Visual Studio 2013\Projects\SistemaVC\SistemaVC\obj\Debug\SistemaVC.pdb
+E:\Archivos vc\SistemaVC\SistemaVC\bin\SistemaVC.dll.config
+E:\Archivos vc\SistemaVC\SistemaVC\bin\SistemaVC.dll
+E:\Archivos vc\SistemaVC\SistemaVC\bin\SistemaVC.pdb
+E:\Archivos vc\SistemaVC\SistemaVC\obj\Debug\SistemaVC.csprojResolveAssemblyReference.cache
+E:\Archivos vc\SistemaVC\SistemaVC\obj\Debug\SistemaVC.dll
+E:\Archivos vc\SistemaVC\SistemaVC\obj\Debug\SistemaVC.pdb
+C:\Users\RicardoRené\Desktop\Archivos vc\SistemaVC\SistemaVC\bin\SistemaVC.dll
+C:\Users\RicardoRené\Desktop\Archivos vc\SistemaVC\SistemaVC\bin\SistemaVC.pdb
+C:\Users\RicardoRené\Desktop\Archivos vc\SistemaVC\SistemaVC\obj\Debug\SistemaVC.csprojResolveAssemblyReference.cache
+C:\Users\RicardoRené\Desktop\Archivos vc\SistemaVC\SistemaVC\obj\Debug\SistemaVC.dll
+C:\Users\RicardoRené\Desktop\Archivos vc\SistemaVC\SistemaVC\obj\Debug\SistemaVC.pdb
