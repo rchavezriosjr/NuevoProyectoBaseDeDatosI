@@ -47,7 +47,7 @@
             this.progress.animated = true;
             this.progress.animationIterval = 1;
             this.progress.animationSpeed = 1;
-            this.progress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(51)))));
+            this.progress.BackColor = System.Drawing.Color.White;
             this.progress.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("progress.BackgroundImage")));
             this.progress.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
             this.progress.ForeColor = System.Drawing.Color.SeaGreen;
@@ -58,7 +58,7 @@
             this.progress.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.progress.MaxValue = 100;
             this.progress.Name = "progress";
-            this.progress.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(51)))));
+            this.progress.ProgressBackColor = System.Drawing.Color.White;
             this.progress.ProgressColor = System.Drawing.Color.SeaGreen;
             this.progress.Size = new System.Drawing.Size(150, 150);
             this.progress.TabIndex = 0;
@@ -85,7 +85,7 @@
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.ForeColor = System.Drawing.Color.Silver;
+            this.label.ForeColor = System.Drawing.Color.White;
             this.label.Location = new System.Drawing.Point(34, 10);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(126, 25);
@@ -96,7 +96,7 @@
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.DarkGray;
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Silver;
             this.bunifuCustomLabel2.Location = new System.Drawing.Point(36, 35);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(121, 17);
@@ -112,7 +112,7 @@
             // timer3
             // 
             this.timer3.Enabled = true;
-            this.timer3.Interval = 7000;
+            this.timer3.Interval = 10000;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // panel1
@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(51)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(300, 438);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.progress);

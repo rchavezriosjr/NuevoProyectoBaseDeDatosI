@@ -30,15 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
             this.navbar = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.adminCuentasTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.reportesTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.clientesTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.comprasTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.idUsuario = new System.Windows.Forms.Label();
             this.nameUser = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.userPicture = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.VentasTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.productosTab = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -46,11 +48,10 @@
             this.minButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.closeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.menu = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.proveedorTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.navbar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userPicture)).BeginInit();
             this.panel4.SuspendLayout();
             this.toppanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minButton)).BeginInit();
@@ -61,7 +62,8 @@
             // navbar
             // 
             this.navbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
-            this.navbar.Controls.Add(this.bunifuFlatButton1);
+            this.navbar.Controls.Add(this.proveedorTab);
+            this.navbar.Controls.Add(this.adminCuentasTab);
             this.navbar.Controls.Add(this.reportesTab);
             this.navbar.Controls.Add(this.clientesTab);
             this.navbar.Controls.Add(this.comprasTab);
@@ -72,50 +74,50 @@
             this.navbar.Dock = System.Windows.Forms.DockStyle.Left;
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
-            this.navbar.Size = new System.Drawing.Size(240, 589);
+            this.navbar.Size = new System.Drawing.Size(240, 651);
             this.navbar.TabIndex = 0;
             this.navbar.Paint += new System.Windows.Forms.PaintEventHandler(this.navbar_Paint);
             // 
-            // bunifuFlatButton1
+            // adminCuentasTab
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(96)))), ((int)(((byte)(179)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "  Administrar Cuentas";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 65D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(3, 505);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(96)))), ((int)(((byte)(179)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuFlatButton1.selected = true;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(240, 50);
-            this.bunifuFlatButton1.TabIndex = 6;
-            this.bunifuFlatButton1.Text = "  Administrar Cuentas";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminCuentasTab.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(97)))), ((int)(((byte)(24)))));
+            this.adminCuentasTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.adminCuentasTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.adminCuentasTab.BorderRadius = 0;
+            this.adminCuentasTab.ButtonText = "  Administrar Cuentas";
+            this.adminCuentasTab.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adminCuentasTab.DisabledColor = System.Drawing.Color.Gray;
+            this.adminCuentasTab.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminCuentasTab.Iconcolor = System.Drawing.Color.Transparent;
+            this.adminCuentasTab.Iconimage = ((System.Drawing.Image)(resources.GetObject("adminCuentasTab.Iconimage")));
+            this.adminCuentasTab.Iconimage_right = null;
+            this.adminCuentasTab.Iconimage_right_Selected = null;
+            this.adminCuentasTab.Iconimage_Selected = null;
+            this.adminCuentasTab.IconMarginLeft = 0;
+            this.adminCuentasTab.IconMarginRight = 0;
+            this.adminCuentasTab.IconRightVisible = true;
+            this.adminCuentasTab.IconRightZoom = 0D;
+            this.adminCuentasTab.IconVisible = true;
+            this.adminCuentasTab.IconZoom = 65D;
+            this.adminCuentasTab.IsTab = false;
+            this.adminCuentasTab.Location = new System.Drawing.Point(3, 563);
+            this.adminCuentasTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminCuentasTab.Name = "adminCuentasTab";
+            this.adminCuentasTab.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.adminCuentasTab.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(97)))), ((int)(((byte)(24)))));
+            this.adminCuentasTab.OnHoverTextColor = System.Drawing.Color.White;
+            this.adminCuentasTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.adminCuentasTab.selected = true;
+            this.adminCuentasTab.Size = new System.Drawing.Size(240, 50);
+            this.adminCuentasTab.TabIndex = 6;
+            this.adminCuentasTab.Text = "  Administrar Cuentas";
+            this.adminCuentasTab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.adminCuentasTab.Textcolor = System.Drawing.Color.White;
+            this.adminCuentasTab.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // reportesTab
             // 
-            this.reportesTab.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(96)))), ((int)(((byte)(179)))));
+            this.reportesTab.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.reportesTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.reportesTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.reportesTab.BorderRadius = 0;
@@ -135,11 +137,11 @@
             this.reportesTab.IconVisible = true;
             this.reportesTab.IconZoom = 65D;
             this.reportesTab.IsTab = false;
-            this.reportesTab.Location = new System.Drawing.Point(3, 447);
+            this.reportesTab.Location = new System.Drawing.Point(3, 505);
             this.reportesTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.reportesTab.Name = "reportesTab";
             this.reportesTab.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
-            this.reportesTab.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(96)))), ((int)(((byte)(179)))));
+            this.reportesTab.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.reportesTab.OnHoverTextColor = System.Drawing.Color.White;
             this.reportesTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.reportesTab.selected = true;
@@ -228,7 +230,7 @@
             // 
             this.panel1.Controls.Add(this.idUsuario);
             this.panel1.Controls.Add(this.nameUser);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.userPicture);
             this.panel1.Location = new System.Drawing.Point(3, 56);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(237, 148);
@@ -256,15 +258,15 @@
             this.nameUser.Text = "Nombre Usuario";
             this.nameUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // userPicture
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(81, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.userPicture.Image = ((System.Drawing.Image)(resources.GetObject("userPicture.Image")));
+            this.userPicture.Location = new System.Drawing.Point(81, 3);
+            this.userPicture.Name = "userPicture";
+            this.userPicture.Size = new System.Drawing.Size(70, 70);
+            this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.userPicture.TabIndex = 2;
+            this.userPicture.TabStop = false;
             // 
             // panel4
             // 
@@ -276,6 +278,28 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(240, 50);
             this.panel4.TabIndex = 2;
+            // 
+            // bunifuCustomLabel4
+            // 
+            this.bunifuCustomLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bunifuCustomLabel4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuCustomLabel4.Image")));
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(3, 9);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(69, 33);
+            this.bunifuCustomLabel4.TabIndex = 1;
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(76, 9);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(90, 33);
+            this.bunifuCustomLabel3.TabIndex = 0;
+            this.bunifuCustomLabel3.Text = "SisVent";
             // 
             // bunifuCustomLabel1
             // 
@@ -373,6 +397,9 @@
             this.toppanel.Name = "toppanel";
             this.toppanel.Size = new System.Drawing.Size(575, 50);
             this.toppanel.TabIndex = 1;
+            this.toppanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.toppanel_MouseDown);
+            this.toppanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.toppanel_MouseMove);
+            this.toppanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.toppanel_MouseUp);
             // 
             // minButton
             // 
@@ -380,13 +407,14 @@
             this.minButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
             this.minButton.Image = ((System.Drawing.Image)(resources.GetObject("minButton.Image")));
             this.minButton.ImageActive = null;
-            this.minButton.Location = new System.Drawing.Point(466, 0);
+            this.minButton.Location = new System.Drawing.Point(504, 12);
             this.minButton.Name = "minButton";
-            this.minButton.Size = new System.Drawing.Size(50, 50);
-            this.minButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.minButton.Size = new System.Drawing.Size(25, 25);
+            this.minButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.minButton.TabIndex = 4;
             this.minButton.TabStop = false;
-            this.minButton.Zoom = 25;
+            this.minButton.Zoom = 15;
+            this.minButton.Click += new System.EventHandler(this.minButton_Click);
             // 
             // closeButton
             // 
@@ -394,13 +422,13 @@
             this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
             this.closeButton.ImageActive = null;
-            this.closeButton.Location = new System.Drawing.Point(522, 0);
+            this.closeButton.Location = new System.Drawing.Point(539, 12);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(50, 50);
-            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.closeButton.Size = new System.Drawing.Size(25, 25);
+            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.closeButton.TabIndex = 3;
             this.closeButton.TabStop = false;
-            this.closeButton.Zoom = 25;
+            this.closeButton.Zoom = 15;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // menu
@@ -417,46 +445,63 @@
             this.menu.Zoom = 25;
             this.menu.Click += new System.EventHandler(this.menu_Click);
             // 
-            // bunifuCustomLabel3
+            // proveedorTab
             // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(76, 9);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(90, 33);
-            this.bunifuCustomLabel3.TabIndex = 0;
-            this.bunifuCustomLabel3.Text = "SisVent";
-            // 
-            // bunifuCustomLabel4
-            // 
-            this.bunifuCustomLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuCustomLabel4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuCustomLabel4.Image")));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(3, 9);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(69, 33);
-            this.bunifuCustomLabel4.TabIndex = 1;
+            this.proveedorTab.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(96)))), ((int)(((byte)(179)))));
+            this.proveedorTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.proveedorTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.proveedorTab.BorderRadius = 0;
+            this.proveedorTab.ButtonText = "  Proveedores";
+            this.proveedorTab.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.proveedorTab.DisabledColor = System.Drawing.Color.Gray;
+            this.proveedorTab.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.proveedorTab.Iconcolor = System.Drawing.Color.Transparent;
+            this.proveedorTab.Iconimage = ((System.Drawing.Image)(resources.GetObject("proveedorTab.Iconimage")));
+            this.proveedorTab.Iconimage_right = null;
+            this.proveedorTab.Iconimage_right_Selected = null;
+            this.proveedorTab.Iconimage_Selected = null;
+            this.proveedorTab.IconMarginLeft = 0;
+            this.proveedorTab.IconMarginRight = 0;
+            this.proveedorTab.IconRightVisible = true;
+            this.proveedorTab.IconRightZoom = 0D;
+            this.proveedorTab.IconVisible = true;
+            this.proveedorTab.IconZoom = 65D;
+            this.proveedorTab.IsTab = false;
+            this.proveedorTab.Location = new System.Drawing.Point(3, 447);
+            this.proveedorTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.proveedorTab.Name = "proveedorTab";
+            this.proveedorTab.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.proveedorTab.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(96)))), ((int)(((byte)(179)))));
+            this.proveedorTab.OnHoverTextColor = System.Drawing.Color.White;
+            this.proveedorTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.proveedorTab.selected = true;
+            this.proveedorTab.Size = new System.Drawing.Size(240, 50);
+            this.proveedorTab.TabIndex = 7;
+            this.proveedorTab.Text = "  Proveedores";
+            this.proveedorTab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.proveedorTab.Textcolor = System.Drawing.Color.White;
+            this.proveedorTab.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(815, 589);
+            this.ClientSize = new System.Drawing.Size(815, 651);
             this.Controls.Add(this.toppanel);
             this.Controls.Add(this.navbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "home";
+            this.Load += new System.EventHandler(this.home_Load);
             this.navbar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userPicture)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.toppanel.ResumeLayout(false);
+            this.toppanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menu)).EndInit();
@@ -473,17 +518,18 @@
         private Bunifu.Framework.UI.BunifuFlatButton productosTab;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label nameUser;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox userPicture;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuFlatButton comprasTab;
         private Bunifu.Framework.UI.BunifuFlatButton clientesTab;
         private Bunifu.Framework.UI.BunifuFlatButton reportesTab;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuFlatButton adminCuentasTab;
         private System.Windows.Forms.Label idUsuario;
         private Bunifu.Framework.UI.BunifuImageButton minButton;
         private Bunifu.Framework.UI.BunifuImageButton closeButton;
         private Bunifu.Framework.UI.BunifuImageButton menu;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Bunifu.Framework.UI.BunifuFlatButton proveedorTab;
     }
 }

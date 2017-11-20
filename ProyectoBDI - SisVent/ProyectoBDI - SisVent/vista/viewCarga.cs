@@ -15,10 +15,12 @@ namespace ProyectoBDI___SisVent
         {
             InitializeComponent();
 
-            color.Add(Color.FromArgb(104, 33, 122));
-            color.Add(Color.FromArgb(42, 88, 173));
-            color.Add(Color.FromArgb(255, 140, 0));
-            color.Add(Color.FromArgb(213, 105, 0));
+            color.Add(Color.MediumSpringGreen);
+            color.Add(Color.FromArgb(78,205,196));
+            color.Add(Color.FromArgb(60,141,188));
+            color.Add(Color.FromArgb(144,100,239)); 
+            color.Add(Color.FromArgb(249,96,179));
+            color.Add(Color.FromArgb(229,57,69)); 
 
             progress.ProgressColor = color[pos];
 
