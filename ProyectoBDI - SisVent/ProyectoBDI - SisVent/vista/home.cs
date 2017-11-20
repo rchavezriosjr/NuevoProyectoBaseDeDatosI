@@ -14,6 +14,7 @@ namespace ProyectoBDI___SisVent.vista
     public partial class home : Form
     {
         Bunifu.Framework.UI.Drag drag = new Bunifu.Framework.UI.Drag();
+        string tabActiva = "";
 
         public home()
         {
@@ -25,6 +26,9 @@ namespace ProyectoBDI___SisVent.vista
         private void home_Load(object sender, EventArgs e)
         {
             CircleUserPicture();
+            tabActiva = "inicio";
+            this.contenedor.Controls.Add(new inicio());
+            timerTab.Start();
         }
 
         private void navbar_Paint(object sender, PaintEventArgs e)
@@ -87,5 +91,136 @@ namespace ProyectoBDI___SisVent.vista
             userPicture.Region = rg;
         }
 
+        private void timerTab_Tick(object sender, EventArgs e)
+        {
+            switch (tabActiva)
+            {
+                case "inicio":
+                    inicioTab.BackColor = Color.SeaGreen;
+                    break;
+
+                case "clientes":
+                    clientesTab.BackColor = Color.SpringGreen;
+                    break;
+
+                case "ventas":
+                    VentasTab.BackColor = Color.FromArgb(78, 205, 196);
+                    break;
+
+                case "compras":
+                    comprasTab.BackColor = Color.FromArgb(60, 141, 188);
+                    break;
+
+                case "productos":
+                    productosTab.BackColor = Color.FromArgb(144, 100, 239);
+                    break;
+
+                case "proveedor":
+                    proveedorTab.BackColor = Color.FromArgb(249, 96, 179);
+                    break;
+
+                case "reportes":
+                    reportesTab.BackColor = Color.FromArgb(229, 57, 69);
+                    break;
+
+                case "cuentas":
+                    adminCuentasTab.BackColor = Color.FromArgb(248, 97, 24);
+                    break;
+            }
+        }
+
+        private void clearColorTabs()
+        {
+            inicioTab.BackColor = Color.FromArgb(47, 50, 58);
+            clientesTab.BackColor = Color.FromArgb(47, 50, 58);
+            VentasTab.BackColor = Color.FromArgb(47, 50, 58);
+            comprasTab.BackColor = Color.FromArgb(47, 50, 58);
+            productosTab.BackColor = Color.FromArgb(47, 50, 58);
+            proveedorTab.BackColor = Color.FromArgb(47, 50, 58);
+            reportesTab.BackColor = Color.FromArgb(47, 50, 58);
+            adminCuentasTab.BackColor = Color.FromArgb(47, 50, 58);
+
+        }
+
+        private void inicioTab_Click(object sender, EventArgs e)
+        {
+            if (tabActiva != "inicio")
+            {
+                clearColorTabs();
+                tabActiva = "inicio";
+                //contenedor.Controls.RemoveAt(0);
+                contenedor.Controls.Add(new inicio());
+            }
+        }
+
+        private void clientesTab_Click(object sender, EventArgs e)
+        {
+            if(tabActiva != "clientes")
+            {
+                clearColorTabs();
+                tabActiva = "clientes";
+                contenedor.Controls.RemoveAt(0);
+            }
+        }
+
+        private void VentasTab_Click(object sender, EventArgs e)
+        {
+            if(tabActiva != "ventas")
+            {
+                clearColorTabs();
+                tabActiva = "ventas";
+                contenedor.Controls.RemoveAt(0);
+            }
+        }
+
+        private void comprasTab_Click(object sender, EventArgs e)
+        {
+            if (tabActiva != "compras")
+            {
+                clearColorTabs();
+                tabActiva = "compras";
+                contenedor.Controls.RemoveAt(0);
+            }
+        }
+
+        private void productosTab_Click(object sender, EventArgs e)
+        {
+            if (tabActiva != "productos")
+            {
+                clearColorTabs();
+                tabActiva = "productos";
+                contenedor.Controls.RemoveAt(0);
+            }
+        }
+
+        private void proveedorTab_Click(object sender, EventArgs e)
+        {
+            if (tabActiva != "proveedor")
+            {
+                clearColorTabs();
+                tabActiva = "proveedor";
+                contenedor.Controls.RemoveAt(0);
+            }
+        }
+
+        private void reportesTab_Click(object sender, EventArgs e)
+        {
+            if (tabActiva != "reportes")
+            {
+                clearColorTabs();
+                tabActiva = "reportes";
+                contenedor.Controls.RemoveAt(0);
+            }
+        }
+
+        private void adminCuentasTab_Click(object sender, EventArgs e)
+        {
+            if (tabActiva != "cuentas")
+            {
+                clearColorTabs();
+                tabActiva = "cuentas";
+                contenedor.Controls.RemoveAt(0);
+            }
+        }
     }
 }

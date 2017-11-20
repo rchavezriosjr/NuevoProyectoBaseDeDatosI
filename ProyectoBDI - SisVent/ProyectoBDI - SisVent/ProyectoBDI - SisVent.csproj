@@ -64,6 +64,12 @@
     <Compile Include="vista\home.Designer.cs">
       <DependentUpon>home.cs</DependentUpon>
     </Compile>
+    <Compile Include="vista\inicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vista\inicio.Designer.cs">
+      <DependentUpon>inicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="vista\italk_theme_-_c#.cs" />
     <Compile Include="vista\login.cs">
       <SubType>Form</SubType>
@@ -101,6 +107,9 @@
     </Compile>
     <EmbeddedResource Include="vista\home.resx">
       <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\inicio.resx">
+      <DependentUpon>inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\login.resx">
       <DependentUpon>login.cs</DependentUpon>
