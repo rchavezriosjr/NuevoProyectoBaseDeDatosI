@@ -54,8 +54,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="data\AddProducto.cs" />
+    <Compile Include="data\Cliente.cs" />
+    <Compile Include="data\Color.cs" />
+    <Compile Include="data\Compra.cs" />
     <Compile Include="data\Conexión.cs" />
+    <Compile Include="data\DetalleVenta.cs" />
+    <Compile Include="data\ListCompra.cs" />
+    <Compile Include="data\ListProducto.cs" />
+    <Compile Include="data\ListProveedor.cs" />
+    <Compile Include="data\ListVenta.cs" />
+    <Compile Include="data\Producto.cs" />
+    <Compile Include="data\Proveedor.cs" />
+    <Compile Include="data\Talle.cs" />
+    <Compile Include="data\Tipo.cs" />
     <Compile Include="data\user.cs" />
+    <Compile Include="data\Venta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="vista\home.cs">
