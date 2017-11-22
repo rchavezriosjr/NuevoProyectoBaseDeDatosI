@@ -16,9 +16,6 @@ namespace ProyectoBDI___SisVent.vista
         Bunifu.Framework.UI.Drag drag = new Bunifu.Framework.UI.Drag();
         string tabActiva = "";
 
-        inicio inicio = new inicio();
-        clientes clientes = new clientes();
-
         public home()
         {
             InitializeComponent();
@@ -30,10 +27,7 @@ namespace ProyectoBDI___SisVent.vista
         {
             CircleUserPicture();
             tabActiva = "inicio";
-            this.contenedor.Controls.Add(inicio);
-            this.contenedor.Controls.Add(clientes);
-
-            inicio.BringToFront();
+            this.contenedor.Controls.Add(new inicio());
             timerTab.Start();
         }
 
@@ -154,7 +148,8 @@ namespace ProyectoBDI___SisVent.vista
             {
                 clearColorTabs();
                 tabActiva = "inicio";
-                inicio.BringToFront();
+                //contenedor.Controls.RemoveAt(0);
+                contenedor.Controls.Add(new inicio());
             }
         }
 
@@ -164,7 +159,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 clearColorTabs();
                 tabActiva = "clientes";
-                clientes.BringToFront();
+                contenedor.Controls.RemoveAt(0);
             }
         }
 
@@ -174,6 +169,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 clearColorTabs();
                 tabActiva = "ventas";
+                contenedor.Controls.RemoveAt(0);
             }
         }
 
@@ -183,6 +179,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 clearColorTabs();
                 tabActiva = "compras";
+                contenedor.Controls.RemoveAt(0);
             }
         }
 
@@ -192,6 +189,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 clearColorTabs();
                 tabActiva = "productos";
+                contenedor.Controls.RemoveAt(0);
             }
         }
 
@@ -201,6 +199,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 clearColorTabs();
                 tabActiva = "proveedor";
+                contenedor.Controls.RemoveAt(0);
             }
         }
 
@@ -210,6 +209,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 clearColorTabs();
                 tabActiva = "reportes";
+                contenedor.Controls.RemoveAt(0);
             }
         }
 
@@ -219,6 +219,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 clearColorTabs();
                 tabActiva = "cuentas";
+                contenedor.Controls.RemoveAt(0);
             }
         }
     }
