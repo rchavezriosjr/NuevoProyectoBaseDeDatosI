@@ -19,9 +19,9 @@ namespace ProyectoBDI___SisVent.data
             this.Id = IdCompra;
         }
 
-        public DataTable GetCompras()
+        public DataSet GetCompras()
         {
-            DataTable dt = new DataTable("Compras");
+            DataSet dt = new DataSet();
             SqlConnection Con = new SqlConnection();
             try
             {
@@ -41,9 +41,9 @@ namespace ProyectoBDI___SisVent.data
             }
             return dt;
         }
-        public DataTable DeleteCompra(int id)
+        public DataSet DeleteCompra(int id)
         {
-            DataTable dt = new DataTable("ComprasAct");
+            DataSet dt = new DataSet();
             SqlConnection Con = new SqlConnection();
             try
             {

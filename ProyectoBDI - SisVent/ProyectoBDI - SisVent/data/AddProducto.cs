@@ -16,6 +16,7 @@ namespace ProyectoBDI___SisVent.data
             try
             {
                 Con.ConnectionString = Conexión.Cn;
+                Con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
                 cmd.CommandText = "AddProducto_Insertar";
@@ -50,15 +51,108 @@ namespace ProyectoBDI___SisVent.data
                 SqlParameter TalleID = new SqlParameter();
                 TalleID.ParameterName = "@TalleID";
                 TalleID.SqlDbType = SqlDbType.Int;
-                TalleID.Value=Prod.
+                TalleID.Value = Prod.Talle.Id;
+                cmd.Parameters.Add(TalleID);
+
+                SqlParameter PrecioCst = new SqlParameter();
+                PrecioCst.ParameterName = "@PrecioCosto";
+                PrecioCst.SqlDbType = SqlDbType.Decimal;
+                PrecioCst.Value = Prod.PrecioCosto;
+                cmd.Parameters.Add(PrecioCst);
+
+                SqlParameter PorcGananc = new SqlParameter();
+                PorcGananc.ParameterName = "@PorcGanancia";
+                PrecioCst.SqlDbType = SqlDbType.Decimal;
+                PrecioCst.Value = Prod.PrecioCosto;
+                cmd.Parameters.Add(PrecioCst);
+
+                SqlParameter PVta = new SqlParameter();
+                PVta.ParameterName = "@PrecioVenta";
+                PVta.SqlDbType = SqlDbType.Decimal;
+                PVta.Value = Prod.PrecioVenta;
+                cmd.Parameters.Add(PVta);
+
+                SqlParameter IStock = new SqlParameter();
+                IStock.ParameterName = "@StockInicial";
+                IStock.SqlDbType = SqlDbType.Decimal;
+                IStock.Value = Prod.StockInicial;
+                cmd.Parameters.Add(IStock);
+
+                SqlParameter AStock = new SqlParameter();
+                AStock.ParameterName = "@StockActual";
+                AStock.SqlDbType = SqlDbType.Decimal;
+                AStock.Value = Prod.StockActual;
+                cmd.Parameters.Add(AStock);
+
+                SqlParameter Descu = new SqlParameter();
+                Descu.ParameterName = "@PorcDescuento";
+                Descu.SqlDbType = SqlDbType.Decimal;
+                Descu.Value = Prod.PorcDescuento;
+                cmd.Parameters.Add(Descu);
+
+                SqlParameter CompID = new SqlParameter();
+                CompID.ParameterName = "@CompraID";
+                CompID.SqlDbType = SqlDbType.Int;
+                CompID.Value = Prod.Compra.Id;
+                cmd.Parameters.Add(CompID);
+
+                cmd.ExecuteNonQuery();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                Console.WriteLine("ERROR: Imposible insertar: " + ex.ToString());
+            }
+            finally
+            {
+                if (Con.State == ConnectionState.Open) Con.Close();
             }
         }
 
+        public DataSet GetTipoProductos()
+        {
+            DataSet dt = new DataSet();
+            SqlConnection Con = new SqlConnection();
+            try
+            {
+                Con.ConnectionString = Conexión.Cn;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Con;
+                cmd.CommandText = "AddProducto_GetTipoProductos";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter Data = new SqlDataAdapter(cmd);
+                Data.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
+                dt = null;
+            }
+            return dt;
+        }
+        public DataSet GetTalles()
+        {
+            DataSet dt = new DataSet();
+            SqlConnection Con = new SqlConnection();
+            try
+            {
+                Con.ConnectionString = Conexión.Cn;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Con;
+                cmd.CommandText = "AddProducto_GetTalles";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter Data = new SqlDataAdapter(cmd);
+                Data.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
+                dt = null;
+            }
+            return dt;
+        }
     }
 }

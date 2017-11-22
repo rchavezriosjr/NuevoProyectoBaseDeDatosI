@@ -19,11 +19,10 @@ namespace SistemaVC.Classes
 
     public static DataSet ExecuteDataSet(string sqlSpName, SqlParameter[] dbParams)
         {
-            DataSet ds = null;
+            DataSet ds = new DataSet();
             //try
             //{
-                ds = new DataSet();
-                SqlConnection cn = new SqlConnection(ConfigurationManager.AppSettings.Get("connectionString"));
+            SqlConnection cn = new SqlConnection(ConfigurationManager.AppSettings.Get("connectionString"));
                 SqlCommand cmd = new SqlCommand(sqlSpName, cn);
 				cmd.CommandTimeout = 600;
                 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -18,9 +18,9 @@ namespace SistemaVC
                     
                     DBHelper.MakeParam("@Codigo", SqlDbType.Int, 0, producto.Codigo),
                     DBHelper.MakeParam("@Descripcion", SqlDbType.VarChar, 0, producto.Descripcion),
-                    DBHelper.MakeParam("@TipoId", SqlDbType.Int, 0, producto.Tipo.Id),
+                    DBHelper.MakeParam("@TipoID", SqlDbType.Int, 0, producto.Tipo.Id),
                     DBHelper.MakeParam("@ColorDescripcion", SqlDbType.VarChar, 0, producto.Color.Descripcion),
-                    DBHelper.MakeParam("@TalleId", SqlDbType.Int, 0, producto.Talle.Id),
+                    DBHelper.MakeParam("@TalleID", SqlDbType.Int, 0, producto.Talle.Id),
                     DBHelper.MakeParam("@PrecioCosto", SqlDbType.Decimal, 0, producto.PrecioCosto),
                     DBHelper.MakeParam("@PorcGanancia", SqlDbType.Decimal, 0, producto.PorcGanancia),
                     DBHelper.MakeParam("@PrecioVenta", SqlDbType.Decimal, 0, producto.PrecioVenta),

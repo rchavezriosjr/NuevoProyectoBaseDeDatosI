@@ -55,11 +55,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="data\AddProducto.cs" />
+    <Compile Include="data\AddVenta.cs" />
     <Compile Include="data\Cliente.cs" />
     <Compile Include="data\Color.cs" />
     <Compile Include="data\Compra.cs" />
     <Compile Include="data\Conexión.cs" />
     <Compile Include="data\DetalleVenta.cs" />
+    <Compile Include="data\EditCliente.cs" />
+    <Compile Include="data\EditCompra.cs" />
+    <Compile Include="data\ListCliente.cs" />
     <Compile Include="data\ListCompra.cs" />
     <Compile Include="data\ListProducto.cs" />
     <Compile Include="data\ListProveedor.cs" />

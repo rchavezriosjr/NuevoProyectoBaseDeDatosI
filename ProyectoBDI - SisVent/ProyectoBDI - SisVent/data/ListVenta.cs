@@ -19,9 +19,9 @@ namespace ProyectoBDI___SisVent.data
         {
             this.IdVta = idvta;
         }
-        public DataTable GetVtas()
+        public DataSet GetVtas()
         {
-            DataTable dt = new DataTable("Ventas");
+            DataSet dt = new DataSet();
             SqlConnection Con = new SqlConnection();
             try
             {

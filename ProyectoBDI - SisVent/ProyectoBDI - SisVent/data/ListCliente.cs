@@ -8,17 +8,9 @@ using System.Threading.Tasks;
 
 namespace ProyectoBDI___SisVent.data
 {
-    class ListProveedor
+    class ListCliente
     {
-        public int Id
-        { get; set; }
-        public ListProveedor()
-        { }
-        public ListProveedor(int IdProveedor)
-        {
-            this.Id = IdProveedor;
-        }
-        public DataSet GetProveedores()
+        public DataSet GetClientes()
         {
             DataSet dt = new DataSet();
             SqlConnection Con = new SqlConnection();
@@ -27,7 +19,7 @@ namespace ProyectoBDI___SisVent.data
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "ListProveedores_Get";
+                cmd.CommandText = "ListCliente_Get";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter Data = new SqlDataAdapter(cmd);
@@ -40,7 +32,8 @@ namespace ProyectoBDI___SisVent.data
             }
             return dt;
         }
-        public DataSet DeleteProveedor(int id)
+
+        public DataSet DeleteCliente(Cliente client)
         {
             DataSet dt = new DataSet();
             SqlConnection Con = new SqlConnection();
@@ -49,14 +42,14 @@ namespace ProyectoBDI___SisVent.data
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "ListProveedores_Delete";
+                cmd.CommandText = "ListCliente_Delete";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter IDPROVEEDOR = new SqlParameter();
-                IDPROVEEDOR.ParameterName = "@Id";
-                IDPROVEEDOR.SqlDbType = SqlDbType.Int;
-                IDPROVEEDOR.Value = id;
-                cmd.Parameters.Add(IDPROVEEDOR);
+                SqlParameter IDCLIENTE = new SqlParameter();
+                IDCLIENTE.ParameterName = "@Id";
+                IDCLIENTE.SqlDbType = SqlDbType.Int;
+                IDCLIENTE.Value = client.C_Id;
+                cmd.Parameters.Add(IDCLIENTE);
 
                 SqlDataAdapter Data = new SqlDataAdapter(cmd);
                 Data.Fill(dt);
@@ -68,5 +61,6 @@ namespace ProyectoBDI___SisVent.data
             }
             return dt;
         }
+
     }
 }

@@ -18,9 +18,9 @@ namespace ProyectoBDI___SisVent.data
         {
             this.Id = IdProducto;
         }
-        public DataTable GetProductos()
+        public DataSet GetProductos()
         {
-            DataTable dt = new DataTable("Productos");
+            DataSet dt = new DataSet();
             SqlConnection Con = new SqlConnection();
             try
             {
@@ -40,9 +40,9 @@ namespace ProyectoBDI___SisVent.data
             }
             return dt;
         }
-        public DataTable DeleteProducto(int id)
+        public DataSet DeleteProducto(int id)
         {
-            DataTable dt = new DataTable("ProductoAct");
+            DataSet dt = new DataSet();
             SqlConnection Con = new SqlConnection();
             try
             {
