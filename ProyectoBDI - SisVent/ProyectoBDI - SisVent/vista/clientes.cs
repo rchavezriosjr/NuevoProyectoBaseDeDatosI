@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Transitions;
+using ProyectoBDI___SisVent.data;
 
 namespace ProyectoBDI___SisVent.vista
 {
@@ -17,12 +18,19 @@ namespace ProyectoBDI___SisVent.vista
         Region rg = new Region();
         Region rg2 = new Region();
         clienteForm clienteForm = new clienteForm();
+        ListCliente lc = new ListCliente();
 
         public clientes()
         {
             InitializeComponent();
         }
 
+        private void CargarClientes()
+        {
+            DataSet ds = new DataSet();
+            ds=lc.GetClientes();
+            dataGridView1.DataSource = ds.Tables[0];
+        }
         private void clientes_Load(object sender, EventArgs e)
         {
             CircleBorder();
@@ -61,7 +69,14 @@ namespace ProyectoBDI___SisVent.vista
 
         private void listarButton_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                CargarClientes();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar clientes " + ex.ToString());
+            }
         }
 
     }

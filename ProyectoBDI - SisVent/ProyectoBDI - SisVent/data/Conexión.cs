@@ -8,6 +8,6 @@ namespace ProyectoBDI___SisVent
 {
     class Conexión
     {
-        public static string Cn = "Data Source=RICARDOCHÁVEZJR\\RCHAVEZ; Initial Catalog=ProyectoBDI; Integrated Security=true";
+        public static string Cn = "Data Source=RICARDOCHÁVEZJR\\RCHAVEZ; Initial Catalog=Administrador; Integrated Security=true";
     }
 }
