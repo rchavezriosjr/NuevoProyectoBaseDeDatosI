@@ -19,6 +19,7 @@ namespace ProyectoBDI___SisVent.vista
         inicio inicio = new inicio();
         clientes clientes = new clientes();
         proveedores proveedores = new proveedores();
+        productos productos = new productos();
 
         public home()
         {
@@ -34,6 +35,7 @@ namespace ProyectoBDI___SisVent.vista
             this.contenedor.Controls.Add(inicio);
             this.contenedor.Controls.Add(clientes);
             this.contenedor.Controls.Add(proveedores);
+            this.contenedor.Controls.Add(productos);
 
             inicio.BringToFront();
             timerTab.Start();
@@ -194,6 +196,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 clearColorTabs();
                 tabActiva = "productos";
+                productos.BringToFront();
             }
         }
 
