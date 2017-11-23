@@ -61,7 +61,6 @@ namespace SistemaVC
         {
             SqlParameter[] dbParams = new SqlParameter[]
 				{
-                    // , , , , , 
                     DBHelper.MakeParam("@ProductoId", SqlDbType.Int, 0, detalle.Producto.Id),
                     DBHelper.MakeParam("@CantidadUnidades", SqlDbType.Int, 0, detalle.CantidadUnidades),
                    
