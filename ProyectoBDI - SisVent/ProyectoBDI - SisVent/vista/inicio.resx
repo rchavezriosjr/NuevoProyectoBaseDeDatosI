@@ -181,20 +181,29 @@
   </data>
   <data name="label11.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAC4SURBVEhLvY6xDcNAEMN+oGzgLvsvEsOZITEFV7YgyIWfAIs/FvoxjdfyXnd/Z492ud/wowEw
-        UabWqgFwEVNr1QC4iKm1agBcxNRaNQAuYmqtGgAXMbVWDUzD/QBTa9UAuIiptWoAXMTUWjUALmJqrRoA
-        FzG1Vg2Ai5haqwbARUytVQPTcD/A1Fo1AC5iaq0aABcxtVYNgIuYWqsGwEVMrVUD4CKm1qoB2B/fc8Sj
-        Xe433DTwPGP8Aers/P/iBIdfAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAALhJREFUSEu9
+        jrENw0AQw36gbOAu+y8Sw5khMQVXtiDIhZ8Aiz8W+jGN1/Jed39nj3a53/CjATBRptaqAXARU2vVALiI
+        qbVqAFzE1Fo1AC5iaq0aABcxtVYNTMP9AFNr1QC4iKm1agBcxNRaNQAuYmqtGgAXMbVWDYCLmFqrBsBF
+        TK1VA9NwP8DUWjUALmJqrRoAFzG1Vg2Ai5haqwbARUytVQPgIqbWqgHYH99zxKNd7jfcNPA8Y/wB6uz8
+        /+IEh18AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="label12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAC4SURBVEhLvY6xDcNAEMN+oGzgLvsvEsOZITEFV7YgyIWfAIs/FvoxjdfyXnd/Z492ud/wowEw
-        UabWqgFwEVNr1QC4iKm1agBcxNRaNQAuYmqtGgAXMbVWDUzD/QBTa9UAuIiptWoAXMTUWjUALmJqrRoA
-        FzG1Vg2Ai5haqwbARUytVQPTcD/A1Fo1AC5iaq0aABcxtVYNgIuYWqsGwEVMrVUD4CKm1qoB2B/fc8Sj
-        Xe433DTwPGP8Aers/P/iBIdfAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAALhJREFUSEu9
+        jrENw0AQw36gbOAu+y8Sw5khMQVXtiDIhZ8Aiz8W+jGN1/Jed39nj3a53/CjATBRptaqAXARU2vVALiI
+        qbVqAFzE1Fo1AC5iaq0aABcxtVYNTMP9AFNr1QC4iKm1agBcxNRaNQAuYmqtGgAXMbVWDYCLmFqrBsBF
+        TK1VA9NwP8DUWjUALmJqrRoAFzG1Vg2Ai5haqwbARUytVQPgIqbWqgHYH99zxKNd7jfcNPA8Y/wB6uz8
+        /+IEh18AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="label13.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAALhJREFUSEu9
+        jrENw0AQw36gbOAu+y8Sw5khMQVXtiDIhZ8Aiz8W+jGN1/Jed39nj3a53/CjATBRptaqAXARU2vVALiI
+        qbVqAFzE1Fo1AC5iaq0aABcxtVYNTMP9AFNr1QC4iKm1agBcxNRaNQAuYmqtGgAXMbVWDYCLmFqrBsBF
+        TK1VA9NwP8DUWjUALmJqrRoAFzG1Vg2Ai5haqwbARUytVQPgIqbWqgHYH99zxKNd7jfcNPA8Y/wB6uz8
+        /+IEh18AAAAASUVORK5CYII=
 </value>
   </data>
 </root>

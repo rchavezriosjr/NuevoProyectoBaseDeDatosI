@@ -12,13 +12,13 @@ using Transitions;
 
 namespace ProyectoBDI___SisVent.vista
 {
-    public partial class clientes : UserControl
+    public partial class proveedores : UserControl
     {
         Region rg = new Region();
         Region rg2 = new Region();
-        clienteForm clienteForm = new clienteForm();
+        proveedorForm proveedorForm = new proveedorForm();
 
-        public clientes()
+        public proveedores()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace ProyectoBDI___SisVent.vista
         {
             //System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             //gp.AddEllipse (0, 0, buscarButton.Width - 3, buscarButton.Height - 3);
-            rg = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0,0,150,40,10,10));
+            rg = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0,0,170,40,10,10));
             rg2 = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 35, 35, 35, 35));
 
             agregarButton.Region = rg;
@@ -56,7 +56,7 @@ namespace ProyectoBDI___SisVent.vista
 
         private void agregarButton_Click(object sender, EventArgs e)
         {
-            clienteForm.ShowDialog();
+            proveedorForm.ShowDialog();
         }
 
         private void listarButton_Click(object sender, EventArgs e)

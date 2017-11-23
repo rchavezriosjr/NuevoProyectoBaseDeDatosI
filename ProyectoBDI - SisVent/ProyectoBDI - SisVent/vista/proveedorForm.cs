@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoBDI___SisVent
 {
-    public partial class clienteForm : Form
+    public partial class proveedorForm : Form
     {
-        public clienteForm()
+        public proveedorForm()
         {
             InitializeComponent();
             //this.TopLevel = false;

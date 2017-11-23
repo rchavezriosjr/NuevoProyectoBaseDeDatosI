@@ -54,6 +54,9 @@
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.ultimasVentas = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
+            this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
+            this.mejoresClientes = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,6 +70,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.productosMasVendidos)).BeginInit();
             this.bunifuCards2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ultimasVentas)).BeginInit();
+            this.bunifuCards3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mejoresClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,7 +87,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(59)))), ((int)(((byte)(66)))));
             this.label1.Location = new System.Drawing.Point(17, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
@@ -284,7 +289,7 @@
             this.bunifuCards1.Controls.Add(this.productosMasVendidos);
             this.bunifuCards1.Controls.Add(this.label11);
             this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(57, 261);
+            this.bunifuCards1.Location = new System.Drawing.Point(30, 260);
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 50;
@@ -326,7 +331,7 @@
             this.bunifuCards2.Controls.Add(this.ultimasVentas);
             this.bunifuCards2.Controls.Add(this.label12);
             this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(373, 261);
+            this.bunifuCards2.Location = new System.Drawing.Point(330, 260);
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 50;
@@ -357,11 +362,52 @@
             this.label12.TabIndex = 2;
             this.label12.Text = "       Últimas ventas";
             // 
+            // bunifuCards3
+            // 
+            this.bunifuCards3.BackColor = System.Drawing.Color.White;
+            this.bunifuCards3.BorderRadius = 10;
+            this.bunifuCards3.BottomSahddow = true;
+            this.bunifuCards3.color = System.Drawing.Color.Lime;
+            this.bunifuCards3.Controls.Add(this.mejoresClientes);
+            this.bunifuCards3.Controls.Add(this.label13);
+            this.bunifuCards3.LeftSahddow = false;
+            this.bunifuCards3.Location = new System.Drawing.Point(632, 260);
+            this.bunifuCards3.Name = "bunifuCards3";
+            this.bunifuCards3.RightSahddow = true;
+            this.bunifuCards3.ShadowDepth = 50;
+            this.bunifuCards3.Size = new System.Drawing.Size(286, 346);
+            this.bunifuCards3.TabIndex = 8;
+            // 
+            // mejoresClientes
+            // 
+            this.mejoresClientes.BackgroundColor = System.Drawing.Color.White;
+            this.mejoresClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mejoresClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mejoresClientes.GridColor = System.Drawing.Color.RoyalBlue;
+            this.mejoresClientes.Location = new System.Drawing.Point(0, 28);
+            this.mejoresClientes.Name = "mejoresClientes";
+            this.mejoresClientes.Size = new System.Drawing.Size(284, 315);
+            this.mejoresClientes.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Image = ((System.Drawing.Image)(resources.GetObject("label13.Image")));
+            this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label13.Location = new System.Drawing.Point(0, 5);
+            this.label13.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(154, 23);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "       Top clientes";
+            // 
             // inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
+            this.Controls.Add(this.bunifuCards3);
             this.Controls.Add(this.bunifuCards2);
             this.Controls.Add(this.bunifuCards1);
             this.Controls.Add(this.label10);
@@ -391,6 +437,9 @@
             this.bunifuCards2.ResumeLayout(false);
             this.bunifuCards2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ultimasVentas)).EndInit();
+            this.bunifuCards3.ResumeLayout(false);
+            this.bunifuCards3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mejoresClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,5 +472,8 @@
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
         private System.Windows.Forms.DataGridView ultimasVentas;
         private System.Windows.Forms.Label label12;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards3;
+        private System.Windows.Forms.DataGridView mejoresClientes;
+        private System.Windows.Forms.Label label13;
     }
 }
