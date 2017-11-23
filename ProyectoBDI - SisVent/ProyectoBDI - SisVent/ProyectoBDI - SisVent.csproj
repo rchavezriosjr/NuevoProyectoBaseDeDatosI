@@ -54,6 +54,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="productos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="productos.Designer.cs">
+      <DependentUpon>productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\proveedores.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vista\proveedores.Designer.cs">
+      <DependentUpon>proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\proveedorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\proveedorForm.Designer.cs">
+      <DependentUpon>proveedorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="data\AddProducto.cs" />
     <Compile Include="data\AddVenta.cs" />
     <Compile Include="data\Cliente.cs" />
@@ -74,18 +92,30 @@
     <Compile Include="data\Tipo.cs" />
     <Compile Include="data\user.cs" />
     <Compile Include="data\Venta.cs" />
+    <Compile Include="vista\clienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\clienteForm.Designer.cs">
+      <DependentUpon>clienteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vista\clientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vista\clientes.Designer.cs">
+      <DependentUpon>clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="vista\home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vista\home.Designer.cs">
+    <Compile Include="vista\home.designer.cs">
       <DependentUpon>home.cs</DependentUpon>
     </Compile>
     <Compile Include="vista\inicio.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="vista\inicio.Designer.cs">
+    <Compile Include="vista\inicio.designer.cs">
       <DependentUpon>inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="vista\italk_theme_-_c#.cs" />
@@ -113,6 +143,18 @@
     <Compile Include="vista\viewCarga.designer.cs">
       <DependentUpon>viewCarga.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="productos.resx">
+      <DependentUpon>productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\proveedores.resx">
+      <DependentUpon>proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\proveedorForm.resx">
+      <DependentUpon>proveedorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\clienteForm.resx">
+      <DependentUpon>clienteForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -123,6 +165,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="vista\clientes.resx">
+      <DependentUpon>clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vista\home.resx">
       <DependentUpon>home.cs</DependentUpon>
     </EmbeddedResource>

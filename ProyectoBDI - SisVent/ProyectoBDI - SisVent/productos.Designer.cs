@@ -1,6 +1,6 @@
 ﻿namespace ProyectoBDI___SisVent.vista
 {
-    partial class clientes
+    partial class productos
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(clientes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(proveedores));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.listarButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.agregarButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtBuscar = new Bunifu.Framework.UI.BunifuTextbox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.vistaProveedores = new System.Windows.Forms.DataGridView();
             this.seeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.editButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.erraseButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.metodoBusqueda = new iTalk.iTalk_ComboBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaProveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erraseButton)).BeginInit();
@@ -62,14 +62,14 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(59)))), ((int)(((byte)(66)))));
             this.label1.Location = new System.Drawing.Point(17, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 23);
+            this.label1.Size = new System.Drawing.Size(162, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "/Clientes";
+            this.label1.Text = "/Proveedores";
             // 
             // listarButton
             // 
-            this.listarButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(194)))), ((int)(((byte)(133)))));
-            this.listarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(194)))), ((int)(((byte)(133)))));
+            this.listarButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(58)))), ((int)(((byte)(110)))));
+            this.listarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(30)))), ((int)(((byte)(121)))));
             this.listarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.listarButton.BorderRadius = 0;
             this.listarButton.ButtonText = "   Mostrar todos";
@@ -87,13 +87,13 @@
             this.listarButton.IconVisible = true;
             this.listarButton.IconZoom = 60D;
             this.listarButton.IsTab = false;
-            this.listarButton.Location = new System.Drawing.Point(616, 87);
+            this.listarButton.Location = new System.Drawing.Point(642, 87);
             this.listarButton.Name = "listarButton";
-            this.listarButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(194)))), ((int)(((byte)(133)))));
-            this.listarButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(205)))), ((int)(((byte)(156)))));
+            this.listarButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(30)))), ((int)(((byte)(121)))));
+            this.listarButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(58)))), ((int)(((byte)(110)))));
             this.listarButton.OnHoverTextColor = System.Drawing.Color.White;
             this.listarButton.selected = false;
-            this.listarButton.Size = new System.Drawing.Size(150, 40);
+            this.listarButton.Size = new System.Drawing.Size(170, 40);
             this.listarButton.TabIndex = 3;
             this.listarButton.Text = "   Mostrar todos";
             this.listarButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -103,11 +103,11 @@
             // 
             // agregarButton
             // 
-            this.agregarButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(181)))), ((int)(((byte)(223)))));
-            this.agregarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(181)))), ((int)(((byte)(223)))));
+            this.agregarButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(127)))), ((int)(((byte)(168)))));
+            this.agregarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(127)))), ((int)(((byte)(168)))));
             this.agregarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.agregarButton.BorderRadius = 0;
-            this.agregarButton.ButtonText = "   Nuevo cliente";
+            this.agregarButton.ButtonText = "   Nuevo proveedor";
             this.agregarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.agregarButton.DisabledColor = System.Drawing.Color.Gray;
             this.agregarButton.Iconcolor = System.Drawing.Color.Transparent;
@@ -124,13 +124,13 @@
             this.agregarButton.IsTab = false;
             this.agregarButton.Location = new System.Drawing.Point(451, 87);
             this.agregarButton.Name = "agregarButton";
-            this.agregarButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(181)))), ((int)(((byte)(223)))));
-            this.agregarButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
+            this.agregarButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(127)))), ((int)(((byte)(168)))));
+            this.agregarButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.agregarButton.OnHoverTextColor = System.Drawing.Color.White;
             this.agregarButton.selected = false;
-            this.agregarButton.Size = new System.Drawing.Size(150, 40);
+            this.agregarButton.Size = new System.Drawing.Size(170, 40);
             this.agregarButton.TabIndex = 2;
-            this.agregarButton.Text = "   Nuevo cliente";
+            this.agregarButton.Text = "   Nuevo proveedor";
             this.agregarButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.agregarButton.Textcolor = System.Drawing.Color.White;
             this.agregarButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,23 +149,23 @@
             this.txtBuscar.TabIndex = 4;
             this.txtBuscar.text = "";
             // 
-            // dataGridView1
+            // vistaProveedores
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
-            this.dataGridView1.Location = new System.Drawing.Point(75, 146);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 498);
-            this.dataGridView1.TabIndex = 7;
+            this.vistaProveedores.AllowUserToAddRows = false;
+            this.vistaProveedores.AllowUserToDeleteRows = false;
+            this.vistaProveedores.BackgroundColor = System.Drawing.Color.White;
+            this.vistaProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.vistaProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vistaProveedores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
+            this.vistaProveedores.Location = new System.Drawing.Point(75, 146);
+            this.vistaProveedores.Name = "vistaProveedores";
+            this.vistaProveedores.ReadOnly = true;
+            this.vistaProveedores.Size = new System.Drawing.Size(800, 498);
+            this.vistaProveedores.TabIndex = 7;
             // 
             // seeButton
             // 
-            this.seeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(146)))), ((int)(((byte)(195)))));
+            this.seeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.seeButton.Image = ((System.Drawing.Image)(resources.GetObject("seeButton.Image")));
             this.seeButton.ImageActive = null;
             this.seeButton.Location = new System.Drawing.Point(34, 151);
@@ -178,7 +178,7 @@
             // 
             // editButton
             // 
-            this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(146)))), ((int)(((byte)(195)))));
+            this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.editButton.Image = ((System.Drawing.Image)(resources.GetObject("editButton.Image")));
             this.editButton.ImageActive = null;
             this.editButton.Location = new System.Drawing.Point(34, 192);
@@ -191,7 +191,7 @@
             // 
             // erraseButton
             // 
-            this.erraseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(146)))), ((int)(((byte)(195)))));
+            this.erraseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.erraseButton.Image = ((System.Drawing.Image)(resources.GetObject("erraseButton.Image")));
             this.erraseButton.ImageActive = null;
             this.erraseButton.Location = new System.Drawing.Point(34, 233);
@@ -225,7 +225,7 @@
             this.metodoBusqueda.StartIndex = 0;
             this.metodoBusqueda.TabIndex = 5;
             // 
-            // clientes
+            // proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -233,17 +233,17 @@
             this.Controls.Add(this.erraseButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.seeButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.vistaProveedores);
             this.Controls.Add(this.metodoBusqueda);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.listarButton);
             this.Controls.Add(this.agregarButton);
             this.Controls.Add(this.panel1);
-            this.Name = "clientes";
+            this.Name = "proveedores";
             this.Size = new System.Drawing.Size(950, 670);
             this.Load += new System.EventHandler(this.clientes_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaProveedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erraseButton)).EndInit();
@@ -259,7 +259,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton listarButton;
         private Bunifu.Framework.UI.BunifuTextbox txtBuscar;
         private iTalk.iTalk_ComboBox metodoBusqueda;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView vistaProveedores;
         private Bunifu.Framework.UI.BunifuImageButton seeButton;
         private Bunifu.Framework.UI.BunifuImageButton editButton;
         private Bunifu.Framework.UI.BunifuImageButton erraseButton;
