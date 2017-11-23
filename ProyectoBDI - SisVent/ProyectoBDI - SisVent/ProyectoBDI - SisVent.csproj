@@ -93,6 +93,9 @@
     <Compile Include="data\DetalleVenta.cs" />
     <Compile Include="data\EditCliente.cs" />
     <Compile Include="data\EditCompra.cs" />
+    <Compile Include="data\EditDetalleVenta.cs" />
+    <Compile Include="data\EditProducto.cs" />
+    <Compile Include="data\EditProveedores.cs" />
     <Compile Include="data\ListCliente.cs" />
     <Compile Include="data\ListCompra.cs" />
     <Compile Include="data\ListProducto.cs" />
