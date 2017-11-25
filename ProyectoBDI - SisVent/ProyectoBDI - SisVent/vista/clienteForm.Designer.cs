@@ -42,8 +42,6 @@
             this.txtNombre = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tipoFormulario = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtID = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCards1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -54,8 +52,6 @@
             this.bunifuCards1.BorderRadius = 0;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.RoyalBlue;
-            this.bunifuCards1.Controls.Add(this.label3);
-            this.bunifuCards1.Controls.Add(this.txtID);
             this.bunifuCards1.Controls.Add(this.cancelar);
             this.bunifuCards1.Controls.Add(this.guardar);
             this.bunifuCards1.Controls.Add(this.label5);
@@ -93,7 +89,7 @@
             this.cancelar.IdleForecolor = System.Drawing.Color.RoyalBlue;
             this.cancelar.IdleLineColor = System.Drawing.Color.RoyalBlue;
             this.cancelar.Location = new System.Drawing.Point(103, 438);
-            this.cancelar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cancelar.Margin = new System.Windows.Forms.Padding(5);
             this.cancelar.Name = "cancelar";
             this.cancelar.Size = new System.Drawing.Size(120, 40);
             this.cancelar.TabIndex = 12;
@@ -119,7 +115,7 @@
             this.guardar.IdleForecolor = System.Drawing.Color.White;
             this.guardar.IdleLineColor = System.Drawing.Color.RoyalBlue;
             this.guardar.Location = new System.Drawing.Point(256, 438);
-            this.guardar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.guardar.Margin = new System.Windows.Forms.Padding(5);
             this.guardar.Name = "guardar";
             this.guardar.Size = new System.Drawing.Size(120, 40);
             this.guardar.TabIndex = 11;
@@ -149,7 +145,7 @@
             this.txtDireccion.LineMouseHoverColor = System.Drawing.Color.RoyalBlue;
             this.txtDireccion.LineThickness = 3;
             this.txtDireccion.Location = new System.Drawing.Point(25, 324);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(351, 35);
             this.txtDireccion.TabIndex = 9;
@@ -178,7 +174,7 @@
             this.txtTel.LineMouseHoverColor = System.Drawing.Color.RoyalBlue;
             this.txtTel.LineThickness = 3;
             this.txtTel.Location = new System.Drawing.Point(25, 242);
-            this.txtTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTel.Margin = new System.Windows.Forms.Padding(4);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(157, 35);
             this.txtTel.TabIndex = 7;
@@ -207,7 +203,7 @@
             this.txtEmail.LineMouseHoverColor = System.Drawing.Color.RoyalBlue;
             this.txtEmail.LineThickness = 3;
             this.txtEmail.Location = new System.Drawing.Point(25, 160);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(198, 35);
             this.txtEmail.TabIndex = 3;
@@ -236,7 +232,7 @@
             this.txtNombre.LineMouseHoverColor = System.Drawing.Color.RoyalBlue;
             this.txtNombre.LineThickness = 3;
             this.txtNombre.Location = new System.Drawing.Point(25, 77);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(198, 35);
             this.txtNombre.TabIndex = 1;
@@ -261,36 +257,6 @@
             this.tipoFormulario.Size = new System.Drawing.Size(186, 22);
             this.tipoFormulario.TabIndex = 0;
             this.tipoFormulario.Text = "Información cliente";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Location = new System.Drawing.Point(264, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "ID ( * )";
-            // 
-            // txtID
-            // 
-            this.txtID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtID.Enabled = false;
-            this.txtID.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtID.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtID.HintForeColor = System.Drawing.Color.Empty;
-            this.txtID.HintText = "";
-            this.txtID.isPassword = false;
-            this.txtID.LineFocusedColor = System.Drawing.Color.RoyalBlue;
-            this.txtID.LineIdleColor = System.Drawing.Color.RoyalBlue;
-            this.txtID.LineMouseHoverColor = System.Drawing.Color.RoyalBlue;
-            this.txtID.LineThickness = 3;
-            this.txtID.Location = new System.Drawing.Point(258, 77);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(118, 35);
-            this.txtID.TabIndex = 13;
-            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // clienteForm
             // 
@@ -326,7 +292,5 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtNombre;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label tipoFormulario;
-        private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtID;
     }
 }

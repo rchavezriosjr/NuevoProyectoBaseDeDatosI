@@ -169,7 +169,7 @@
             this.seeButton.Location = new System.Drawing.Point(34, 151);
             this.seeButton.Name = "seeButton";
             this.seeButton.Size = new System.Drawing.Size(35, 35);
-            this.seeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.seeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.seeButton.TabIndex = 8;
             this.seeButton.TabStop = false;
             this.seeButton.Zoom = 10;
@@ -182,7 +182,7 @@
             this.editButton.Location = new System.Drawing.Point(34, 192);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(35, 35);
-            this.editButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.editButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.editButton.TabIndex = 9;
             this.editButton.TabStop = false;
             this.editButton.Zoom = 10;

@@ -51,7 +51,7 @@
             this.editButton.Location = new System.Drawing.Point(34, 205);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(35, 35);
-            this.editButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.editButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.editButton.TabIndex = 18;
             this.editButton.TabStop = false;
             this.editButton.Zoom = 10;
@@ -64,7 +64,7 @@
             this.seeButton.Location = new System.Drawing.Point(34, 164);
             this.seeButton.Name = "seeButton";
             this.seeButton.Size = new System.Drawing.Size(35, 35);
-            this.seeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.seeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.seeButton.TabIndex = 17;
             this.seeButton.TabStop = false;
             this.seeButton.Zoom = 10;
@@ -138,7 +138,7 @@
             this.agregarButton.IconRightVisible = true;
             this.agregarButton.IconRightZoom = 0D;
             this.agregarButton.IconVisible = true;
-            this.agregarButton.IconZoom = 60D;
+            this.agregarButton.IconZoom = 70D;
             this.agregarButton.IsTab = false;
             this.agregarButton.Location = new System.Drawing.Point(451, 100);
             this.agregarButton.Name = "agregarButton";

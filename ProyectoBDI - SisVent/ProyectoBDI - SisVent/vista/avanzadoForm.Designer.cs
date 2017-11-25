@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(avanzadoForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.closeButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.iTalk_TabControl1 = new iTalk.iTalk_TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.agregarCategoria = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -70,6 +70,20 @@
             this.panel1.Size = new System.Drawing.Size(711, 40);
             this.panel1.TabIndex = 1;
             // 
+            // closeButton
+            // 
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
+            this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
+            this.closeButton.ImageActive = null;
+            this.closeButton.Location = new System.Drawing.Point(672, 3);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(35, 35);
+            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.closeButton.TabIndex = 11;
+            this.closeButton.TabStop = false;
+            this.closeButton.Zoom = 10;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.AutoSize = true;
@@ -80,20 +94,6 @@
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(93, 21);
             this.bunifuCustomLabel2.TabIndex = 0;
             this.bunifuCustomLabel2.Text = "Avanzado";
-            // 
-            // closeButton
-            // 
-            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
-            this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.ImageActive = null;
-            this.closeButton.Location = new System.Drawing.Point(672, 3);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(35, 35);
-            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.closeButton.TabIndex = 11;
-            this.closeButton.TabStop = false;
-            this.closeButton.Zoom = 10;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // iTalk_TabControl1
             // 
@@ -134,7 +134,7 @@
             this.agregarCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
             this.agregarCategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.agregarCategoria.BorderRadius = 0;
-            this.agregarCategoria.ButtonText = "Agregar categoría";
+            this.agregarCategoria.ButtonText = "     Agregar categoría";
             this.agregarCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.agregarCategoria.DisabledColor = System.Drawing.Color.Gray;
             this.agregarCategoria.Iconcolor = System.Drawing.Color.Transparent;
@@ -147,7 +147,7 @@
             this.agregarCategoria.IconRightVisible = true;
             this.agregarCategoria.IconRightZoom = 0D;
             this.agregarCategoria.IconVisible = true;
-            this.agregarCategoria.IconZoom = 90D;
+            this.agregarCategoria.IconZoom = 60D;
             this.agregarCategoria.IsTab = false;
             this.agregarCategoria.Location = new System.Drawing.Point(262, 18);
             this.agregarCategoria.Name = "agregarCategoria";
@@ -157,7 +157,7 @@
             this.agregarCategoria.selected = false;
             this.agregarCategoria.Size = new System.Drawing.Size(170, 35);
             this.agregarCategoria.TabIndex = 7;
-            this.agregarCategoria.Text = "Agregar categoría";
+            this.agregarCategoria.Text = "     Agregar categoría";
             this.agregarCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.agregarCategoria.Textcolor = System.Drawing.Color.White;
             this.agregarCategoria.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,7 +171,7 @@
             this.seeCategoria.Location = new System.Drawing.Point(498, 396);
             this.seeCategoria.Name = "seeCategoria";
             this.seeCategoria.Size = new System.Drawing.Size(30, 30);
-            this.seeCategoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.seeCategoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.seeCategoria.TabIndex = 6;
             this.seeCategoria.TabStop = false;
             this.seeCategoria.Zoom = 10;
@@ -181,10 +181,10 @@
             this.editCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
             this.editCategoria.Image = ((System.Drawing.Image)(resources.GetObject("editCategoria.Image")));
             this.editCategoria.ImageActive = null;
-            this.editCategoria.Location = new System.Drawing.Point(462, 396);
+            this.editCategoria.Location = new System.Drawing.Point(457, 396);
             this.editCategoria.Name = "editCategoria";
             this.editCategoria.Size = new System.Drawing.Size(30, 30);
-            this.editCategoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.editCategoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.editCategoria.TabIndex = 5;
             this.editCategoria.TabStop = false;
             this.editCategoria.Zoom = 10;
@@ -257,10 +257,10 @@
             this.editarProductoInhabilitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
             this.editarProductoInhabilitado.Image = ((System.Drawing.Image)(resources.GetObject("editarProductoInhabilitado.Image")));
             this.editarProductoInhabilitado.ImageActive = null;
-            this.editarProductoInhabilitado.Location = new System.Drawing.Point(500, 393);
+            this.editarProductoInhabilitado.Location = new System.Drawing.Point(459, 393);
             this.editarProductoInhabilitado.Name = "editarProductoInhabilitado";
             this.editarProductoInhabilitado.Size = new System.Drawing.Size(30, 30);
-            this.editarProductoInhabilitado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.editarProductoInhabilitado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.editarProductoInhabilitado.TabIndex = 10;
             this.editarProductoInhabilitado.TabStop = false;
             this.editarProductoInhabilitado.Zoom = 10;
@@ -270,10 +270,10 @@
             this.verProductoInhabilitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
             this.verProductoInhabilitado.Image = ((System.Drawing.Image)(resources.GetObject("verProductoInhabilitado.Image")));
             this.verProductoInhabilitado.ImageActive = null;
-            this.verProductoInhabilitado.Location = new System.Drawing.Point(464, 393);
+            this.verProductoInhabilitado.Location = new System.Drawing.Point(500, 393);
             this.verProductoInhabilitado.Name = "verProductoInhabilitado";
             this.verProductoInhabilitado.Size = new System.Drawing.Size(30, 30);
-            this.verProductoInhabilitado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.verProductoInhabilitado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.verProductoInhabilitado.TabIndex = 9;
             this.verProductoInhabilitado.TabStop = false;
             this.verProductoInhabilitado.Zoom = 10;

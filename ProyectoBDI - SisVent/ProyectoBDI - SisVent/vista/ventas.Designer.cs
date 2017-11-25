@@ -51,7 +51,7 @@
             this.editButton.Location = new System.Drawing.Point(34, 205);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(35, 35);
-            this.editButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.editButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.editButton.TabIndex = 18;
             this.editButton.TabStop = false;
             this.editButton.Zoom = 10;
@@ -64,7 +64,7 @@
             this.seeButton.Location = new System.Drawing.Point(34, 164);
             this.seeButton.Name = "seeButton";
             this.seeButton.Size = new System.Drawing.Size(35, 35);
-            this.seeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.seeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.seeButton.TabIndex = 17;
             this.seeButton.TabStop = false;
             this.seeButton.Zoom = 10;
@@ -98,7 +98,7 @@
             // 
             // agregarButton
             // 
-            this.agregarButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
+            this.agregarButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(191)))), ((int)(((byte)(243)))));
             this.agregarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(191)))), ((int)(((byte)(243)))));
             this.agregarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.agregarButton.BorderRadius = 0;
@@ -119,8 +119,8 @@
             this.agregarButton.IsTab = false;
             this.agregarButton.Location = new System.Drawing.Point(451, 100);
             this.agregarButton.Name = "agregarButton";
-            this.agregarButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
-            this.agregarButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(166)))), ((int)(((byte)(78)))));
+            this.agregarButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(191)))), ((int)(((byte)(243)))));
+            this.agregarButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(191)))), ((int)(((byte)(243)))));
             this.agregarButton.OnHoverTextColor = System.Drawing.Color.White;
             this.agregarButton.selected = false;
             this.agregarButton.Size = new System.Drawing.Size(150, 40);
