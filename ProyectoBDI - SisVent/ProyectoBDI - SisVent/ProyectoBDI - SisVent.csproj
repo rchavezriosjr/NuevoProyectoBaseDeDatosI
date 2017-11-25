@@ -54,10 +54,40 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="productos.cs">
+    <Compile Include="vista\ventaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\ventaForm.Designer.cs">
+      <DependentUpon>ventaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\ventas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="productos.Designer.cs">
+    <Compile Include="vista\ventas.Designer.cs">
+      <DependentUpon>ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\compraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\compraForm.Designer.cs">
+      <DependentUpon>compraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\compras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vista\compras.Designer.cs">
+      <DependentUpon>compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\productoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\productoForm.Designer.cs">
+      <DependentUpon>productoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\productos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vista\productos.Designer.cs">
       <DependentUpon>productos.cs</DependentUpon>
     </Compile>
     <Compile Include="vista\avanzadoForm.cs">
@@ -158,7 +188,22 @@
     <Compile Include="vista\viewCarga.designer.cs">
       <DependentUpon>viewCarga.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="productos.resx">
+    <EmbeddedResource Include="vista\ventaForm.resx">
+      <DependentUpon>ventaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\ventas.resx">
+      <DependentUpon>ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\compraForm.resx">
+      <DependentUpon>compraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\compras.resx">
+      <DependentUpon>compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\productoForm.resx">
+      <DependentUpon>productoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\productos.resx">
       <DependentUpon>productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\avanzadoForm.resx">
@@ -222,7 +267,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="images\Menu_40px.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="images\Circled Chevron Left_40px.png" />
   </ItemGroup>

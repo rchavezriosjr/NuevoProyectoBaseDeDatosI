@@ -20,6 +20,8 @@ namespace ProyectoBDI___SisVent.vista
         clientes clientes = new clientes();
         proveedores proveedores = new proveedores();
         productos productos = new productos();
+        compras compras = new compras();
+        ventas ventas = new ventas();
 
         public home()
         {
@@ -36,6 +38,8 @@ namespace ProyectoBDI___SisVent.vista
             this.contenedor.Controls.Add(clientes);
             this.contenedor.Controls.Add(proveedores);
             this.contenedor.Controls.Add(productos);
+            this.contenedor.Controls.Add(compras);
+            this.contenedor.Controls.Add(ventas);
 
             inicio.BringToFront();
             timerTab.Start();
@@ -58,7 +62,7 @@ namespace ProyectoBDI___SisVent.vista
             else
             {
                 Transition.run(navbar, "Width", 0, new TransitionType_EaseInEaseOut(1000));
-                menu.Image = ProyectoBDI___SisVent.Properties.Resources.Xbox_Menu_40px;
+                menu.Image = ProyectoBDI___SisVent.Properties.Resources.Menu_40px;
             }
                 
         }
@@ -178,6 +182,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 clearColorTabs();
                 tabActiva = "ventas";
+                ventas.BringToFront();
             }
         }
 
@@ -187,6 +192,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 clearColorTabs();
                 tabActiva = "compras";
+                compras.BringToFront();
             }
         }
 
