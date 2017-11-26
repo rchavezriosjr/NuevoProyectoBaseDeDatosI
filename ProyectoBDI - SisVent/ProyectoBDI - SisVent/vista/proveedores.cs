@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Transitions;
+using ProyectoBDI___SisVent.data;
 
 namespace ProyectoBDI___SisVent.vista
 {
@@ -17,6 +18,7 @@ namespace ProyectoBDI___SisVent.vista
         Region rg = new Region();
         Region rg2 = new Region();
         proveedorForm proveedorForm = new proveedorForm();
+        ListProveedor lp = new ListProveedor();
 
         public proveedores()
         {
@@ -53,6 +55,12 @@ namespace ProyectoBDI___SisVent.vista
             int nHeightEllipse
         );
 
+        public void CargarProveedores()
+        {
+            DataSet ds = new DataSet();
+            ds = lp.GetProveedores();
+            vistaProveedores.DataSource = ds.Tables[0];
+        }
 
         private void agregarButton_Click(object sender, EventArgs e)
         {
@@ -61,7 +69,14 @@ namespace ProyectoBDI___SisVent.vista
 
         private void listarButton_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                CargarProveedores();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar proveedores. " + ex.ToString());
+            }
         }
 
     }
