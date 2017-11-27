@@ -7,17 +7,17 @@ namespace ProyectoBDI___SisVent.datos
 {
     public class user
     {
-        public string nombre, apellido, username, password, email;
+        public string nombre, apellido, username, password;
         public Image pPic;
 
         public user() { }
 
-        public user(string nombre, string apellido, string password, string email, Image picture, Accion type)
+        public user(string nombre, string apellido, string password, string usuario, Image picture, Accion type)
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
             this.Password = password;
-            this.Email = email;
+            this.UserName = usuario;
             this.PPic = picture;
 
             switch (type)
@@ -66,12 +66,6 @@ namespace ProyectoBDI___SisVent.datos
             set { password = value; }
         }
 
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
-
         public Image PPic
         {
             get { return pPic; }
@@ -97,6 +91,14 @@ namespace ProyectoBDI___SisVent.datos
 
                 // Parámetros del Procedimiento Almacenado
 
+                SqlParameter ParUsuario = new SqlParameter();
+                ParUsuario.ParameterName = "@usuario";
+                ParUsuario.SqlDbType = SqlDbType.VarChar;
+                ParUsuario.Size = 10;
+                ParUsuario.Value = UserName;
+                SqlCmd.Parameters.Add(ParUsuario);
+
+
                 SqlParameter ParContraseña = new SqlParameter();
                 ParContraseña.ParameterName = "@contraseña";
                 ParContraseña.SqlDbType = SqlDbType.NVarChar;
@@ -118,12 +120,6 @@ namespace ProyectoBDI___SisVent.datos
                 ParApellido.Value = Apellido;
                 SqlCmd.Parameters.Add(ParApellido);
 
-                SqlParameter ParCorreo = new SqlParameter();
-                ParCorreo.ParameterName = "@correo";
-                ParCorreo.SqlDbType = SqlDbType.VarChar;
-                ParCorreo.Size = 35;
-                ParCorreo.Value = Email;
-                SqlCmd.Parameters.Add(ParCorreo);
 
                 SqlParameter ParPerfilPicture = new SqlParameter();
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
@@ -175,6 +171,14 @@ namespace ProyectoBDI___SisVent.datos
 
                 // Parámetros del Procedimiento Almacenado
 
+                SqlParameter ParUsuario = new SqlParameter();
+                ParUsuario.ParameterName = "@usuario";
+                ParUsuario.SqlDbType = SqlDbType.VarChar;
+                ParUsuario.Size = 10;
+                ParUsuario.Value = UserName;
+                SqlCmd.Parameters.Add(ParUsuario);
+
+
                 SqlParameter ParID = new SqlParameter();
                 ParID.ParameterName = "@id";
                 ParID.SqlDbType = SqlDbType.NVarChar;
@@ -196,12 +200,6 @@ namespace ProyectoBDI___SisVent.datos
                 ParNombre.Value = this.Nombre;
                 SqlCmd.Parameters.Add(ParNombre);
 
-                SqlParameter ParCorreo = new SqlParameter();
-                ParCorreo.ParameterName = "@correo";
-                ParCorreo.SqlDbType = SqlDbType.VarChar;
-                ParCorreo.Size = 35;
-                ParCorreo.Value = this.Email;
-                SqlCmd.Parameters.Add(ParCorreo);
 
                 SqlParameter ParPerfilPicture = new SqlParameter();
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();

@@ -73,6 +73,16 @@ namespace ProyectoBDI___SisVent.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gender_Neutral_User_60px {
+            get {
+                object obj = ResourceManager.GetObject("Gender Neutral User_60px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Menu_40px {
             get {
                 object obj = ResourceManager.GetObject("Menu_40px", resourceCulture);

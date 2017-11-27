@@ -46,7 +46,6 @@
             this.inicioTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.proveedorTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.adminCuentasTab = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.reportesTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.clientesTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.comprasTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.userPicture = new System.Windows.Forms.PictureBox();
@@ -69,7 +68,6 @@
             this.navbar.Controls.Add(this.inicioTab);
             this.navbar.Controls.Add(this.proveedorTab);
             this.navbar.Controls.Add(this.adminCuentasTab);
-            this.navbar.Controls.Add(this.reportesTab);
             this.navbar.Controls.Add(this.clientesTab);
             this.navbar.Controls.Add(this.comprasTab);
             this.navbar.Controls.Add(this.panel1);
@@ -299,11 +297,11 @@
             // 
             // adminCuentasTab
             // 
-            this.adminCuentasTab.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(97)))), ((int)(((byte)(24)))));
+            this.adminCuentasTab.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.adminCuentasTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.adminCuentasTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.adminCuentasTab.BorderRadius = 0;
-            this.adminCuentasTab.ButtonText = "  Administrar Cuentas";
+            this.adminCuentasTab.ButtonText = "  Administración";
             this.adminCuentasTab.Cursor = System.Windows.Forms.Cursors.Hand;
             this.adminCuentasTab.DisabledColor = System.Drawing.Color.Gray;
             this.adminCuentasTab.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -319,59 +317,21 @@
             this.adminCuentasTab.IconVisible = true;
             this.adminCuentasTab.IconZoom = 65D;
             this.adminCuentasTab.IsTab = false;
-            this.adminCuentasTab.Location = new System.Drawing.Point(3, 620);
+            this.adminCuentasTab.Location = new System.Drawing.Point(3, 562);
             this.adminCuentasTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.adminCuentasTab.Name = "adminCuentasTab";
             this.adminCuentasTab.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
-            this.adminCuentasTab.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(97)))), ((int)(((byte)(24)))));
+            this.adminCuentasTab.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.adminCuentasTab.OnHoverTextColor = System.Drawing.Color.White;
             this.adminCuentasTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.adminCuentasTab.selected = true;
             this.adminCuentasTab.Size = new System.Drawing.Size(240, 50);
             this.adminCuentasTab.TabIndex = 6;
-            this.adminCuentasTab.Text = "  Administrar Cuentas";
+            this.adminCuentasTab.Text = "  Administración";
             this.adminCuentasTab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.adminCuentasTab.Textcolor = System.Drawing.Color.White;
             this.adminCuentasTab.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminCuentasTab.Click += new System.EventHandler(this.adminCuentasTab_Click);
-            // 
-            // reportesTab
-            // 
-            this.reportesTab.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
-            this.reportesTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
-            this.reportesTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.reportesTab.BorderRadius = 0;
-            this.reportesTab.ButtonText = "  Reportes";
-            this.reportesTab.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.reportesTab.DisabledColor = System.Drawing.Color.Gray;
-            this.reportesTab.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportesTab.Iconcolor = System.Drawing.Color.Transparent;
-            this.reportesTab.Iconimage = ((System.Drawing.Image)(resources.GetObject("reportesTab.Iconimage")));
-            this.reportesTab.Iconimage_right = null;
-            this.reportesTab.Iconimage_right_Selected = null;
-            this.reportesTab.Iconimage_Selected = null;
-            this.reportesTab.IconMarginLeft = 0;
-            this.reportesTab.IconMarginRight = 0;
-            this.reportesTab.IconRightVisible = true;
-            this.reportesTab.IconRightZoom = 0D;
-            this.reportesTab.IconVisible = true;
-            this.reportesTab.IconZoom = 65D;
-            this.reportesTab.IsTab = false;
-            this.reportesTab.Location = new System.Drawing.Point(3, 562);
-            this.reportesTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.reportesTab.Name = "reportesTab";
-            this.reportesTab.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
-            this.reportesTab.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
-            this.reportesTab.OnHoverTextColor = System.Drawing.Color.White;
-            this.reportesTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.reportesTab.selected = true;
-            this.reportesTab.Size = new System.Drawing.Size(240, 50);
-            this.reportesTab.TabIndex = 5;
-            this.reportesTab.Text = "  Reportes";
-            this.reportesTab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportesTab.Textcolor = System.Drawing.Color.White;
-            this.reportesTab.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportesTab.Click += new System.EventHandler(this.reportesTab_Click);
             // 
             // clientesTab
             // 
@@ -458,6 +418,7 @@
             this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.userPicture.TabIndex = 2;
             this.userPicture.TabStop = false;
+            this.userPicture.Click += new System.EventHandler(this.userPicture_Click);
             // 
             // bunifuCustomLabel4
             // 
@@ -587,7 +548,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuFlatButton comprasTab;
         private Bunifu.Framework.UI.BunifuFlatButton clientesTab;
-        private Bunifu.Framework.UI.BunifuFlatButton reportesTab;
         private Bunifu.Framework.UI.BunifuFlatButton adminCuentasTab;
         private System.Windows.Forms.Label idUsuario;
         private Bunifu.Framework.UI.BunifuImageButton minButton;

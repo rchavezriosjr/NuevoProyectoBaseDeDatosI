@@ -22,6 +22,7 @@ namespace ProyectoBDI___SisVent.vista
         productos productos = new productos();
         compras compras = new compras();
         ventas ventas = new ventas();
+        adminCuentas adminCuentas = new adminCuentas();
 
         public home()
         {
@@ -40,6 +41,7 @@ namespace ProyectoBDI___SisVent.vista
             this.contenedor.Controls.Add(productos);
             this.contenedor.Controls.Add(compras);
             this.contenedor.Controls.Add(ventas);
+            this.contenedor.Controls.Add(adminCuentas);
 
             inicio.BringToFront();
             timerTab.Start();
@@ -133,10 +135,6 @@ namespace ProyectoBDI___SisVent.vista
                     proveedorTab.BackColor = Color.FromArgb(249, 96, 179);
                     break;
 
-                case "reportes":
-                    reportesTab.BackColor = Color.FromArgb(229, 57, 69);
-                    break;
-
                 case "cuentas":
                     adminCuentasTab.BackColor = Color.FromArgb(248, 97, 24);
                     break;
@@ -151,7 +149,6 @@ namespace ProyectoBDI___SisVent.vista
             comprasTab.BackColor = Color.FromArgb(47, 50, 58);
             productosTab.BackColor = Color.FromArgb(47, 50, 58);
             proveedorTab.BackColor = Color.FromArgb(47, 50, 58);
-            reportesTab.BackColor = Color.FromArgb(47, 50, 58);
             adminCuentasTab.BackColor = Color.FromArgb(47, 50, 58);
 
         }
@@ -216,22 +213,19 @@ namespace ProyectoBDI___SisVent.vista
             }
         }
 
-        private void reportesTab_Click(object sender, EventArgs e)
-        {
-            if (tabActiva != "reportes")
-            {
-                clearColorTabs();
-                tabActiva = "reportes";
-            }
-        }
-
         private void adminCuentasTab_Click(object sender, EventArgs e)
         {
             if (tabActiva != "cuentas")
             {
                 clearColorTabs();
                 tabActiva = "cuentas";
+                adminCuentas.BringToFront();
             }
+        }
+
+        private void userPicture_Click(object sender, EventArgs e)
+        {
+            new Register(true).ShowDialog();
         }
     }
 }
