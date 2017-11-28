@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using ProyectoBDI___SisVent.data;
 
 namespace ProyectoBDI___SisVent.vista
 {
@@ -15,10 +16,19 @@ namespace ProyectoBDI___SisVent.vista
     {
         Region rg = new Region();
         Region rg2 = new Region();
+        ListCompra lcmp= new ListCompra();
 
         public compras()
         {
             InitializeComponent();
+            try
+            {
+                CargarCompras();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar compras. " + ex.ToString());
+            }
         }
 
         public void CircleBorder()
@@ -52,6 +62,13 @@ namespace ProyectoBDI___SisVent.vista
         private void agregarButton_Click(object sender, EventArgs e)
         {
             new compraForm().ShowDialog();
+        }
+
+        public void CargarCompras()
+        {
+            DataSet ds = new DataSet();
+            ds = lcmp.GetCompras();
+            dataGridView1.DataSource = ds.Tables[0];
         }
     }
 }
