@@ -686,3 +686,51 @@ as
 begin
 	Select ID from Usuario with(nolock) where ID =  @Usuario and Contraseña=@Contraseña
 end
+
+	go
+
+create procedure [Mostrar_Usuarios]
+as
+begin
+	select * from Usuario
+end
+
+	go
+
+create procedure [Mostrar_Clientes]
+as
+begin
+	select * from Cliente
+end
+
+	go
+
+create procedure [Mostar_Proveedores]
+as
+begin
+	select * from Proveedor
+end
+
+	go
+
+create procedure [Mostar_Productos]
+as
+begin
+	select * from Producto where Estado = 1
+end
+
+	go
+
+create procedure [Mostar_Ventas]
+as
+begin
+	select * from Venta
+end
+
+	go
+
+create procedure [Mostar_Compras]
+as
+begin
+	select * from Compra
+end
