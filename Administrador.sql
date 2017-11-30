@@ -726,3 +726,33 @@ as
 begin
 	select * from Compra
 end
+
+	go
+
+create procedure [Deshabilitar_Usuario](
+	@ID
+)
+as
+begin
+	delete from Usuario where ID = @ID
+end
+
+	go
+
+create procedure [Deshabilitar_Cliente](
+	@ID
+)
+as
+begin
+	delete from Cliente where ID = @ID
+end
+
+	go
+
+create procedure [Deshabilitar_Proveedor](
+	@ID
+)
+as
+begin
+	delete from Proveedor where ID = @ID
+end
