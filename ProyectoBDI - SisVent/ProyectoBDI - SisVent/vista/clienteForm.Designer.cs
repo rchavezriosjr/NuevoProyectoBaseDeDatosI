@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(clienteForm));
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.labelID = new System.Windows.Forms.Label();
+            this.txtID = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cancelar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.guardar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,9 +43,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.editarButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.tipoFormulario = new System.Windows.Forms.Label();
             this.bunifuCards1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editarButton)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards1
@@ -52,6 +56,8 @@
             this.bunifuCards1.BorderRadius = 0;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.RoyalBlue;
+            this.bunifuCards1.Controls.Add(this.labelID);
+            this.bunifuCards1.Controls.Add(this.txtID);
             this.bunifuCards1.Controls.Add(this.cancelar);
             this.bunifuCards1.Controls.Add(this.guardar);
             this.bunifuCards1.Controls.Add(this.label5);
@@ -69,6 +75,37 @@
             this.bunifuCards1.ShadowDepth = 20;
             this.bunifuCards1.Size = new System.Drawing.Size(405, 500);
             this.bunifuCards1.TabIndex = 1;
+            this.bunifuCards1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards1_Paint);
+            // 
+            // labelID
+            // 
+            this.labelID.AutoSize = true;
+            this.labelID.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.labelID.Location = new System.Drawing.Point(286, 60);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(18, 13);
+            this.labelID.TabIndex = 14;
+            this.labelID.Text = "ID";
+            // 
+            // txtID
+            // 
+            this.txtID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtID.Enabled = false;
+            this.txtID.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtID.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtID.HintForeColor = System.Drawing.Color.Empty;
+            this.txtID.HintText = "";
+            this.txtID.isPassword = false;
+            this.txtID.LineFocusedColor = System.Drawing.Color.RoyalBlue;
+            this.txtID.LineIdleColor = System.Drawing.Color.RoyalBlue;
+            this.txtID.LineMouseHoverColor = System.Drawing.Color.RoyalBlue;
+            this.txtID.LineThickness = 3;
+            this.txtID.Location = new System.Drawing.Point(280, 77);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(96, 35);
+            this.txtID.TabIndex = 13;
+            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // cancelar
             // 
@@ -241,11 +278,26 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.editarButton);
             this.panel1.Controls.Add(this.tipoFormulario);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 44);
             this.panel1.TabIndex = 2;
+            // 
+            // editarButton
+            // 
+            this.editarButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.editarButton.Image = ((System.Drawing.Image)(resources.GetObject("editarButton.Image")));
+            this.editarButton.ImageActive = null;
+            this.editarButton.Location = new System.Drawing.Point(362, 7);
+            this.editarButton.Name = "editarButton";
+            this.editarButton.Size = new System.Drawing.Size(30, 30);
+            this.editarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.editarButton.TabIndex = 1;
+            this.editarButton.TabStop = false;
+            this.editarButton.Zoom = 10;
+            this.editarButton.Click += new System.EventHandler(this.editarButton_Click);
             // 
             // tipoFormulario
             // 
@@ -269,10 +321,12 @@
             this.Name = "clienteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.clienteForm_Load);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editarButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,5 +346,8 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtNombre;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label tipoFormulario;
+        private System.Windows.Forms.Label labelID;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtID;
+        private Bunifu.Framework.UI.BunifuImageButton editarButton;
     }
 }

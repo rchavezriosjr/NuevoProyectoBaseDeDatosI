@@ -35,27 +35,19 @@
             this.iTalk_TabControl1 = new iTalk.iTalk_TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.agregarCategoria = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.seeCategoria = new Bunifu.Framework.UI.BunifuImageButton();
-            this.editCategoria = new Bunifu.Framework.UI.BunifuImageButton();
             this.vistaCategorias = new System.Windows.Forms.DataGridView();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.mostrarInhabilitados = new Bunifu.Framework.UI.BunifuCheckbox();
             this.txtBuscarCategoria = new Bunifu.Framework.UI.BunifuTextbox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.editarProductoInhabilitado = new Bunifu.Framework.UI.BunifuImageButton();
-            this.verProductoInhabilitado = new Bunifu.Framework.UI.BunifuImageButton();
             this.vistaProductosInhabilitados = new System.Windows.Forms.DataGridView();
             this.txtBuscarProductoInhabilitado = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             this.iTalk_TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.seeCategoria)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editCategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCategorias)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.editarProductoInhabilitado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.verProductoInhabilitado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaProductosInhabilitados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,8 +107,6 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.tabPage1.Controls.Add(this.agregarCategoria);
-            this.tabPage1.Controls.Add(this.seeCategoria);
-            this.tabPage1.Controls.Add(this.editCategoria);
             this.tabPage1.Controls.Add(this.vistaCategorias);
             this.tabPage1.Controls.Add(this.bunifuCustomLabel1);
             this.tabPage1.Controls.Add(this.mostrarInhabilitados);
@@ -163,32 +153,6 @@
             this.agregarCategoria.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.agregarCategoria.Click += new System.EventHandler(this.agregarCategoria_Click_1);
             // 
-            // seeCategoria
-            // 
-            this.seeCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
-            this.seeCategoria.Image = ((System.Drawing.Image)(resources.GetObject("seeCategoria.Image")));
-            this.seeCategoria.ImageActive = null;
-            this.seeCategoria.Location = new System.Drawing.Point(498, 396);
-            this.seeCategoria.Name = "seeCategoria";
-            this.seeCategoria.Size = new System.Drawing.Size(30, 30);
-            this.seeCategoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.seeCategoria.TabIndex = 6;
-            this.seeCategoria.TabStop = false;
-            this.seeCategoria.Zoom = 10;
-            // 
-            // editCategoria
-            // 
-            this.editCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
-            this.editCategoria.Image = ((System.Drawing.Image)(resources.GetObject("editCategoria.Image")));
-            this.editCategoria.ImageActive = null;
-            this.editCategoria.Location = new System.Drawing.Point(457, 396);
-            this.editCategoria.Name = "editCategoria";
-            this.editCategoria.Size = new System.Drawing.Size(30, 30);
-            this.editCategoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.editCategoria.TabIndex = 5;
-            this.editCategoria.TabStop = false;
-            this.editCategoria.Zoom = 10;
-            // 
             // vistaCategorias
             // 
             this.vistaCategorias.AllowUserToAddRows = false;
@@ -198,10 +162,13 @@
             this.vistaCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vistaCategorias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
             this.vistaCategorias.Location = new System.Drawing.Point(25, 118);
+            this.vistaCategorias.MultiSelect = false;
             this.vistaCategorias.Name = "vistaCategorias";
             this.vistaCategorias.ReadOnly = true;
+            this.vistaCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vistaCategorias.Size = new System.Drawing.Size(503, 272);
             this.vistaCategorias.TabIndex = 4;
+            this.vistaCategorias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vistaCategorias_CellDoubleClick);
             // 
             // bunifuCustomLabel1
             // 
@@ -240,8 +207,6 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.tabPage2.Controls.Add(this.editarProductoInhabilitado);
-            this.tabPage2.Controls.Add(this.verProductoInhabilitado);
             this.tabPage2.Controls.Add(this.vistaProductosInhabilitados);
             this.tabPage2.Controls.Add(this.txtBuscarProductoInhabilitado);
             this.tabPage2.Location = new System.Drawing.Point(154, 4);
@@ -252,32 +217,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Productos deshabilitados";
             // 
-            // editarProductoInhabilitado
-            // 
-            this.editarProductoInhabilitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
-            this.editarProductoInhabilitado.Image = ((System.Drawing.Image)(resources.GetObject("editarProductoInhabilitado.Image")));
-            this.editarProductoInhabilitado.ImageActive = null;
-            this.editarProductoInhabilitado.Location = new System.Drawing.Point(459, 393);
-            this.editarProductoInhabilitado.Name = "editarProductoInhabilitado";
-            this.editarProductoInhabilitado.Size = new System.Drawing.Size(30, 30);
-            this.editarProductoInhabilitado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.editarProductoInhabilitado.TabIndex = 10;
-            this.editarProductoInhabilitado.TabStop = false;
-            this.editarProductoInhabilitado.Zoom = 10;
-            // 
-            // verProductoInhabilitado
-            // 
-            this.verProductoInhabilitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
-            this.verProductoInhabilitado.Image = ((System.Drawing.Image)(resources.GetObject("verProductoInhabilitado.Image")));
-            this.verProductoInhabilitado.ImageActive = null;
-            this.verProductoInhabilitado.Location = new System.Drawing.Point(500, 393);
-            this.verProductoInhabilitado.Name = "verProductoInhabilitado";
-            this.verProductoInhabilitado.Size = new System.Drawing.Size(30, 30);
-            this.verProductoInhabilitado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.verProductoInhabilitado.TabIndex = 9;
-            this.verProductoInhabilitado.TabStop = false;
-            this.verProductoInhabilitado.Zoom = 10;
-            // 
             // vistaProductosInhabilitados
             // 
             this.vistaProductosInhabilitados.AllowUserToAddRows = false;
@@ -287,11 +226,13 @@
             this.vistaProductosInhabilitados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vistaProductosInhabilitados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
             this.vistaProductosInhabilitados.Location = new System.Drawing.Point(27, 115);
+            this.vistaProductosInhabilitados.MultiSelect = false;
             this.vistaProductosInhabilitados.Name = "vistaProductosInhabilitados";
             this.vistaProductosInhabilitados.ReadOnly = true;
+            this.vistaProductosInhabilitados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vistaProductosInhabilitados.Size = new System.Drawing.Size(503, 272);
             this.vistaProductosInhabilitados.TabIndex = 8;
-            this.vistaProductosInhabilitados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.vistaProductosInhabilitados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vistaProductosInhabilitados_CellDoubleClick);
             // 
             // txtBuscarProductoInhabilitado
             // 
@@ -324,12 +265,8 @@
             this.iTalk_TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.seeCategoria)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editCategoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCategorias)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.editarProductoInhabilitado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.verProductoInhabilitado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaProductosInhabilitados)).EndInit();
             this.ResumeLayout(false);
 
@@ -339,15 +276,11 @@
 
         private iTalk.iTalk_TabControl iTalk_TabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private Bunifu.Framework.UI.BunifuImageButton seeCategoria;
-        private Bunifu.Framework.UI.BunifuImageButton editCategoria;
         private System.Windows.Forms.DataGridView vistaCategorias;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCheckbox mostrarInhabilitados;
         private Bunifu.Framework.UI.BunifuTextbox txtBuscarCategoria;
         private System.Windows.Forms.TabPage tabPage2;
-        private Bunifu.Framework.UI.BunifuImageButton editarProductoInhabilitado;
-        private Bunifu.Framework.UI.BunifuImageButton verProductoInhabilitado;
         private System.Windows.Forms.DataGridView vistaProductosInhabilitados;
         private Bunifu.Framework.UI.BunifuTextbox txtBuscarProductoInhabilitado;
         private System.Windows.Forms.Panel panel1;

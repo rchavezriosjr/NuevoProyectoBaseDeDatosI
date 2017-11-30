@@ -73,7 +73,7 @@ namespace ProyectoBDI___SisVent.vista
         // evt close button
         private void closeButton_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            new loginDiag("¿Desea salir?", true, false, true).ShowDialog();
         }
 
 
@@ -136,7 +136,7 @@ namespace ProyectoBDI___SisVent.vista
                     break;
 
                 case "cuentas":
-                    adminCuentasTab.BackColor = Color.FromArgb(248, 97, 24);
+                    adminCuentasTab.BackColor = Color.FromArgb(229, 57, 69);
                     break;
             }
         }

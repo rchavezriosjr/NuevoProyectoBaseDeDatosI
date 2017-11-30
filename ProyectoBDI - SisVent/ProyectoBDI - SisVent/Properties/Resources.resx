@@ -130,4 +130,7 @@
   <data name="Gender Neutral User_60px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\Gender Neutral User_60px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Circled User Male_85px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Circled User Male_85px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

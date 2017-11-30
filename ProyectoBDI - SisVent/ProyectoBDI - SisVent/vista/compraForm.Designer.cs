@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(compraForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(compraForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelDatosCompra = new System.Windows.Forms.Panel();
@@ -73,6 +73,7 @@
             this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cancelarButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.guardarButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.editarButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
             this.panelDatosCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -82,11 +83,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleCompra)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editarButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
+            this.panel1.Controls.Add(this.editarButton);
             this.panel1.Controls.Add(this.bunifuCustomLabel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -603,6 +606,19 @@
             this.guardarButton.TabIndex = 3;
             this.guardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // editarButton
+            // 
+            this.editarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
+            this.editarButton.Image = ((System.Drawing.Image)(resources.GetObject("editarButton.Image")));
+            this.editarButton.ImageActive = null;
+            this.editarButton.Location = new System.Drawing.Point(638, 5);
+            this.editarButton.Name = "editarButton";
+            this.editarButton.Size = new System.Drawing.Size(30, 30);
+            this.editarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.editarButton.TabIndex = 5;
+            this.editarButton.TabStop = false;
+            this.editarButton.Zoom = 10;
+            // 
             // compraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -631,6 +647,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.detalleCompra)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editarButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -674,5 +691,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn costoProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn costoTotal;
+        private Bunifu.Framework.UI.BunifuImageButton editarButton;
     }
 }

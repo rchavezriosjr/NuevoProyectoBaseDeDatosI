@@ -26,14 +26,10 @@ namespace ProyectoBDI___SisVent.vista
             //System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             //gp.AddEllipse (0, 0, buscarButton.Width - 3, buscarButton.Height - 3);
             rg = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 170, 35, 10, 10));
-            rg2 = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 30, 30, 30, 30));
+            //rg2 = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 30, 30, 30, 30));
 
             agregarCategoria.Region = rg;
 
-            seeCategoria.Region = rg2;
-            editCategoria.Region = rg2;
-            verProductoInhabilitado.Region = rg2;
-            editarProductoInhabilitado.Region = rg2;
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -46,11 +42,6 @@ namespace ProyectoBDI___SisVent.vista
             int nHeightEllipse
         );
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void closeButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -59,6 +50,16 @@ namespace ProyectoBDI___SisVent.vista
         private void agregarCategoria_Click_1(object sender, EventArgs e)
         {
             new categoriaForm().ShowDialog();
+        }
+
+        private void vistaCategorias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new categoriaForm(int.Parse(vistaCategorias.Rows[e.RowIndex].Cells[0].Value.ToString())).ShowDialog();
+        }
+
+        private void vistaProductosInhabilitados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new productoForm(int.Parse(vistaProductosInhabilitados.Rows[e.RowIndex].Cells[0].Value.ToString())).ShowDialog();
         }
     }
 }

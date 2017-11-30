@@ -41,13 +41,11 @@ namespace ProyectoBDI___SisVent.vista
             //System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             //gp.AddEllipse (0, 0, buscarButton.Width - 3, buscarButton.Height - 3);
             rg = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0,0,150,40,10,10));
-            rg2 = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 35, 35, 35, 35));
+            rg2 = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 40, 40, 40, 40));
 
             agregarButton.Region = rg;
             listarButton.Region = rg;
 
-            seeButton.Region = rg2;
-            editButton.Region = rg2;
             erraseButton.Region = rg2;
         }
 
@@ -79,5 +77,9 @@ namespace ProyectoBDI___SisVent.vista
             }
         }
 
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new clienteForm(int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString())).ShowDialog();
+        }
     }
 }

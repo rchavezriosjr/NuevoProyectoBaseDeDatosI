@@ -38,9 +38,6 @@
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.nombreTxt = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.close = new Bunifu.Framework.UI.BunifuImageButton();
-            this.perfil = new System.Windows.Forms.PictureBox();
-            this.next = new Bunifu.Framework.UI.BunifuThinButton2();
             this.lateral = new System.Windows.Forms.Panel();
             this.confirPass = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -48,16 +45,19 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.nomUser = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.finalizar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bac = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.perfil)).BeginInit();
+            this.close = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bac = new Bunifu.Framework.UI.BunifuImageButton();
+            this.finalizar = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.perfil = new System.Windows.Forms.PictureBox();
+            this.next = new Bunifu.Framework.UI.BunifuThinButton2();
             this.lateral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bac)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bac)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.perfil)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse2
@@ -161,61 +161,6 @@
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(51, 16);
             this.bunifuCustomLabel6.TabIndex = 26;
             this.bunifuCustomLabel6.Text = "Nombre";
-            // 
-            // close
-            // 
-            this.close.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.close, BunifuAnimatorNS.DecorationType.None);
-            this.close.Image = ((System.Drawing.Image)(resources.GetObject("close.Image")));
-            this.close.ImageActive = null;
-            this.close.Location = new System.Drawing.Point(361, 8);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(25, 25);
-            this.close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.close.TabIndex = 24;
-            this.close.TabStop = false;
-            this.close.Zoom = 10;
-            this.close.Click += new System.EventHandler(this.bunifuImageButton1_Click);
-            // 
-            // perfil
-            // 
-            this.perfil.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.perfil, BunifuAnimatorNS.DecorationType.None);
-            this.perfil.Image = global::ProyectoBDI___SisVent.Properties.Resources.Gender_Neutral_User_60px;
-            this.perfil.Location = new System.Drawing.Point(131, 65);
-            this.perfil.Name = "perfil";
-            this.perfil.Size = new System.Drawing.Size(100, 100);
-            this.perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.perfil.TabIndex = 22;
-            this.perfil.TabStop = false;
-            this.perfil.Click += new System.EventHandler(this.perfil_Click);
-            // 
-            // next
-            // 
-            this.next.ActiveBorderThickness = 1;
-            this.next.ActiveCornerRadius = 20;
-            this.next.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
-            this.next.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.next.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
-            this.next.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.next.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("next.BackgroundImage")));
-            this.next.ButtonText = "Siguiente";
-            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition1.SetDecoration(this.next, BunifuAnimatorNS.DecorationType.None);
-            this.next.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.next.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.next.IdleBorderThickness = 1;
-            this.next.IdleCornerRadius = 20;
-            this.next.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.next.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
-            this.next.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
-            this.next.Location = new System.Drawing.Point(221, 403);
-            this.next.Margin = new System.Windows.Forms.Padding(5);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(124, 40);
-            this.next.TabIndex = 27;
-            this.next.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.next.Click += new System.EventHandler(this.next_Click);
             // 
             // lateral
             // 
@@ -338,6 +283,58 @@
             this.bunifuCustomLabel2.TabIndex = 31;
             this.bunifuCustomLabel2.Text = "Nombre de usuario";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
+            this.panel1.Controls.Add(this.close);
+            this.panel1.Controls.Add(this.bac);
+            this.bunifuTransition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(394, 40);
+            this.panel1.TabIndex = 38;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 100;
+            this.bunifuElipse3.TargetControl = this.perfil;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 0;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // close
+            // 
+            this.close.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.close, BunifuAnimatorNS.DecorationType.None);
+            this.close.Image = ((System.Drawing.Image)(resources.GetObject("close.Image")));
+            this.close.ImageActive = null;
+            this.close.Location = new System.Drawing.Point(361, 8);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(25, 25);
+            this.close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.close.TabIndex = 24;
+            this.close.TabStop = false;
+            this.close.Zoom = 10;
+            this.close.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // bac
+            // 
+            this.bac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
+            this.bunifuTransition1.SetDecoration(this.bac, BunifuAnimatorNS.DecorationType.None);
+            this.bac.Image = ((System.Drawing.Image)(resources.GetObject("bac.Image")));
+            this.bac.ImageActive = ((System.Drawing.Image)(resources.GetObject("bac.ImageActive")));
+            this.bac.Location = new System.Drawing.Point(7, 5);
+            this.bac.Name = "bac";
+            this.bac.Size = new System.Drawing.Size(30, 30);
+            this.bac.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bac.TabIndex = 37;
+            this.bac.TabStop = false;
+            this.bac.Zoom = 10;
+            this.bac.Click += new System.EventHandler(this.bac_Click);
+            // 
             // finalizar
             // 
             this.finalizar.ActiveBorderThickness = 1;
@@ -365,42 +362,45 @@
             this.finalizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.finalizar.Click += new System.EventHandler(this.registrar_Click);
             // 
-            // bac
+            // perfil
             // 
-            this.bac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
-            this.bunifuTransition1.SetDecoration(this.bac, BunifuAnimatorNS.DecorationType.None);
-            this.bac.Image = ((System.Drawing.Image)(resources.GetObject("bac.Image")));
-            this.bac.ImageActive = ((System.Drawing.Image)(resources.GetObject("bac.ImageActive")));
-            this.bac.Location = new System.Drawing.Point(7, 5);
-            this.bac.Name = "bac";
-            this.bac.Size = new System.Drawing.Size(30, 30);
-            this.bac.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bac.TabIndex = 37;
-            this.bac.TabStop = false;
-            this.bac.Zoom = 10;
-            this.bac.Click += new System.EventHandler(this.bac_Click);
+            this.perfil.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.perfil, BunifuAnimatorNS.DecorationType.None);
+            this.perfil.Image = global::ProyectoBDI___SisVent.Properties.Resources.Circled_User_Male_85px;
+            this.perfil.Location = new System.Drawing.Point(147, 65);
+            this.perfil.Name = "perfil";
+            this.perfil.Size = new System.Drawing.Size(100, 100);
+            this.perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.perfil.TabIndex = 22;
+            this.perfil.TabStop = false;
+            this.perfil.Click += new System.EventHandler(this.perfil_Click);
             // 
-            // panel1
+            // next
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
-            this.panel1.Controls.Add(this.close);
-            this.panel1.Controls.Add(this.bac);
-            this.bunifuTransition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(394, 40);
-            this.panel1.TabIndex = 38;
-            // 
-            // bunifuElipse3
-            // 
-            this.bunifuElipse3.ElipseRadius = 100;
-            this.bunifuElipse3.TargetControl = this.perfil;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 0;
-            this.bunifuElipse1.TargetControl = this;
+            this.next.ActiveBorderThickness = 1;
+            this.next.ActiveCornerRadius = 20;
+            this.next.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
+            this.next.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
+            this.next.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
+            this.next.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
+            this.next.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("next.BackgroundImage")));
+            this.next.ButtonText = "Siguiente";
+            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.next, BunifuAnimatorNS.DecorationType.None);
+            this.next.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.next.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.next.IdleBorderThickness = 1;
+            this.next.IdleCornerRadius = 20;
+            this.next.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
+            this.next.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
+            this.next.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
+            this.next.Location = new System.Drawing.Point(221, 403);
+            this.next.Margin = new System.Windows.Forms.Padding(5);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(124, 40);
+            this.next.TabIndex = 27;
+            this.next.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.next.Click += new System.EventHandler(this.next_Click);
             // 
             // Register
             // 
@@ -422,12 +422,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Register_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.perfil)).EndInit();
             this.lateral.ResumeLayout(false);
             this.lateral.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bac)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bac)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.perfil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
