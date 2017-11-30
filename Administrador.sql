@@ -1,4 +1,4 @@
-create datebase Administrador
+create database Administrador
 	go
 use Administrador
 	go
@@ -207,7 +207,7 @@ begin
 	Update Proveedor 
 		Set Nombre=@Nombre, 
 			Domicilio=@Domicilio,
-			Tel=@Tel,Email=@Email
+			Telefono=@Tel,Email=@Email
 	where ID=@ID
 	select @@ROWCOUNT as CantidadAfectada
 end
@@ -321,17 +321,16 @@ end
 	go
 
 create procedure [Insertar_Detalle_Compra](
-	CompraID varchar(15),
-	ProductoID int,
-	Cantidad int,
-	CostoUnitario decimal(18,2),
-	Total decimal(18,2)
+	@CompraID varchar(15),
+	@ProductoID int,
+	@Cantidad int,
+	@CostoUnitario decimal(18,2),
+	@Total decimal(18,2)
 )
 as 
 begin
 	insert into Detalle_Compra(CompraID, ProductoID, Cantidad, CostoUnitario, Total)
 	values(@CompraID, @ProductoID, @Cantidad, @CostoUnitario, @Total)
-		go
 	Update Producto
 		set 
 			Stock = Stock + @Cantidad
@@ -354,16 +353,13 @@ begin
 		@ActualCantidad as int
 
 	set @ActualizaStock = (select Cantidad from Detalle_Compra where CompraID = @CompraID and ProductoID = @ProductoID)
-		go
 	Update Detalle_Compra 
 		set 
 			Cantidad = @Cantidad,
 			CostoUnitario = @CostoUnitario,
 			Total = @Total
 	where CompraID = @CompraID and ProductoID = @ProductoID
-		go
 	set @ActualCantidad = (select Cantidad from Detalle_Compra where CompraID = @CompraID and ProductoID = @ProductoID)
-		go
 	Update Producto
 		set 
 			Stock = Stock + (@ActualCantidad - @ActualizaStock)
@@ -432,7 +428,6 @@ as
 begin
 	insert into Detalle_Venta(VentaID, ProductoID, Cantidad, PrecioUnitario, Descuento, Impuesto, Total)
 	values(@VentaID, @ProductoID, @Cantidad, @PrecioUnitario, @Descuento, @Impuesto, @Total)
-		go
 	Update Producto
 		set Stock = Stock - @Cantidad
 	where ID = @ProductoID
@@ -456,7 +451,7 @@ begin
 		@ActualCantidad as int
 
 	set @ActualizaStock = (select Cantidad from Detalle_Venta where VentaID = @VentaID and ProductoID = @ProductoID)
-		go
+		
 	Update Detalle_Venta
 		set
 			Cantidad = @Cantidad,
@@ -465,9 +460,9 @@ begin
 			Impuesto = @Impuesto,
 			Total = @Total
 	where VentaID = @VentaID and ProductoID = @ProductoID
-		go
+		
 	set @ActualCantidad = (select Cantidad from Detalle_Venta where VentaID = @VentaID and ProductoID = @ProductoID)
-		go
+		
 	Update Producto
 		set 
 			Stock = Stock - (@ActualCantidad - @ActualizaStock)
@@ -482,7 +477,7 @@ create procedure [Remover_Producto_Detalle_Venta](
 )
 as
 begin
-	delete * from Detalle_Venta where VentaID = @VentaID and ProductoID = @ProductoID
+	delete from Detalle_Venta where VentaID = @VentaID and ProductoID = @ProductoID
 end
 
 	go
@@ -493,7 +488,7 @@ create procedure [Remover_Producto_Detalle_Compra](
 )
 as
 begin
-	delete * from Detalle_Compra where CompraID = @CompraID and ProductoID = @ProductoID
+	delete from Detalle_Compra where CompraID = @CompraID and ProductoID = @ProductoID
 end
 
 	go
@@ -535,12 +530,12 @@ end
 create procedure [TabInicio_UltimasVentas]
 as
 begin
-	select 
+	select top 5
 		ID, 
 		FechaVenta as Fecha, 
 		Total 
 	from Venta
-	order by (ID) desc limit 5
+	order by (ID) desc
 end
 
 	go
@@ -639,16 +634,13 @@ begin
 		select * from Producto where (Nombre like '%'+@valor+'%' or ID like '%'+@valor+'%') and Estado = 1
 	else
 		if @clave = 1
-			select * from Producto  where (ProveedorID like '%'+@valor+'%') and Estado = 1
+			select * from Producto  where (CategoriaID like '%'+@valor+'%') and Estado = 1
 		else
 			if @clave = 2
-				select * from Producto where (CategoriaID like '%'+@valor+'%') and Estado = 1
+				select * from Producto where (PrecioVenta like '%'+@valor+'%') and Estado = 1
 			else
 				if @clave = 3
-					select * from Producto where (PrecioUnitario like '%'+@valor+'%') and Estado = 1
-				else
-					if @clave = 4
-						select * from Producto where (Stock like '%'+@valor+'%') and Estado = 1
+					select * from Producto where (Stock like '%'+@valor+'%') and Estado = 1
 end
 
 	go
