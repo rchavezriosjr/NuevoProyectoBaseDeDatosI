@@ -46,7 +46,7 @@
             this.cancelarButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.estadoValor = new Bunifu.Framework.UI.BunifuCheckbox();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.labelId = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtID = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editarButton)).BeginInit();
@@ -307,15 +307,15 @@
             this.bunifuCustomLabel7.TabIndex = 14;
             this.bunifuCustomLabel7.Text = "Habilitar";
             // 
-            // bunifuCustomLabel8
+            // labelId
             // 
-            this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(184)))), ((int)(((byte)(131)))));
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(319, 84);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(64, 13);
-            this.bunifuCustomLabel8.TabIndex = 16;
-            this.bunifuCustomLabel8.Text = "ID Producto";
+            this.labelId.AutoSize = true;
+            this.labelId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(184)))), ((int)(((byte)(131)))));
+            this.labelId.Location = new System.Drawing.Point(319, 84);
+            this.labelId.Name = "labelId";
+            this.labelId.Size = new System.Drawing.Size(64, 13);
+            this.labelId.TabIndex = 16;
+            this.labelId.Text = "ID Producto";
             // 
             // txtID
             // 
@@ -342,7 +342,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(461, 476);
-            this.Controls.Add(this.bunifuCustomLabel8);
+            this.Controls.Add(this.labelId);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.bunifuCustomLabel7);
             this.Controls.Add(this.estadoValor);
@@ -391,7 +391,7 @@
         private Bunifu.Framework.UI.BunifuImageButton editarButton;
         private Bunifu.Framework.UI.BunifuCheckbox estadoValor;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
+        private Bunifu.Framework.UI.BunifuCustomLabel labelId;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtID;
     }
 }

@@ -82,7 +82,7 @@ namespace ProyectoBDI___SisVent.vista
 
         private void agregarButton_Click(object sender, EventArgs e)
         {
-            new Register(false).ShowDialog();
+            new Register().ShowDialog();
         }
     }
 }

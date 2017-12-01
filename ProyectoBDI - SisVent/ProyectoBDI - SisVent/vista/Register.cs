@@ -1,8 +1,11 @@
-﻿using System;
+﻿using ProyectoBDI___SisVent.vista;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,20 +15,31 @@ namespace ProyectoBDI___SisVent
 {
     public partial class Register : Form
     {
-        bool edt = false;
-        string n, a, nu, p;
+        string accionformulario;
         Image pic;
-        public Register(bool e)
+        public Register()
         {
             InitializeComponent();
+            iniciarVista();
+            accionformulario = "crear";
+
+        }
+
+        public Register(string id)
+        {
+            InitializeComponent();
+            iniciarVista();
+            accionformulario = "editar";
+            Edit(id);
+        }
+
+        private void iniciarVista()
+        {
             CircleUserPicture();
             lateral.Visible = false;
             bac.Visible = false;
             pass.isPassword = true;
             confirPass.isPassword = true;
-
-            edt = e;
-
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -41,12 +55,9 @@ namespace ProyectoBDI___SisVent
             }else{
                 if (pass.Text.Equals(confirPass.Text)){
 
-                    if (edt)
-                    {
-                        editInfo();
-                    }
-                    else
-                    {
+                    if (accionformulario == "editar"){
+                        confirmarActualizarPerfil();
+                    }else{
                         saveNew();
                     }
                     
@@ -59,11 +70,19 @@ namespace ProyectoBDI___SisVent
             
         }
 
+        private void confirmarActualizarPerfil()
+        {
+            if (new dialogoConfirmarContraseña(nomUser.Text).ShowDialog() == DialogResult.OK)
+                editInfo();
+            else
+                new popup("Verificación de contraseña incorrecta", popup.AlertType.error);
+        }
+
         private bool CVacios()
         {
             bool vacio = false;
 
-            if (nomUser.Text.Equals("")) { vacio = true; }    
+            //if (nomUser.Text.Equals("")) { vacio = true; }    
 
             if (pass.Text.Equals("")) { vacio = true; }  
 
@@ -78,7 +97,7 @@ namespace ProyectoBDI___SisVent
             {
                 bunifuTransition1.ShowSync(lateral);
                 bac.Visible = true;
-                if(!edt)
+                if(accionformulario != "editar")
                     nomUser.Text = "@" + nombreTxt.Text.Substring(0, 3) + apellidoTxt.Text.Substring(0, 3);
             }
             else
@@ -122,12 +141,22 @@ namespace ProyectoBDI___SisVent
                 pass.Focus();
                 next_Click(null, null);
             }
+
+            if (apellidoTxt.Text.Length == 0)
+                e.KeyChar = e.KeyChar.ToString().ToUpper().ToCharArray()[0];
+            else if (apellidoTxt.Text.Length > 0)
+                e.KeyChar = e.KeyChar.ToString().ToLower().ToCharArray()[0];
         }
 
         private void nombreTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 apellidoTxt.Focus();
+
+            if(nombreTxt.Text.Length == 0)
+                e.KeyChar = e.KeyChar.ToString().ToUpper().ToCharArray()[0];
+            else if(nombreTxt.Text.Length > 0)
+                e.KeyChar = e.KeyChar.ToString().ToLower().ToCharArray()[0];
         }
 
         private void bac_Click(object sender, EventArgs e)
@@ -154,21 +183,72 @@ namespace ProyectoBDI___SisVent
 
         private void Register_Load(object sender, EventArgs e)
         {
-            Console.WriteLine(edt);
-            if (edt)
-            {
-                Edit();
-            }
         }
 
-        public void Edit()
+        public void Edit(string id)
         {
-            nombreTxt.Text = n;
-            apellidoTxt.Text = a;
-            nomUser.Text = nu;
-            pass.Text = p;
-            perfil.Image = pic;
+            Conexión conexion = new Conexión();
+            DataTable data = new DataTable("Usuario");
+            using (SqlConnection cn = new SqlConnection(Conexión.Cn))
+            {
+                try
+                {
+                    cn.Open();
 
+                    SqlCommand cmd = new SqlCommand(
+                        "select ID, Nombre, Apellido, Contraseña from Usuario where ID = " + id,
+                        cn
+                        );
+
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
+                    SqlDat.Fill(data);
+
+                    DataRow row = data.Rows[0];
+                    nomUser.Text = row["ID"].ToString();
+                    nombreTxt.Text = row["Nombre"].ToString();
+                    apellidoTxt.Text = row["Apellido"].ToString();
+                    pass.Text = row["Contraseña"].ToString();
+                    confirPass.Text = row["Contraseña"].ToString();
+                    perfil.Image = obtenerFotoPerfil(id);
+                }
+                catch (Exception ex)
+                {
+                    new popup("Error al mostrar información", popup.AlertType.error);
+                    //this.Close();
+                }
+            }
+
+        }
+
+        // función para obtener la foto del usuario desde la BD
+        private Image obtenerFotoPerfil(string id)
+        {
+            Conexión conex = new Conexión();
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conexión.Cn))
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(
+                        "select FotoPerfil from Usuario where ID = " + id,
+                        cn
+                        );
+
+                    byte[] arrImg = (byte[])cmd.ExecuteScalar();
+                    cn.Close();
+
+                    MemoryStream ms = new MemoryStream(arrImg);
+                    Image img = Image.FromStream(ms);
+
+                    ms.Close();
+
+                    return img;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         private void perfil_Click(object sender, EventArgs e)
@@ -178,25 +258,6 @@ namespace ProyectoBDI___SisVent
                 Bitmap imagen = new Bitmap(open.FileName);
                 perfil.Image = imagen;
             }
-        }
-
-        private void nombreTxt_Leave(object sender, EventArgs e)
-        {
-            nombreTxt.Text = nombreTxt.Text.Replace(nombreTxt.Text[0], nombreTxt.Text.ToUpper()[0]);
-        }
-
-        private void apellidoTxt_Leave(object sender, EventArgs e)
-        {
-            apellidoTxt.Text = apellidoTxt.Text.Replace(apellidoTxt.Text[0], apellidoTxt.Text.ToUpper()[0]);
-        }
-
-        public void setInfo(string nom, string ape, string nUs, string ps, Image pct)
-        {
-            this.n = nom;
-            this.a = ape;
-            this.nu = nUs;
-            this.p = ps;
-            this.pic = pct;
         }
 
         public void editInfo()
@@ -225,6 +286,14 @@ namespace ProyectoBDI___SisVent
             perfil.Region = rg;
         }
 
+        private void pass_OnValueChanged(object sender, EventArgs e)
+        {
+            pass.isPassword = true;
+        }
 
+        private void confirPass_OnValueChanged(object sender, EventArgs e)
+        {
+            confirPass.isPassword = true;
+        }
     }
 }

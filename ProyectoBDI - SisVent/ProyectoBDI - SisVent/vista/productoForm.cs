@@ -41,6 +41,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 editarButton.Visible = false;
                 txtID.Visible = false;
+                labelId.Visible = true;
                 guardarButton.ButtonText = "Guardar";
             }
             else if (accionformulario == "ver")

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Transitions;
 
 namespace ProyectoBDI___SisVent
 {
@@ -21,12 +22,14 @@ namespace ProyectoBDI___SisVent
             yes.Visible = y;
             aceptar.Visible = a;
             no.Visible = n;
+
             
         }
 
         private void loginDiag_Load(object sender, EventArgs e)
         {
             this.Height = this.Height + 30;
+
         }
 
         private void yes_Click(object sender, EventArgs e)

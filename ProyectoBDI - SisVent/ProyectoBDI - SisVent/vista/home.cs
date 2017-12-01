@@ -225,7 +225,7 @@ namespace ProyectoBDI___SisVent.vista
 
         private void userPicture_Click(object sender, EventArgs e)
         {
-            new Register(true).ShowDialog();
+            new Register(idUsuario.Text).ShowDialog();
         }
     }
 }

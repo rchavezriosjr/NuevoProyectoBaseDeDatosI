@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.editarButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.labelID = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtDescripcion = new iTalk.iTalk_RichTextBox();
             this.txtId = new iTalk.iTalk_TextBox_Small();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -81,15 +81,15 @@
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Información categoría";
             // 
-            // bunifuCustomLabel2
+            // labelID
             // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(297, 57);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(67, 13);
-            this.bunifuCustomLabel2.TabIndex = 2;
-            this.bunifuCustomLabel2.Text = "ID categoría";
+            this.labelID.AutoSize = true;
+            this.labelID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
+            this.labelID.Location = new System.Drawing.Point(297, 57);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(67, 13);
+            this.labelID.TabIndex = 2;
+            this.labelID.Text = "ID categoría";
             // 
             // txtDescripcion
             // 
@@ -243,7 +243,7 @@
             this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.bunifuCustomLabel2);
+            this.Controls.Add(this.labelID);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "categoriaForm";
@@ -262,7 +262,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel labelID;
         private iTalk.iTalk_RichTextBox txtDescripcion;
         private iTalk.iTalk_TextBox_Small txtId;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;

@@ -36,7 +36,7 @@
             this.txtDireccion = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTel = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelID = new System.Windows.Forms.Label();
             this.txtID = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmail = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -62,7 +62,7 @@
             this.bunifuCards1.Controls.Add(this.txtDireccion);
             this.bunifuCards1.Controls.Add(this.label4);
             this.bunifuCards1.Controls.Add(this.txtTel);
-            this.bunifuCards1.Controls.Add(this.label3);
+            this.bunifuCards1.Controls.Add(this.labelID);
             this.bunifuCards1.Controls.Add(this.txtID);
             this.bunifuCards1.Controls.Add(this.label2);
             this.bunifuCards1.Controls.Add(this.txtEmail);
@@ -187,15 +187,15 @@
             this.txtTel.TabIndex = 7;
             this.txtTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // label3
+            // labelID
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label3.Location = new System.Drawing.Point(264, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "ID ";
+            this.labelID.AutoSize = true;
+            this.labelID.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.labelID.Location = new System.Drawing.Point(264, 60);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(21, 13);
+            this.labelID.TabIndex = 6;
+            this.labelID.Text = "ID ";
             // 
             // txtID
             // 
@@ -346,7 +346,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtNombre;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelID;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtID;
         private Bunifu.Framework.UI.BunifuImageButton editarButton;
     }

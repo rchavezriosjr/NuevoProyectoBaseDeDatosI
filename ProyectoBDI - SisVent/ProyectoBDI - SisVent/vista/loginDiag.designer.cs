@@ -49,7 +49,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.Controls.Add(this.yes);
             this.panel1.Controls.Add(this.mensaje);
             this.panel1.Controls.Add(this.aceptar);
@@ -67,7 +67,7 @@
             this.yes.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.yes.ActiveForecolor = System.Drawing.Color.SpringGreen;
             this.yes.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.yes.BackColor = System.Drawing.Color.White;
+            this.yes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.yes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("yes.BackgroundImage")));
             this.yes.ButtonText = "Si";
             this.yes.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -115,7 +115,7 @@
             this.aceptar.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.aceptar.ActiveForecolor = System.Drawing.Color.SpringGreen;
             this.aceptar.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.aceptar.BackColor = System.Drawing.Color.White;
+            this.aceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.aceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("aceptar.BackgroundImage")));
             this.aceptar.ButtonText = "Aceptar";
             this.aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -141,7 +141,7 @@
             this.no.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.no.ActiveForecolor = System.Drawing.Color.SpringGreen;
             this.no.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.no.BackColor = System.Drawing.Color.White;
+            this.no.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.no.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("no.BackgroundImage")));
             this.no.ButtonText = "No";
             this.no.Cursor = System.Windows.Forms.Cursors.Hand;

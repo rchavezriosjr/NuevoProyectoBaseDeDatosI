@@ -45,14 +45,14 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.nomUser = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.finalizar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.close = new Bunifu.Framework.UI.BunifuImageButton();
             this.bac = new Bunifu.Framework.UI.BunifuImageButton();
-            this.finalizar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.perfil = new System.Windows.Forms.PictureBox();
             this.next = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.lateral.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
@@ -111,7 +111,6 @@
             this.apellidoTxt.TabIndex = 28;
             this.apellidoTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.apellidoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.apellidoTxt_KeyPress);
-            this.apellidoTxt.Leave += new System.EventHandler(this.apellidoTxt_Leave);
             // 
             // bunifuCustomLabel5
             // 
@@ -147,7 +146,6 @@
             this.nombreTxt.TabIndex = 25;
             this.nombreTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.nombreTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreTxt_KeyPress);
-            this.nombreTxt.Leave += new System.EventHandler(this.nombreTxt_Leave);
             // 
             // bunifuCustomLabel6
             // 
@@ -197,6 +195,7 @@
             this.confirPass.Size = new System.Drawing.Size(205, 30);
             this.confirPass.TabIndex = 35;
             this.confirPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.confirPass.OnValueChanged += new System.EventHandler(this.confirPass_OnValueChanged);
             this.confirPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.confirPass_KeyPress);
             // 
             // bunifuCustomLabel3
@@ -232,6 +231,7 @@
             this.pass.Size = new System.Drawing.Size(205, 30);
             this.pass.TabIndex = 33;
             this.pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.pass.OnValueChanged += new System.EventHandler(this.pass_OnValueChanged);
             this.pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pass_KeyPress);
             // 
             // bunifuCustomLabel1
@@ -283,6 +283,33 @@
             this.bunifuCustomLabel2.TabIndex = 31;
             this.bunifuCustomLabel2.Text = "Nombre de usuario";
             // 
+            // finalizar
+            // 
+            this.finalizar.ActiveBorderThickness = 1;
+            this.finalizar.ActiveCornerRadius = 20;
+            this.finalizar.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
+            this.finalizar.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
+            this.finalizar.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
+            this.finalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
+            this.finalizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("finalizar.BackgroundImage")));
+            this.finalizar.ButtonText = "Finalizar";
+            this.finalizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.finalizar, BunifuAnimatorNS.DecorationType.None);
+            this.finalizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.finalizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.finalizar.IdleBorderThickness = 1;
+            this.finalizar.IdleCornerRadius = 20;
+            this.finalizar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
+            this.finalizar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
+            this.finalizar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
+            this.finalizar.Location = new System.Drawing.Point(241, 232);
+            this.finalizar.Margin = new System.Windows.Forms.Padding(5);
+            this.finalizar.Name = "finalizar";
+            this.finalizar.Size = new System.Drawing.Size(124, 40);
+            this.finalizar.TabIndex = 32;
+            this.finalizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.finalizar.Click += new System.EventHandler(this.registrar_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
@@ -294,16 +321,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(394, 40);
             this.panel1.TabIndex = 38;
-            // 
-            // bunifuElipse3
-            // 
-            this.bunifuElipse3.ElipseRadius = 100;
-            this.bunifuElipse3.TargetControl = this.perfil;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 0;
-            this.bunifuElipse1.TargetControl = this;
             // 
             // close
             // 
@@ -334,33 +351,6 @@
             this.bac.TabStop = false;
             this.bac.Zoom = 10;
             this.bac.Click += new System.EventHandler(this.bac_Click);
-            // 
-            // finalizar
-            // 
-            this.finalizar.ActiveBorderThickness = 1;
-            this.finalizar.ActiveCornerRadius = 20;
-            this.finalizar.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.finalizar.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
-            this.finalizar.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
-            this.finalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.finalizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("finalizar.BackgroundImage")));
-            this.finalizar.ButtonText = "Finalizar";
-            this.finalizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition1.SetDecoration(this.finalizar, BunifuAnimatorNS.DecorationType.None);
-            this.finalizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.finalizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.finalizar.IdleBorderThickness = 1;
-            this.finalizar.IdleCornerRadius = 20;
-            this.finalizar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
-            this.finalizar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.finalizar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
-            this.finalizar.Location = new System.Drawing.Point(241, 232);
-            this.finalizar.Margin = new System.Windows.Forms.Padding(5);
-            this.finalizar.Name = "finalizar";
-            this.finalizar.Size = new System.Drawing.Size(124, 40);
-            this.finalizar.TabIndex = 32;
-            this.finalizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.finalizar.Click += new System.EventHandler(this.registrar_Click);
             // 
             // perfil
             // 
@@ -401,6 +391,16 @@
             this.next.TabIndex = 27;
             this.next.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.next.Click += new System.EventHandler(this.next_Click);
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 100;
+            this.bunifuElipse3.TargetControl = this.perfil;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 0;
+            this.bunifuElipse1.TargetControl = this;
             // 
             // Register
             // 

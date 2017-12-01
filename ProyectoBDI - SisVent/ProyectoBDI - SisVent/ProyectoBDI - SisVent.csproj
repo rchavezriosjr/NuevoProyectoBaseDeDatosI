@@ -61,6 +61,12 @@
     <Compile Include="vista\adminCuentas.Designer.cs">
       <DependentUpon>adminCuentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="vista\dialogoConfirmarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\dialogoConfirmarContraseña.Designer.cs">
+      <DependentUpon>dialogoConfirmarContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="vista\Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </Compile>
     <EmbeddedResource Include="vista\adminCuentas.resx">
       <DependentUpon>adminCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\dialogoConfirmarContraseña.resx">
+      <DependentUpon>dialogoConfirmarContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
