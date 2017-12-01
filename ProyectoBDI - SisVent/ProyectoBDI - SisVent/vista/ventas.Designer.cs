@@ -29,45 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ventas));
-            this.editButton = new Bunifu.Framework.UI.BunifuImageButton();
-            this.seeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new Bunifu.Framework.UI.BunifuTextbox();
             this.agregarButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.metodoBusqueda = new iTalk.iTalk_ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.editButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // editButton
-            // 
-            this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
-            this.editButton.Image = ((System.Drawing.Image)(resources.GetObject("editButton.Image")));
-            this.editButton.ImageActive = null;
-            this.editButton.Location = new System.Drawing.Point(34, 205);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(35, 35);
-            this.editButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.editButton.TabIndex = 18;
-            this.editButton.TabStop = false;
-            this.editButton.Zoom = 10;
-            // 
-            // seeButton
-            // 
-            this.seeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
-            this.seeButton.Image = ((System.Drawing.Image)(resources.GetObject("seeButton.Image")));
-            this.seeButton.ImageActive = null;
-            this.seeButton.Location = new System.Drawing.Point(34, 164);
-            this.seeButton.Name = "seeButton";
-            this.seeButton.Size = new System.Drawing.Size(35, 35);
-            this.seeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.seeButton.TabIndex = 17;
-            this.seeButton.TabStop = false;
-            this.seeButton.Zoom = 10;
             // 
             // dataGridView1
             // 
@@ -95,6 +65,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(350, 40);
             this.txtBuscar.TabIndex = 14;
             this.txtBuscar.text = "";
+            this.txtBuscar.OnTextChange += new System.EventHandler(this.txtBuscar_OnTextChange);
             // 
             // agregarButton
             // 
@@ -179,8 +150,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.Controls.Add(this.editButton);
-            this.Controls.Add(this.seeButton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.metodoBusqueda);
             this.Controls.Add(this.txtBuscar);
@@ -189,8 +158,6 @@
             this.Name = "ventas";
             this.Size = new System.Drawing.Size(950, 670);
             this.Load += new System.EventHandler(this.compras_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.editButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -198,8 +165,6 @@
         }
 
         #endregion
-        private Bunifu.Framework.UI.BunifuImageButton editButton;
-        private Bunifu.Framework.UI.BunifuImageButton seeButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private iTalk.iTalk_ComboBox metodoBusqueda;
         private Bunifu.Framework.UI.BunifuTextbox txtBuscar;

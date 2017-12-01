@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(proveedores));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.listarButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.agregarButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtBuscar = new Bunifu.Framework.UI.BunifuTextbox();
             this.vistaProveedores = new System.Windows.Forms.DataGridView();
@@ -61,41 +60,6 @@
             this.label1.Size = new System.Drawing.Size(162, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "/Proveedores";
-            // 
-            // listarButton
-            // 
-            this.listarButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(58)))), ((int)(((byte)(110)))));
-            this.listarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(30)))), ((int)(((byte)(121)))));
-            this.listarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.listarButton.BorderRadius = 0;
-            this.listarButton.ButtonText = "   Mostrar todos";
-            this.listarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listarButton.DisabledColor = System.Drawing.Color.Gray;
-            this.listarButton.Iconcolor = System.Drawing.Color.Transparent;
-            this.listarButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("listarButton.Iconimage")));
-            this.listarButton.Iconimage_right = null;
-            this.listarButton.Iconimage_right_Selected = null;
-            this.listarButton.Iconimage_Selected = null;
-            this.listarButton.IconMarginLeft = 0;
-            this.listarButton.IconMarginRight = 0;
-            this.listarButton.IconRightVisible = true;
-            this.listarButton.IconRightZoom = 0D;
-            this.listarButton.IconVisible = true;
-            this.listarButton.IconZoom = 60D;
-            this.listarButton.IsTab = false;
-            this.listarButton.Location = new System.Drawing.Point(642, 87);
-            this.listarButton.Name = "listarButton";
-            this.listarButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(30)))), ((int)(((byte)(121)))));
-            this.listarButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(58)))), ((int)(((byte)(110)))));
-            this.listarButton.OnHoverTextColor = System.Drawing.Color.White;
-            this.listarButton.selected = false;
-            this.listarButton.Size = new System.Drawing.Size(170, 40);
-            this.listarButton.TabIndex = 3;
-            this.listarButton.Text = "   Mostrar todos";
-            this.listarButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.listarButton.Textcolor = System.Drawing.Color.White;
-            this.listarButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listarButton.Click += new System.EventHandler(this.listarButton_Click);
             // 
             // agregarButton
             // 
@@ -167,7 +131,7 @@
             this.erraseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.erraseButton.Image = ((System.Drawing.Image)(resources.GetObject("erraseButton.Image")));
             this.erraseButton.ImageActive = null;
-            this.erraseButton.Location = new System.Drawing.Point(828, 87);
+            this.erraseButton.Location = new System.Drawing.Point(649, 87);
             this.erraseButton.Name = "erraseButton";
             this.erraseButton.Size = new System.Drawing.Size(40, 40);
             this.erraseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -207,7 +171,6 @@
             this.Controls.Add(this.vistaProveedores);
             this.Controls.Add(this.metodoBusqueda);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.listarButton);
             this.Controls.Add(this.agregarButton);
             this.Controls.Add(this.panel1);
             this.Name = "proveedores";
@@ -225,7 +188,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuFlatButton agregarButton;
-        private Bunifu.Framework.UI.BunifuFlatButton listarButton;
         private Bunifu.Framework.UI.BunifuTextbox txtBuscar;
         private iTalk.iTalk_ComboBox metodoBusqueda;
         private System.Windows.Forms.DataGridView vistaProveedores;

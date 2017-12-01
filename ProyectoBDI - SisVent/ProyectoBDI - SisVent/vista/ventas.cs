@@ -11,8 +11,7 @@ using System.Runtime.InteropServices;
 
 namespace ProyectoBDI___SisVent.vista
 {
-    public partial class ventas
-        : UserControl
+    public partial class ventas : UserControl
     {
         Region rg = new Region();
         Region rg2 = new Region();
@@ -30,9 +29,6 @@ namespace ProyectoBDI___SisVent.vista
             rg2 = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 35, 35, 35, 35));
 
             agregarButton.Region = rg;
-
-            seeButton.Region = rg2;
-            editButton.Region = rg2;
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -53,6 +49,21 @@ namespace ProyectoBDI___SisVent.vista
         private void agregarButton_Click(object sender, EventArgs e)
         {
             new ventaForm().ShowDialog();
+        }
+
+        private void txtBuscar_OnTextChange(object sender, EventArgs e)
+        {
+            try
+            {
+                //if (txtBuscar.text == "")
+                    // codigo para cargar las ventas
+                //else
+                // aquí va el codigo del método de busqueda
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar productos. " + ex.ToString());
+            }
         }
     }
 }

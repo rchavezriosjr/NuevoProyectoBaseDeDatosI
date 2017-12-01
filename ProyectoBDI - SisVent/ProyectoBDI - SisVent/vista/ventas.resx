@@ -118,24 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="editButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAD1SURBVDhPjdHNKgVhGAfwuQFZWNoo2ZyytPGxkBs4RSl7JZSPDlsHkbuwdQPcgq+SJRfAXqJ8
-        NX6vnqkzzDnmX7+a3uf/zDQzWd3keT7HFZtxVC8WhjmgSDtGvaM4zhtNDimyFZXqKLSYZYNPFihucB21
-        vzHc4YEGE3TeYJdmVMsx6Fw84YMR0nl6hUZUyzFo88gop3yxyBTzTEe1HINui5M8sx/VcgyOKBbPKBZn
-        eGE7quUYpCc+MUbVYvffYnjLEsekrFNrcYh3+uljjf8XUxRWuYvrAVZ4Ze+n0CtK56Tck/7nDdVf9XcU
-        L7lgmcE4rpEs+wbX54RZlRqqJgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="seeButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAJ5JREFUOE/d
-        kcENgkAQRTcB6QK70CooRY941Db0ZGIDamzAPmwDE0004/vLbCTxBJ70JS+bP58FFsKfYGZjXOEZL74u
-        sfRLPqHMcIFXvOMG574qN1hj5ltaGBR4QHHDiVcR8hR1A7HHIhU5njR11j7ftdG2nvUGiSPmGlYxvpnh
-        CJ8xmT1QWUfoUn33ZC+GnTnBYNjX7kLZ/z//EiG8APwlXZIi3C+3AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="txtBuscar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAwAAAAB/CAYAAABYHaUHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

@@ -22,7 +22,6 @@ namespace ProyectoBDI___SisVent
             InitializeComponent();
             iniciarVista();
             accionformulario = "crear";
-
         }
 
         public Register(string id)
@@ -97,8 +96,8 @@ namespace ProyectoBDI___SisVent
             {
                 bunifuTransition1.ShowSync(lateral);
                 bac.Visible = true;
-                if(accionformulario != "editar")
-                    nomUser.Text = "@" + nombreTxt.Text.Substring(0, 3) + apellidoTxt.Text.Substring(0, 3);
+                if (accionformulario != "editar")
+                    nomUser.Text = UserName();
             }
             else
             {
@@ -218,6 +217,33 @@ namespace ProyectoBDI___SisVent
                 }
             }
 
+        }
+
+        private string UserName()
+        {
+            string codigo = "@" + nombreTxt.Text.Substring(0, 3) + apellidoTxt.Text.Substring(0, 3);
+            Conexión conexion = new Conexión();
+
+            using (SqlConnection cn = new SqlConnection(Conexión.Cn))
+            {
+                try
+                {
+                    cn.Open();
+
+                    SqlCommand cmd = new SqlCommand("select count(*) + 1 from Usuario s where substring(s.ID, 1, 7) = " + codigo, cn);
+
+                    int cont = (int)cmd.ExecuteScalar();
+                    if (cont <= 9)
+                        codigo+="00"+cont;
+                    if (cont <= 99)
+                        codigo += "0" + cont;
+                    if (cont <= 999)
+                        codigo += cont;
+                }
+                catch (Exception ex) { codigo += "001"; }
+            }
+
+            return codigo;
         }
 
         // función para obtener la foto del usuario desde la BD

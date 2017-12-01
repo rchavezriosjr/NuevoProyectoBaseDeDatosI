@@ -61,5 +61,21 @@ namespace ProyectoBDI___SisVent.vista
         {
             new productoForm().ShowDialog();
         }
+
+        private void compraForm_Load(object sender, EventArgs e)
+        {
+            txtCodigoCompra.Text = generaCodFactura();
+        }
+
+        private string generaCodFactura()
+        {
+            string codigo;
+            DateTime fa = DateTime.Today;
+
+            codigo = "C" + fa.Day + fa.Month + fa.Year.ToString().Substring(2, 2);
+            codigo += "-" +fa.ToShortTimeString().Replace(":", "-");
+
+            return codigo;
+        }
     }
 }

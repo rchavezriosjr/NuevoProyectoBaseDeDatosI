@@ -44,8 +44,6 @@ namespace ProyectoBDI___SisVent.vista
             rg2 = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 40, 40, 40, 40));
 
             agregarButton.Region = rg;
-            listarButton.Region = rg;
-
             erraseButton.Region = rg2;
         }
 

@@ -15,20 +15,13 @@ namespace ProyectoBDI___SisVent.vista
     public partial class dialogoConfirmarContraseña : Form
     {
         string param;
-        public bool resultado;
         public dialogoConfirmarContraseña(string valor)
         {
             InitializeComponent();
-            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 400, 175, 10, 10));
-            this.panel1.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 398, 173, 10, 10));
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 400, 155, 10, 10));
+            this.panel1.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 398, 153, 10, 10));
 
             param = valor;
-        }
-
-        public bool Resultado
-        {
-            get { return resultado; }
-            set { resultado = value; }
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -54,9 +47,7 @@ namespace ProyectoBDI___SisVent.vista
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-            //verifica();
-            //Resultado = true;
-            this.DialogResult = DialogResult.OK;
+            verifica();
             this.Close();
         }
 
@@ -64,11 +55,11 @@ namespace ProyectoBDI___SisVent.vista
         {
             try
             {
-                user v = new user();
-                DataTable Datos = v.Verifica(param, this.bunifuMaterialTextbox1.Text);
+                DataTable Datos = new user().Verifica(param, this.bunifuMaterialTextbox1.Text);
                 if (Datos.Rows.Count != 0)
-                    Resultado = true;
-                else Resultado = false; 
+                    this.DialogResult = DialogResult.OK;
+                else
+                    this.DialogResult = DialogResult.None;
             }
             catch (Exception ex)
             {
@@ -77,5 +68,10 @@ namespace ProyectoBDI___SisVent.vista
 
         }
 
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Abort;
+            this.Close();
+        }
     }
 }

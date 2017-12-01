@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ventaForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,8 +40,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ventaForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.editarButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelDatosVenta = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -51,7 +52,7 @@
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tipoPago = new iTalk.iTalk_ComboBox();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtCodigoCompra = new iTalk.iTalk_TextBox_Small();
+            this.txtCodigoVenta = new iTalk.iTalk_TextBox_Small();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -84,8 +85,8 @@
             this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cancelarButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.guardarButton = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.editarButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editarButton)).BeginInit();
             this.panelDatosVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vistaClientes)).BeginInit();
             this.panel2.SuspendLayout();
@@ -94,7 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleVenta)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.editarButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -107,6 +107,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(680, 40);
             this.panel1.TabIndex = 0;
+            // 
+            // editarButton
+            // 
+            this.editarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(191)))), ((int)(((byte)(243)))));
+            this.editarButton.Image = ((System.Drawing.Image)(resources.GetObject("editarButton.Image")));
+            this.editarButton.ImageActive = null;
+            this.editarButton.Location = new System.Drawing.Point(638, 5);
+            this.editarButton.Name = "editarButton";
+            this.editarButton.Size = new System.Drawing.Size(30, 30);
+            this.editarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.editarButton.TabIndex = 2;
+            this.editarButton.TabStop = false;
+            this.editarButton.Zoom = 10;
             // 
             // bunifuCustomLabel1
             // 
@@ -130,7 +143,7 @@
             this.panelDatosVenta.Controls.Add(this.bunifuCustomLabel5);
             this.panelDatosVenta.Controls.Add(this.tipoPago);
             this.panelDatosVenta.Controls.Add(this.bunifuCustomLabel4);
-            this.panelDatosVenta.Controls.Add(this.txtCodigoCompra);
+            this.panelDatosVenta.Controls.Add(this.txtCodigoVenta);
             this.panelDatosVenta.Controls.Add(this.bunifuCustomLabel3);
             this.panelDatosVenta.Controls.Add(this.panel2);
             this.panelDatosVenta.Controls.Add(this.txtCliente);
@@ -237,21 +250,21 @@
             this.bunifuCustomLabel4.TabIndex = 5;
             this.bunifuCustomLabel4.Text = "Cod. factura";
             // 
-            // txtCodigoCompra
+            // txtCodigoVenta
             // 
-            this.txtCodigoCompra.BackColor = System.Drawing.Color.White;
-            this.txtCodigoCompra.Enabled = false;
-            this.txtCodigoCompra.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txtCodigoCompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
-            this.txtCodigoCompra.Location = new System.Drawing.Point(306, 61);
-            this.txtCodigoCompra.MaxLength = 32767;
-            this.txtCodigoCompra.Multiline = false;
-            this.txtCodigoCompra.Name = "txtCodigoCompra";
-            this.txtCodigoCompra.ReadOnly = false;
-            this.txtCodigoCompra.Size = new System.Drawing.Size(123, 28);
-            this.txtCodigoCompra.TabIndex = 4;
-            this.txtCodigoCompra.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtCodigoCompra.UseSystemPasswordChar = false;
+            this.txtCodigoVenta.BackColor = System.Drawing.Color.White;
+            this.txtCodigoVenta.Enabled = false;
+            this.txtCodigoVenta.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtCodigoVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
+            this.txtCodigoVenta.Location = new System.Drawing.Point(306, 61);
+            this.txtCodigoVenta.MaxLength = 32767;
+            this.txtCodigoVenta.Multiline = false;
+            this.txtCodigoVenta.Name = "txtCodigoVenta";
+            this.txtCodigoVenta.ReadOnly = false;
+            this.txtCodigoVenta.Size = new System.Drawing.Size(170, 28);
+            this.txtCodigoVenta.TabIndex = 4;
+            this.txtCodigoVenta.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCodigoVenta.UseSystemPasswordChar = false;
             // 
             // bunifuCustomLabel3
             // 
@@ -701,19 +714,6 @@
             this.guardarButton.TabIndex = 3;
             this.guardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // editarButton
-            // 
-            this.editarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(191)))), ((int)(((byte)(243)))));
-            this.editarButton.Image = ((System.Drawing.Image)(resources.GetObject("editarButton.Image")));
-            this.editarButton.ImageActive = null;
-            this.editarButton.Location = new System.Drawing.Point(638, 5);
-            this.editarButton.Name = "editarButton";
-            this.editarButton.Size = new System.Drawing.Size(30, 30);
-            this.editarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.editarButton.TabIndex = 2;
-            this.editarButton.TabStop = false;
-            this.editarButton.Zoom = 10;
-            // 
             // ventaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -728,8 +728,10 @@
             this.Name = "ventaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "compraForm";
+            this.Load += new System.EventHandler(this.ventaForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editarButton)).EndInit();
             this.panelDatosVenta.ResumeLayout(false);
             this.panelDatosVenta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vistaClientes)).EndInit();
@@ -742,7 +744,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.detalleVenta)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.editarButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -759,7 +760,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private iTalk.iTalk_ComboBox tipoPago;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
-        private iTalk.iTalk_TextBox_Small txtCodigoCompra;
+        private iTalk.iTalk_TextBox_Small txtCodigoVenta;
         private System.Windows.Forms.DataGridView vistaClientes;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private Bunifu.Framework.UI.BunifuDatepicker fechaVenta;
