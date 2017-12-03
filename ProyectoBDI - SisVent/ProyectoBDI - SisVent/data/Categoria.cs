@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProyectoBDI___SisVent.data
 {
-    class Producto
+    class Categoria
     {
         public int ID { get; set; }
-	    public int CategoriaID { get; set; }
         public string Nombre { get; set; }
-        public float PrecioVenta { get; set; }
-        public int Stock { get; set; }
         public string Descripcion { get; set; }
         public int Estado { get; set; }
     }

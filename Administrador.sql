@@ -1,4 +1,4 @@
-create database Administrador
+﻿create database Administrador
 	go
 use Administrador
 	go
@@ -729,29 +729,19 @@ end
 
 	go
 
-create procedure [Deshabilitar_Usuario](
-	@ID
-)
+create procedure [Deshabilitar_Usuario] @ID int
 as
 begin
 	delete from Usuario where ID = @ID
 end
 
-	go
-
-create procedure [Deshabilitar_Cliente](
-	@ID
-)
+create procedure [Deshabilitar_Cliente] @ID int
 as
 begin
 	delete from Cliente where ID = @ID
 end
 
-	go
-
-create procedure [Deshabilitar_Proveedor](
-	@ID
-)
+create procedure [Deshabilitar_Proveedor] @ID int
 as
 begin
 	delete from Proveedor where ID = @ID

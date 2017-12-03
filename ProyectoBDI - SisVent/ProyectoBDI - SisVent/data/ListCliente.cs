@@ -19,7 +19,7 @@ namespace ProyectoBDI___SisVent.data
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "ListCliente_Get";
+                cmd.CommandText = "Mostrar_Clientes";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter Data = new SqlDataAdapter(cmd);
@@ -42,7 +42,7 @@ namespace ProyectoBDI___SisVent.data
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "ListCliente_Delete";
+                cmd.CommandText = "Deshabilitar_Cliente";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter IDCLIENTE = new SqlParameter();

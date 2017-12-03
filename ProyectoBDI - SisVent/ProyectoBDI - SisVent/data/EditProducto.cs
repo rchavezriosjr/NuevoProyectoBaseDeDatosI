@@ -35,7 +35,7 @@ namespace ProyectoBDI___SisVent.data
                 cmd.Parameters.Add(Cod);
 
                 SqlParameter Desc = new SqlParameter();
-                Desc.ParameterName = "@Descripcion";
+                Desc.ParameterName = "@Nombre";
                 Desc.SqlDbType = SqlDbType.VarChar;
                 Desc.Size = 1000;
                 Desc.Value = Prod.Descripcion;

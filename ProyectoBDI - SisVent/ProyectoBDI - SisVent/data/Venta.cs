@@ -8,54 +8,24 @@ namespace ProyectoBDI___SisVent.data
 {
     class Venta
     {
-        private int _id;
-        private DateTime _fechaVenta;
-        private Cliente _cliente;
-        private double _montoTotal;
-        private int _userId;
-
-        private List<DetalleVenta> _detalleVentas;
-
         public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-
-        public DateTime FechaVenta
-        {
-            get { return _fechaVenta; }
-            set { _fechaVenta = value; }
-        }
-
-        public Cliente Cliente
-        {
-            get { return _cliente; }
-            set { _cliente = value; }
-        }
-
-        public double MontoTotal
-        {
-            get { return _montoTotal; }
-            set { _montoTotal = value; }
-        }
-
+        { get; set; }
+        public int ClientId
+        { get; set; }
         public int UserId
-        {
-            get { return _userId; }
-            set { _userId = value; }
-        }
-
+        { get; set; }
+        public DateTime FechaVenta
+        { get; set; }
+        public int TipoPago
+        { get; set; }
+        public int TipoVenta
+        { get; set; }
+        public double SubTotal { get;set; }
+        public double Tax { get; set; }
+        public double MontoTotal
+        { get; set; }
         public List<DetalleVenta> DetalleVentas
-        {
-            get { return _detalleVentas; }
-            set { _detalleVentas = value; }
-        }
+        { get; set; }
 
-        public Venta()
-        {
-            _cliente = new Cliente();
-            DetalleVentas = new List<DetalleVenta>();
-        }
     }
 }
