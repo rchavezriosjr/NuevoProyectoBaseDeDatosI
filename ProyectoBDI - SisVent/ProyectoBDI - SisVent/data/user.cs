@@ -7,6 +7,7 @@ namespace ProyectoBDI___SisVent.datos
 {
     public class user
     {
+        //Clase de validacion de usuario
         public string nombre, apellido, username, password;
         public Image pPic;
 
