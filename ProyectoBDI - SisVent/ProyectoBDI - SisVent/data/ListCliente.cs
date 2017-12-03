@@ -46,7 +46,7 @@ namespace ProyectoBDI___SisVent.data
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter IDCLIENTE = new SqlParameter();
-                IDCLIENTE.ParameterName = "@Id";
+                IDCLIENTE.ParameterName = "@ID";
                 IDCLIENTE.SqlDbType = SqlDbType.Int;
                 IDCLIENTE.Value = client.C_Id;
                 cmd.Parameters.Add(IDCLIENTE);

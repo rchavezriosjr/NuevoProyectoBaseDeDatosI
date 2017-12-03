@@ -28,7 +28,7 @@ namespace ProyectoBDI___SisVent.data
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "ListCompra_GetCompras";
+                cmd.CommandText = "Mostrar_Compras";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter Data = new SqlDataAdapter(cmd);

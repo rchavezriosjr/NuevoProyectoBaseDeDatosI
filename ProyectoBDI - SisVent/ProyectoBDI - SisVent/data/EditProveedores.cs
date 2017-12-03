@@ -20,7 +20,7 @@ namespace ProyectoBDI___SisVent.data
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "Insertar_Proveedores";
+                cmd.CommandText = "Insertar_Proveedor";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter Name = new SqlParameter();
@@ -38,7 +38,7 @@ namespace ProyectoBDI___SisVent.data
                 cmd.Parameters.Add(Dom);
 
                 SqlParameter Tel = new SqlParameter();
-                Tel.ParameterName = "@Tel";
+                Tel.ParameterName = "@Telfono";
                 Tel.SqlDbType = SqlDbType.VarChar;
                 Tel.Size = 200;
                 Tel.Value = prov.P_Telefono;
@@ -76,7 +76,7 @@ namespace ProyectoBDI___SisVent.data
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ID = new SqlParameter();
-                ID.ParameterName = "@Id";
+                ID.ParameterName = "@ID";
                 ID.SqlDbType = SqlDbType.Int;
                 ID.Value = prov.P_Id;
                 cmd.Parameters.Add(ID);
@@ -120,7 +120,7 @@ namespace ProyectoBDI___SisVent.data
                 if (Con.State == ConnectionState.Open) Con.Close();
             }
         }
-        public DataSet GetProveedores(Proveedor prov)
+        public DataSet GetProveedores(string valor, int clave)
         {
             DataSet dt = new DataSet();
             SqlConnection Con = new SqlConnection();
@@ -129,14 +129,21 @@ namespace ProyectoBDI___SisVent.data
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "Proveedor_Get_edit";
+                cmd.CommandText = "Busqueda_Proveedor";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ID = new SqlParameter();
-                ID.ParameterName = "@Id";
-                ID.SqlDbType = SqlDbType.Int;
-                ID.Value = prov.P_Id ;
+                ID.ParameterName = "@valor";
+                ID.SqlDbType = SqlDbType.VarChar;
+                ID.Size = 100;
+                ID.Value = valor ;
                 cmd.Parameters.Add(ID);
+
+                SqlParameter key = new SqlParameter();
+                key.ParameterName = "@clave";
+                key.SqlDbType = SqlDbType.Int;
+                key.Value = clave;
+                cmd.Parameters.Add(key);
 
                 SqlDataAdapter Data = new SqlDataAdapter(cmd);
                 Data.Fill(dt);

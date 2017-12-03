@@ -27,7 +27,7 @@ namespace ProyectoBDI___SisVent.data
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "ListProveedores_Get";
+                cmd.CommandText = "Mostrar_Proveedores";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter Data = new SqlDataAdapter(cmd);
@@ -49,11 +49,11 @@ namespace ProyectoBDI___SisVent.data
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "ListProveedores_Delete";
+                cmd.CommandText = "Deshabilitar_Proveedor";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter IDPROVEEDOR = new SqlParameter();
-                IDPROVEEDOR.ParameterName = "@Id";
+                IDPROVEEDOR.ParameterName = "@ID";
                 IDPROVEEDOR.SqlDbType = SqlDbType.Int;
                 IDPROVEEDOR.Value = id;
                 cmd.Parameters.Add(IDPROVEEDOR);
