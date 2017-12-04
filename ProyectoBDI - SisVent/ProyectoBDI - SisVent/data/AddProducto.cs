@@ -12,6 +12,7 @@ namespace ProyectoBDI___SisVent.data
     {
         public void Insertar(Producto Prod)
         {
+<<<<<<< HEAD
             //SqlConnection Con = new SqlConnection();
             //try
             //{
@@ -108,51 +109,138 @@ namespace ProyectoBDI___SisVent.data
             //{
             //    if (Con.State == ConnectionState.Open) Con.Close();
             //}
-        }
-
-        public DataSet GetTipoProductos()
-        {
-            DataSet dt = new DataSet();
+=======
             SqlConnection Con = new SqlConnection();
             try
             {
                 Con.ConnectionString = Conexión.Cn;
+                Con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "AddProducto_GetTipoProductos";
+                cmd.CommandText = "Insertar_Producto";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlDataAdapter Data = new SqlDataAdapter(cmd);
-                Data.Fill(dt);
+                SqlParameter Cat = new SqlParameter();
+                Cat.ParameterName = "@Categoria";
+                Cat.SqlDbType = SqlDbType.Int;
+                Cat.Value = Prod.CategoriaID;
+                cmd.Parameters.Add(Cat);
+
+                SqlParameter Name = new SqlParameter();
+                Name.ParameterName = "@Nombre";
+                Name.SqlDbType = SqlDbType.VarChar;
+                Name.Size = 200;
+                Name.Value = Prod.Descripcion;
+                cmd.Parameters.Add(Name);
+
+                SqlParameter PVta = new SqlParameter();
+                PVta.ParameterName = "@PrecioVenta";
+                PVta.SqlDbType = SqlDbType.Decimal;
+                PVta.Value = Prod.PrecioVenta;
+                cmd.Parameters.Add(PVta);
+
+                SqlParameter Stock = new SqlParameter();
+                Stock.ParameterName = "@Stock";
+                Stock.SqlDbType = SqlDbType.Decimal;
+                Stock.Value = Prod.Stock;
+                cmd.Parameters.Add(Stock);
+
+                SqlParameter Desc = new SqlParameter();
+                Desc.ParameterName = "@Descripcion";
+                Desc.SqlDbType = SqlDbType.VarChar;
+                Desc.Size = 250;
+                Desc.Value = Prod.Descripcion;
+                cmd.Parameters.Add(Desc);
+
+                SqlParameter Estadox = new SqlParameter();
+                Estadox.ParameterName = "@Estado";
+                Estadox.SqlDbType = SqlDbType.Int;
+                Estadox.Value = Prod.Estado;
+                cmd.Parameters.Add(Estadox);
+
+                cmd.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
-                dt = null;
+
+                Console.WriteLine("ERROR: Imposible insertar: " + ex.ToString());
             }
-            return dt;
+            finally
+            {
+                if (Con.State == ConnectionState.Open) Con.Close();
+            }
+>>>>>>> 8ce7c2861ccfce7989db8e030881c11aecb38b8b
         }
-        public DataSet GetTalles()
+
+        public void Actualizar(Producto Prod)
         {
-            DataSet dt = new DataSet();
             SqlConnection Con = new SqlConnection();
             try
             {
                 Con.ConnectionString = Conexión.Cn;
+                Con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "AddProducto_GetTalles";
+                cmd.CommandText = "Actualizar_Producto";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlDataAdapter Data = new SqlDataAdapter(cmd);
-                Data.Fill(dt);
+                SqlParameter id = new SqlParameter();
+                id.ParameterName = "@ID";
+                id.SqlDbType = SqlDbType.Int;
+                id.Value = Prod.CategoriaID;
+                cmd.Parameters.Add(id);
+
+                SqlParameter Cat = new SqlParameter();
+                Cat.ParameterName = "@Categoria";
+                Cat.SqlDbType = SqlDbType.Int;
+                Cat.Value = Prod.CategoriaID;
+                cmd.Parameters.Add(Cat);
+
+                SqlParameter Name = new SqlParameter();
+                Name.ParameterName = "@Nombre";
+                Name.SqlDbType = SqlDbType.VarChar;
+                Name.Size = 200;
+                Name.Value = Prod.Descripcion;
+                cmd.Parameters.Add(Name);
+
+                SqlParameter PVta = new SqlParameter();
+                PVta.ParameterName = "@PrecioVenta";
+                PVta.SqlDbType = SqlDbType.Decimal;
+                PVta.Value = Prod.PrecioVenta;
+                cmd.Parameters.Add(PVta);
+
+                SqlParameter Stock = new SqlParameter();
+                Stock.ParameterName = "@Stock";
+                Stock.SqlDbType = SqlDbType.Decimal;
+                Stock.Value = Prod.Stock;
+                cmd.Parameters.Add(Stock);
+
+                SqlParameter Desc = new SqlParameter();
+                Desc.ParameterName = "@Descripcion";
+                Desc.SqlDbType = SqlDbType.VarChar;
+                Desc.Size = 250;
+                Desc.Value = Prod.Descripcion;
+                cmd.Parameters.Add(Desc);
+
+                SqlParameter Estadox = new SqlParameter();
+                Estadox.ParameterName = "@Estado";
+                Estadox.SqlDbType = SqlDbType.Int;
+                Estadox.Value = Prod.Estado;
+                cmd.Parameters.Add(Estadox);
+
+                cmd.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
-                dt = null;
+
+                Console.WriteLine("ERROR: Imposible actualizar: " + ex.ToString());
             }
-            return dt;
+            finally
+            {
+                if (Con.State == ConnectionState.Open) Con.Close();
+            }
         }
     }
 }

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ProyectoBDI___SisVent.data
 {
-    class EditCliente
+    class DataCategory
     {
-        public void InsertarCliente(Cliente client)
+        public void AddCategory(Categoria cat)
         {
             SqlConnection Con = new SqlConnection();
             try
@@ -20,36 +20,28 @@ namespace ProyectoBDI___SisVent.data
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "Insertar_Cliente";
+                cmd.CommandText = "Insertar_Categoria";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter Name = new SqlParameter();
                 Name.ParameterName = "@Nombre";
                 Name.SqlDbType = SqlDbType.VarChar;
-                Name.Size = 200;
-                Name.Value = client.C_Nombre;
+                Name.Size = 100;
+                Name.Value = cat.Nombre;
                 cmd.Parameters.Add(Name);
 
-                SqlParameter Dom = new SqlParameter();
-                Dom.ParameterName = "@Domicilio";
-                Dom.SqlDbType = SqlDbType.VarChar;
-                Dom.Size = 200;
-                Dom.Value = client.C_Domicilio;
-                cmd.Parameters.Add(Dom);
+                SqlParameter Desc = new SqlParameter();
+                Desc.ParameterName = "@Descripcion";
+                Desc.SqlDbType = SqlDbType.VarChar;
+                Desc.Size = 250;
+                Desc.Value = cat.Descripcion;
+                cmd.Parameters.Add(Desc);
 
-                SqlParameter Tel = new SqlParameter();
-                Tel.ParameterName = "@Telefono";
-                Tel.SqlDbType = SqlDbType.VarChar;
-                Tel.Size = 200;
-                Tel.Value = client.C_Telefono;
-                cmd.Parameters.Add(Tel);
-
-                SqlParameter Correo = new SqlParameter();
-                Correo.ParameterName = "@Email";
-                Correo.SqlDbType = SqlDbType.VarChar;
-                Correo.Size = 200;
-                Correo.Value = client.C_Email;
-                cmd.Parameters.Add(Correo);
+                SqlParameter Status = new SqlParameter();
+                Status.ParameterName = "@Estado";
+                Status.SqlDbType = SqlDbType.Int;
+                Status.Value = cat.Estado;
+                cmd.Parameters.Add(Status);
 
                 cmd.ExecuteNonQuery();
             }
@@ -62,7 +54,7 @@ namespace ProyectoBDI___SisVent.data
                 if (Con.State == ConnectionState.Open) Con.Close();
             }
         }
-        public void Actualizar(Cliente client)
+        public void UpdateCategory(Categoria cat)
         {
             SqlConnection Con = new SqlConnection();
             try
@@ -72,56 +64,47 @@ namespace ProyectoBDI___SisVent.data
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "Actualizar_Cliente";
+                cmd.CommandText = "Insertar_Categoria";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ID = new SqlParameter();
                 ID.ParameterName = "@ID";
                 ID.SqlDbType = SqlDbType.Int;
-                ID.Value = client.C_Id;
+                ID.Value = cat.ID;
                 cmd.Parameters.Add(ID);
 
                 SqlParameter Name = new SqlParameter();
                 Name.ParameterName = "@Nombre";
                 Name.SqlDbType = SqlDbType.VarChar;
-                Name.Size = 200;
-                Name.Value = client.C_Nombre;
+                Name.Size = 100;
+                Name.Value = cat.Nombre;
                 cmd.Parameters.Add(Name);
 
-                SqlParameter Dom = new SqlParameter();
-                Dom.ParameterName = "@Domicilio";
-                Dom.SqlDbType = SqlDbType.VarChar;
-                Dom.Size = 200;
-                Dom.Value = client.C_Domicilio;
-                cmd.Parameters.Add(Dom);
+                SqlParameter Desc = new SqlParameter();
+                Desc.ParameterName = "@Descripcion";
+                Desc.SqlDbType = SqlDbType.VarChar;
+                Desc.Size = 250;
+                Desc.Value = cat.Descripcion;
+                cmd.Parameters.Add(Desc);
 
-                SqlParameter Tel = new SqlParameter();
-                Tel.ParameterName = "@Telefono";
-                Tel.SqlDbType = SqlDbType.VarChar;
-                Tel.Size = 200;
-                Tel.Value = client.C_Telefono;
-                cmd.Parameters.Add(Tel);
-
-                SqlParameter Correo = new SqlParameter();
-                Correo.ParameterName = "@Email";
-                Correo.SqlDbType = SqlDbType.VarChar;
-                Correo.Size = 200;
-                Correo.Value = client.C_Email;
-                cmd.Parameters.Add(Correo);
+                SqlParameter Status = new SqlParameter();
+                Status.ParameterName = "@Estado";
+                Status.SqlDbType = SqlDbType.Int;
+                Status.Value = cat.Estado;
+                cmd.Parameters.Add(Status);
 
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("ERROR: Imposible Actualizar: " + ex.ToString());
+                Console.WriteLine("ERROR: Imposible actualizar: " + ex.ToString());
             }
             finally
             {
                 if (Con.State == ConnectionState.Open) Con.Close();
             }
         }
-
-        public DataSet GetCliente(string valor,int clave)
+        public DataSet SearchCategory(string valor, int state)
         {
             DataSet dt = new DataSet();
             SqlConnection Con = new SqlConnection();
@@ -130,7 +113,7 @@ namespace ProyectoBDI___SisVent.data
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "Busqueda_Cliente";
+                cmd.CommandText = "Busqueda_Categoria";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ID = new SqlParameter();
@@ -141,9 +124,9 @@ namespace ProyectoBDI___SisVent.data
                 cmd.Parameters.Add(ID);
 
                 SqlParameter Key = new SqlParameter();
-                Key.ParameterName = "@clave";
+                Key.ParameterName = "@estado";
                 Key.SqlDbType = SqlDbType.Int;
-                Key.Value = clave;
+                Key.Value = state;
                 cmd.Parameters.Add(Key);
 
                 SqlDataAdapter Data = new SqlDataAdapter(cmd);
