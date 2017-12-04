@@ -76,5 +76,10 @@ namespace ProyectoBDI___SisVent.vista
             }
             catch(Exception ex) { }
         }
+
+        private void vistaVentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new ventaForm(vistaVentas.Rows[e.RowIndex].Cells[0].Value.ToString()).ShowDialog();
+        }
     }
 }

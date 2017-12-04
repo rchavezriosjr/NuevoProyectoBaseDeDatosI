@@ -48,10 +48,13 @@
             this.vistaVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vistaVentas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
             this.vistaVentas.Location = new System.Drawing.Point(75, 159);
+            this.vistaVentas.MultiSelect = false;
             this.vistaVentas.Name = "vistaVentas";
             this.vistaVentas.ReadOnly = true;
+            this.vistaVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vistaVentas.Size = new System.Drawing.Size(800, 498);
             this.vistaVentas.TabIndex = 16;
+            this.vistaVentas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vistaVentas_CellDoubleClick);
             // 
             // txtBuscar
             // 

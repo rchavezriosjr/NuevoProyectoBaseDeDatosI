@@ -12,7 +12,6 @@ namespace ProyectoBDI___SisVent.data
     {
         public void InsertarVenta(Venta vta)
         {
-<<<<<<< HEAD
             SqlConnection Con = new SqlConnection();
             try
             {
@@ -78,7 +77,6 @@ namespace ProyectoBDI___SisVent.data
                 Tot.SqlDbType = SqlDbType.Decimal;
                 Tot.Value = vta.MontoTotal;
                 cmd.Parameters.Add(Tot);
-=======
             //SqlConnection Con = new SqlConnection();
             //try
             //{
@@ -112,18 +110,18 @@ namespace ProyectoBDI___SisVent.data
             //    UID.SqlDbType = SqlDbType.Int;
             //    UID.Value = vta.UserId;
             //    cmd.Parameters.Add(UID);
->>>>>>> 830e9ae5cc01e7db85483ac9b618eb616a2be282
 
-            //    cmd.ExecuteNonQuery();
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine("ERROR: Imposible insertar: " + ex.ToString());
-            //}
-            //finally
-            //{
-            //    if (Con.State == ConnectionState.Open) Con.Close();
-            //}
+
+            cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR: Imposible insertar: " + ex.ToString());
+            }
+            finally
+            {
+                if (Con.State == ConnectionState.Open) Con.Close();
+            }
         }
         public void ActualizarVenta(Venta vta)
         {

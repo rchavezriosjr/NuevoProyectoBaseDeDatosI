@@ -139,6 +139,7 @@ namespace ProyectoBDI___SisVent.vista
                     SqlDat.Fill(data);
 
                     DataRow row = data.Rows[0];
+                    txtCliente.Text = obtenerCliente(row["ClienteID"].ToString(););
                 }
                 catch (Exception ex)
                 {
@@ -147,6 +148,36 @@ namespace ProyectoBDI___SisVent.vista
                 }
             }
 
+        }
+
+        private string obtenerCliente(string id)
+        {
+            DataTable data = new DataTable("Cliente");
+            string value;
+            using (SqlConnection cn = new SqlConnection(Conexión.Cn))
+            {
+                try
+                {
+                    cn.Open();
+
+                    SqlCommand cmd = new SqlCommand(
+                        "select ID, Nombre from Cliente where ID = " + id,
+                        cn
+                        );
+
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
+                    SqlDat.Fill(data);
+
+                    DataRow row = data.Rows[0];
+                    value = row["ID"].ToString() + "-" + row["Nombre"].ToString();
+                }
+                catch (Exception ex)
+                {
+                    value = "";
+                }
+
+                return value;
+            }
         }
 
         private void detalleVenta_CellClick(object sender, DataGridViewCellEventArgs e)
