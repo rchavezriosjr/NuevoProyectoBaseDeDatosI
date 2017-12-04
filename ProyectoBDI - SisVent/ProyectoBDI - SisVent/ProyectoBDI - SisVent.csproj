@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="data\Busqueda.cs" />
     <Compile Include="data\Categoria.cs" />
     <Compile Include="data\DataCategory.cs" />
     <Compile Include="data\DetalleCompra.cs" />

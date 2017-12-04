@@ -1,4 +1,5 @@
-﻿using ProyectoBDI___SisVent.vista;
+﻿using ProyectoBDI___SisVent.datos;
+using ProyectoBDI___SisVent.vista;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -172,7 +173,7 @@ namespace ProyectoBDI___SisVent
                 pass.Text,
                 nomUser.Text,
                 perfil.Image,
-                Accion.insertar
+                user.Accion.insertar
                 );
         }
 
@@ -290,7 +291,7 @@ namespace ProyectoBDI___SisVent
                 pass.Text,
                 nomUser.Text,
                 perfil.Image,
-                Accion.editar
+                user.Accion.editar
                 );
         }
 

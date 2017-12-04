@@ -33,11 +33,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.agregarButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtBuscar = new Bunifu.Framework.UI.BunifuTextbox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.vistaClientes = new System.Windows.Forms.DataGridView();
             this.erraseButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.metodoBusqueda = new iTalk.iTalk_ComboBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erraseButton)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,23 +108,24 @@
             this.txtBuscar.Size = new System.Drawing.Size(350, 40);
             this.txtBuscar.TabIndex = 4;
             this.txtBuscar.text = "";
+            this.txtBuscar.OnTextChange += new System.EventHandler(this.txtBuscar_OnTextChange);
             // 
-            // dataGridView1
+            // vistaClientes
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
-            this.dataGridView1.Location = new System.Drawing.Point(75, 146);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 498);
-            this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.vistaClientes.AllowUserToAddRows = false;
+            this.vistaClientes.AllowUserToDeleteRows = false;
+            this.vistaClientes.BackgroundColor = System.Drawing.Color.White;
+            this.vistaClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.vistaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vistaClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
+            this.vistaClientes.Location = new System.Drawing.Point(75, 146);
+            this.vistaClientes.MultiSelect = false;
+            this.vistaClientes.Name = "vistaClientes";
+            this.vistaClientes.ReadOnly = true;
+            this.vistaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.vistaClientes.Size = new System.Drawing.Size(800, 498);
+            this.vistaClientes.TabIndex = 7;
+            this.vistaClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // erraseButton
             // 
@@ -168,7 +169,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
             this.Controls.Add(this.erraseButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.vistaClientes);
             this.Controls.Add(this.metodoBusqueda);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.agregarButton);
@@ -177,7 +178,7 @@
             this.Size = new System.Drawing.Size(950, 670);
             this.Load += new System.EventHandler(this.clientes_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erraseButton)).EndInit();
             this.ResumeLayout(false);
 
@@ -190,7 +191,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton agregarButton;
         private Bunifu.Framework.UI.BunifuTextbox txtBuscar;
         private iTalk.iTalk_ComboBox metodoBusqueda;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView vistaClientes;
         private Bunifu.Framework.UI.BunifuImageButton erraseButton;
     }
 }

@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ventas));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.vistaVentas = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new Bunifu.Framework.UI.BunifuTextbox();
             this.agregarButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.metodoBusqueda = new iTalk.iTalk_ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaVentas)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // vistaVentas
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
-            this.dataGridView1.Location = new System.Drawing.Point(75, 159);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 498);
-            this.dataGridView1.TabIndex = 16;
+            this.vistaVentas.AllowUserToAddRows = false;
+            this.vistaVentas.AllowUserToDeleteRows = false;
+            this.vistaVentas.BackgroundColor = System.Drawing.Color.White;
+            this.vistaVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.vistaVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vistaVentas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
+            this.vistaVentas.Location = new System.Drawing.Point(75, 159);
+            this.vistaVentas.Name = "vistaVentas";
+            this.vistaVentas.ReadOnly = true;
+            this.vistaVentas.Size = new System.Drawing.Size(800, 498);
+            this.vistaVentas.TabIndex = 16;
             // 
             // txtBuscar
             // 
@@ -150,7 +150,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.vistaVentas);
             this.Controls.Add(this.metodoBusqueda);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.agregarButton);
@@ -158,14 +158,14 @@
             this.Name = "ventas";
             this.Size = new System.Drawing.Size(950, 670);
             this.Load += new System.EventHandler(this.compras_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaVentas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView vistaVentas;
         private iTalk.iTalk_ComboBox metodoBusqueda;
         private Bunifu.Framework.UI.BunifuTextbox txtBuscar;
         private Bunifu.Framework.UI.BunifuFlatButton agregarButton;

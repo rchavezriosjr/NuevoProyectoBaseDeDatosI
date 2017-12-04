@@ -92,7 +92,7 @@ namespace ProyectoBDI___SisVent
             bool ver = false;
             try
             {   
-                DataTable Datos = new user.Verifica(this.username.Text,this.password.Text);
+                DataTable Datos = new user().Verifica(this.username.Text,this.password.Text);
                 
                 if (Datos.Rows.Count != 0){ver= true;}
                 else {ver= false;}

@@ -84,5 +84,17 @@ namespace ProyectoBDI___SisVent.vista
         {
             new Register().ShowDialog();
         }
+
+        private void txtBuscar_OnTextChange(object sender, EventArgs e)
+        {
+            if (txtBuscar.text == "")
+                vistaUsuarios.DataSource = new Busqueda().MostrarUsuarios();
+            else
+                vistaUsuarios.DataSource = new Busqueda().BusquedaUsuarios(txtBuscar.text);
+        }
+
+        public void cargaDatos() {
+            vistaUsuarios.DataSource = new Busqueda().MostrarUsuarios();
+        }
     }
 }

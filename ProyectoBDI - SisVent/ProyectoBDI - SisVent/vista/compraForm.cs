@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoBDI___SisVent.data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +29,7 @@ namespace ProyectoBDI___SisVent.vista
         {
             InitializeComponent();
             accionformulario = "ver";
-            //setDataView(id);
+            setDataView(id);
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -58,6 +59,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 Transition.run(panelDatosCompra, "Height", 160, new TransitionType_EaseInEaseOut(1000));
                 panelDatosCompra.SendToBack();
+                resultadoProveedor.DataSource = new Busqueda().BusquedaProveedor(txtProveedor.Text, 0);
             }
         }
 
@@ -72,6 +74,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 Transition.run(panelDatosDetalleCompra, "Height", 100, new TransitionType_EaseInEaseOut(1000));
                 panelDatosDetalleCompra.SendToBack();
+                vistaProducto.DataSource = new Busqueda().BusquedaProductos(txtProducto.Text, 0);
             }
         }
 

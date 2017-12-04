@@ -27,9 +27,7 @@ namespace ProyectoBDI___SisVent.vista
 
         private void CargarClientes()
         {
-            DataSet ds = new DataSet();
-            ds=lc.GetClientes();
-            dataGridView1.DataSource = ds.Tables[0];
+            vistaClientes.DataSource = new Busqueda().MostrarClientes();
         }
         private void clientes_Load(object sender, EventArgs e)
         {
@@ -77,7 +75,15 @@ namespace ProyectoBDI___SisVent.vista
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            new clienteForm(int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString())).ShowDialog();
+            new clienteForm(int.Parse(vistaClientes.Rows[e.RowIndex].Cells[0].Value.ToString())).ShowDialog();
+        }
+
+        private void txtBuscar_OnTextChange(object sender, EventArgs e)
+        {
+            if (txtBuscar.text == "")
+                vistaClientes.DataSource = new Busqueda().MostrarClientes();
+            else
+                vistaClientes.DataSource = new Busqueda().BusquedaCliente(txtBuscar.text, metodoBusqueda.SelectedIndex);
         }
     }
 }

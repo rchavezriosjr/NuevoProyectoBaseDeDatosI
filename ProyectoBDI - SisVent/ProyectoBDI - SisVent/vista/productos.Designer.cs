@@ -33,10 +33,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.avanzadoButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtBuscar = new Bunifu.Framework.UI.BunifuTextbox();
-            this.vistaProveedores = new System.Windows.Forms.DataGridView();
+            this.vistaProductos = new System.Windows.Forms.DataGridView();
             this.metodoBusqueda = new iTalk.iTalk_ComboBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaProveedores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -108,19 +108,20 @@
             this.txtBuscar.text = "";
             this.txtBuscar.OnTextChange += new System.EventHandler(this.txtBuscar_OnTextChange);
             // 
-            // vistaProveedores
+            // vistaProductos
             // 
-            this.vistaProveedores.AllowUserToAddRows = false;
-            this.vistaProveedores.AllowUserToDeleteRows = false;
-            this.vistaProveedores.BackgroundColor = System.Drawing.Color.White;
-            this.vistaProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.vistaProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vistaProveedores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
-            this.vistaProveedores.Location = new System.Drawing.Point(75, 146);
-            this.vistaProveedores.Name = "vistaProveedores";
-            this.vistaProveedores.ReadOnly = true;
-            this.vistaProveedores.Size = new System.Drawing.Size(800, 498);
-            this.vistaProveedores.TabIndex = 7;
+            this.vistaProductos.AllowUserToAddRows = false;
+            this.vistaProductos.AllowUserToDeleteRows = false;
+            this.vistaProductos.BackgroundColor = System.Drawing.Color.White;
+            this.vistaProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.vistaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vistaProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
+            this.vistaProductos.Location = new System.Drawing.Point(75, 146);
+            this.vistaProductos.Name = "vistaProductos";
+            this.vistaProductos.ReadOnly = true;
+            this.vistaProductos.Size = new System.Drawing.Size(800, 498);
+            this.vistaProductos.TabIndex = 7;
+            this.vistaProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vistaProductos_CellDoubleClick);
             // 
             // metodoBusqueda
             // 
@@ -150,7 +151,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.Controls.Add(this.vistaProveedores);
+            this.Controls.Add(this.vistaProductos);
             this.Controls.Add(this.metodoBusqueda);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.avanzadoButton);
@@ -159,7 +160,7 @@
             this.Size = new System.Drawing.Size(950, 670);
             this.Load += new System.EventHandler(this.clientes_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vistaProveedores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -171,6 +172,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton avanzadoButton;
         private Bunifu.Framework.UI.BunifuTextbox txtBuscar;
         private iTalk.iTalk_ComboBox metodoBusqueda;
-        private System.Windows.Forms.DataGridView vistaProveedores;
+        private System.Windows.Forms.DataGridView vistaProductos;
     }
 }

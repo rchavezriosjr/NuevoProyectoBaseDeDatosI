@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoBDI___SisVent.data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,6 +58,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 Transition.run(panelDatosVenta, "Height", 160, new TransitionType_EaseInEaseOut(1000));
                 panelDatosVenta.SendToBack();
+                vistaClientes.DataSource = new Busqueda().BusquedaCliente(txtCliente.Text, 0);
             }
         }
 
@@ -71,6 +73,7 @@ namespace ProyectoBDI___SisVent.vista
             {
                 Transition.run(panelDatosDetalleVenta, "Height", 100, new TransitionType_EaseInEaseOut(1000));
                 panelDatosDetalleVenta.SendToBack();
+                vistaProducto.DataSource = new Busqueda().BusquedaProductos(txtProducto.Text, 0);
             }
         }
 

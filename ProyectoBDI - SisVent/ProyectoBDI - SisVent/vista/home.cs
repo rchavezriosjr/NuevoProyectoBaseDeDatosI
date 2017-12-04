@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +62,36 @@ namespace ProyectoBDI___SisVent.vista
                     new popup("Error al mostrar información", popup.AlertType.error);
                     //this.Close();
                 }
+            }
+        }
+
+        private Image obtenerFotoPerfil(string id)
+        {
+            Conexión conex = new Conexión();
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conexión.Cn))
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(
+                        "select FotoPerfil from Usuario where ID = " + id,
+                        cn
+                        );
+
+                    byte[] arrImg = (byte[])cmd.ExecuteScalar();
+                    cn.Close();
+
+                    MemoryStream ms = new MemoryStream(arrImg);
+                    Image img = Image.FromStream(ms);
+
+                    ms.Close();
+
+                    return img;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
 

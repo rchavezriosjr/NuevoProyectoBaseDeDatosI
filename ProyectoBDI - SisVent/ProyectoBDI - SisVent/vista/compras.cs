@@ -63,9 +63,7 @@ namespace ProyectoBDI___SisVent.vista
 
         public void CargarCompras()
         {
-            DataSet ds = new DataSet();
-            ds = lcmp.GetCompras();
-            dataGridView1.DataSource = ds.Tables[0];
+            vistaCompras.DataSource = new Busqueda().MostrarCompras();
         }
 
         private void txtBuscar_OnTextChange(object sender, EventArgs e)
@@ -74,13 +72,18 @@ namespace ProyectoBDI___SisVent.vista
             {
                 if (txtBuscar.text == "")
                     CargarCompras();
-                //else
-                // aquí va el codigo del método de busqueda
+                else
+                    vistaCompras.DataSource = new Busqueda().BusquedaCompras(txtBuscar.text, metodoBusqueda.SelectedIndex);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar productos. " + ex.ToString());
             }
+        }
+
+        private void vistaCompras_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new compraForm(vistaCompras.Rows[e.RowIndex].Cells[0].Value.ToString()).ShowDialog();
         }
     }
 }
