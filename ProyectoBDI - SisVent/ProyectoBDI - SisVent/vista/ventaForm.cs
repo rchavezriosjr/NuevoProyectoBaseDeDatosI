@@ -139,7 +139,16 @@ namespace ProyectoBDI___SisVent.vista
                     SqlDat.Fill(data);
 
                     DataRow row = data.Rows[0];
-                    txtCliente.Text = obtenerCliente(row["ClienteID"].ToString(););
+                    txtCodigoVenta.Text = row["ID"].ToString();
+                    txtCliente.Text = obtenerCliente(row["ClienteID"].ToString());
+                    tipoPago.SelectedIndex = int.Parse(row["TipoPago"].ToString());
+                    fechaVenta.Value = DateTime.Parse(row["FechaVenta"].ToString());
+                    if (int.Parse(row["TipoVenta"].ToString()) == 0)
+                        ventaCredito.Checked = false;
+                    else
+                        ventaCredito.Checked = true;
+
+                    detalleVenta.DataSource = getDetalleVenta(txtCodigoVenta.Text);
                 }
                 catch (Exception ex)
                 {
@@ -178,6 +187,33 @@ namespace ProyectoBDI___SisVent.vista
 
                 return value;
             }
+        }
+
+        private DataTable getDetalleVenta(string id)
+        {
+            DataTable data = new DataTable("Cliente");
+            using (SqlConnection cn = new SqlConnection(Conexión.Cn))
+            {
+                try
+                {
+                    cn.Open();
+
+                    SqlCommand cmd = new SqlCommand(
+                        "select d.ProdcutoID as ID, p.Nombre as Producto, d.Cantidad, d.PrecioUnitario as [Precio Unitario], d.Descuento, d.Impuesto, d.Total  from Detalle_Venta d inner join Producto p on p.ID = d.ProductoID where VentaID = " + id + " and p.ID = d.ProductoID",
+                        cn
+                        );
+
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
+                    SqlDat.Fill(data);
+
+                }
+                catch (Exception ex)
+                {
+                    data = null;
+                }
+            }
+
+            return data;
         }
 
         private void detalleVenta_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -322,16 +358,36 @@ namespace ProyectoBDI___SisVent.vista
         {
             if (accionformulario == "crear" || accionformulario == "editar")
             {
+                string[] valueid = txtCliente.Text.Split('-');
+                Venta v = new Venta();
+                v.Id = txtCodigoVenta.Text;
+                v.ClientId = int.Parse(valueid[0]);
+                v.TipoPago = tipoPago.SelectedIndex;
+                v.FechaVenta = fechaVenta.Value;
+                if (ventaCredito.Checked)
+                    v.TipoVenta = 1;
+                else
+                    v.TipoVenta = 0;
+                v.SubTotal = decimal.Parse(labelSubtotal.Text);
+                v.Tax = decimal.Parse(labelImpuesto.Text);
+                v.MontoTotal = decimal.Parse(labelTotal.Text);
 
                 if (accionformulario == "crear")
                 {
-                    try { }
+                    try {
+
+                        new AddVenta().InsertarVenta(v);
+                        saveDetalle(1);
+                    }
                     catch (Exception ex) { MessageBox.Show("ERROR: Inserción fallida: " + ex.ToString()); }
                     this.Close();
                 }
                 else
                 {
-                    try { }
+                    try {
+                        new AddVenta().ActualizarVenta(v);
+                        saveDetalle(0);
+                    }
                     catch (Exception ex) { MessageBox.Show("ERROR: Actualización fallida: " + ex.ToString()); }
                     ReadStatus(true);
                 }
@@ -339,6 +395,26 @@ namespace ProyectoBDI___SisVent.vista
             }
             else
                 this.Close();
+        }
+
+        private void saveDetalle(int tipo)
+        {
+            DetalleVenta d = new DetalleVenta();
+            for (int i=0; i<detalleVenta.Rows.Count;i++)
+            {
+                d.ProductoID = int.Parse(detalleVenta.Rows[i].Cells[0].Value.ToString());
+                d.VentaID = txtCodigoVenta.Text;
+                d.Cantidad = int.Parse(detalleVenta.Rows[i].Cells[2].Value.ToString());
+                d.PrecioUnitario = decimal.Parse(detalleVenta.Rows[i].Cells[3].Value.ToString());
+                d.Descuento = decimal.Parse(detalleVenta.Rows[i].Cells[4].Value.ToString());
+                d.Impuesto = decimal.Parse(detalleVenta.Rows[i].Cells[5].Value.ToString());
+                d.Total = decimal.Parse(detalleVenta.Rows[i].Cells[6].Value.ToString());
+
+                if (tipo == 1)
+                    new EditDetalleVenta().InsertarDetalle(d);
+                else
+                    new EditDetalleVenta().ActualizarDetalle(d);
+            }
         }
 
         private void clearTextboxDetalle()

@@ -8,7 +8,7 @@ namespace ProyectoBDI___SisVent.data
 {
     class Venta
     {
-        public int Id
+        public string Id
         { get; set; }
         public int ClientId
         { get; set; }
@@ -20,9 +20,9 @@ namespace ProyectoBDI___SisVent.data
         { get; set; }
         public int TipoVenta
         { get; set; }
-        public double SubTotal { get;set; }
-        public double Tax { get; set; }
-        public double MontoTotal
+        public decimal SubTotal { get;set; }
+        public decimal Tax { get; set; }
+        public decimal MontoTotal
         { get; set; }
         public List<DetalleVenta> DetalleVentas
         { get; set; }

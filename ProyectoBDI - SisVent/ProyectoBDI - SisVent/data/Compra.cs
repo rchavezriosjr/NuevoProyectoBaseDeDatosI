@@ -12,7 +12,7 @@ namespace ProyectoBDI___SisVent.data
     public int ProveedorID { get; set; }
 	public DateTime FechaCompra { get; set; }
     public int TipoPago { get; set; }
-	public float Monto { get; set; }
+	public decimal Monto { get; set; }
     public List<DetalleCompra> Detail {get;set;}
     }
 }

@@ -5,7 +5,7 @@
         public int CompraID { get; set; }
         public int ProdID { get; set; }
         public int Cant { get; set; }
-        public float UnitPrice { get; set; }
-        public float Total { get; set; }
+        public decimal UnitPrice { get; set; }
+        public decimal Total { get; set; }
     }
 }

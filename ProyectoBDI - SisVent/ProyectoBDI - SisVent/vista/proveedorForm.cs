@@ -57,7 +57,9 @@ namespace ProyectoBDI___SisVent
                 }
                 else
                 {
-                    try { np.ActualizaProveedor(p); }
+                    try {
+                        p.P_Id = int.Parse(txtID.Text);
+                        np.ActualizaProveedor(p); }
                     catch (Exception ex) { MessageBox.Show("ERROR: Actualización fallida: " + ex.ToString()); }
                     ReadStatus(true);
                 }

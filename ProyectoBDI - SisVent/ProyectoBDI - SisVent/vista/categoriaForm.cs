@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoBDI___SisVent.data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -54,10 +55,18 @@ namespace ProyectoBDI___SisVent.vista
         {
             if (accionformulario == "crear" || accionformulario == "editar")
             {
+                Categoria c = new Categoria();
+                c.Nombre = txtNombre.Text;
+                c.Descripcion = txtDescripcion.Text;
+                if (estadoValor.Checked)
+                    c.Estado = 1;
+                else
+                    c.Estado = 0;
             
                 if (accionformulario == "crear")
                 {
                     try {
+                        new DataCategory().AddCategory(c);
                     }
                     catch (Exception ex) { MessageBox.Show("ERROR: Inserción fallida: " + ex.ToString()); }
                     this.Close();
@@ -65,6 +74,8 @@ namespace ProyectoBDI___SisVent.vista
                 else
                 {
                     try {
+                        c.ID = int.Parse(txtId.Text);
+                        new DataCategory().UpdateCategory(c);
                     }
                     catch (Exception ex) { MessageBox.Show("ERROR: Actualización fallida: " + ex.ToString()); }
                     ReadStatus(true);

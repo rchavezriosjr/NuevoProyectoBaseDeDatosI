@@ -10,7 +10,7 @@ namespace ProyectoBDI___SisVent.data
 {
     class EditDetalleVenta
     {
-        public void InsertarDetalle(DetalleVenta dv, SqlTransaction trx)
+        public void InsertarDetalle(DetalleVenta dv)//, SqlTransaction trx)
         {
             SqlConnection Con = new SqlConnection();
             try
@@ -19,7 +19,7 @@ namespace ProyectoBDI___SisVent.data
                 Con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.Transaction = trx;
+                //cmd.Transaction = trx;
                 cmd.CommandText = "Insertar_Detalle_Venta";
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -79,7 +79,7 @@ namespace ProyectoBDI___SisVent.data
             }
         }
 
-        public void ActualizarDetalle(DetalleVenta dv, SqlTransaction trx)
+        public void ActualizarDetalle(DetalleVenta dv)//, SqlTransaction trx)
         {
             SqlConnection Con = new SqlConnection();
             try
@@ -88,7 +88,7 @@ namespace ProyectoBDI___SisVent.data
                 Con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.Transaction = trx;
+                //cmd.Transaction = trx;
                 cmd.CommandText = "Actualizar_Detalle_Venta";
                 cmd.CommandType = CommandType.StoredProcedure;
 

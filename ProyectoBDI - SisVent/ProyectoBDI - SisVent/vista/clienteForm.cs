@@ -58,7 +58,10 @@ namespace ProyectoBDI___SisVent
                 }
                 else
                 {
-                    try { c.Actualizar(Client); }
+                    try {
+                        Client.C_Id = int.Parse(txtID.Text); 
+                        c.Actualizar(Client);
+                    }
                     catch (Exception ex) { MessageBox.Show("ERROR: Actualización fallida: " + ex.ToString()); }
                     ReadStatus(true);
                 }

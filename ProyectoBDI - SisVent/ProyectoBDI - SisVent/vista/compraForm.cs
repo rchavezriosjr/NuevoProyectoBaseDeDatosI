@@ -154,7 +154,7 @@ namespace ProyectoBDI___SisVent.vista
                     cn.Open();
 
                     SqlCommand cmd = new SqlCommand(
-                        "select * from Venta where ID = " + id,
+                        "select * from Compra where ID = " + id,
                         cn
                         );
 
@@ -162,6 +162,13 @@ namespace ProyectoBDI___SisVent.vista
                     SqlDat.Fill(data);
 
                     DataRow row = data.Rows[0];
+                    txtCodigoCompra.Text = row["ID"].ToString();
+                    txtProveedor.Text = obtenerProveedor(row["ProveedorID"].ToString());
+                    tipoPago.SelectedIndex = int.Parse(row["TipoPago"].ToString());
+                    fechaCompra.Value = DateTime.Parse(row["FechaCompra"].ToString());
+                    txtTotalCompra.Text = row["Monto"].ToString();
+                    
+                    detalleCompra.DataSource = getDetalleCompra(txtCodigoCompra.Text);
                 }
                 catch (Exception ex)
                 {
@@ -170,6 +177,63 @@ namespace ProyectoBDI___SisVent.vista
                 }
             }
 
+        }
+
+        private string obtenerProveedor(string id)
+        {
+            DataTable data = new DataTable("Cliente");
+            string value;
+            using (SqlConnection cn = new SqlConnection(Conexión.Cn))
+            {
+                try
+                {
+                    cn.Open();
+
+                    SqlCommand cmd = new SqlCommand(
+                        "select ID, Nombre from Proveedor where ID = " + id,
+                        cn
+                        );
+
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
+                    SqlDat.Fill(data);
+
+                    DataRow row = data.Rows[0];
+                    value = row["ID"].ToString() + "-" + row["Nombre"].ToString();
+                }
+                catch (Exception ex)
+                {
+                    value = "";
+                }
+
+                return value;
+            }
+        }
+
+        private DataTable getDetalleCompra(string id)
+        {
+            DataTable data = new DataTable("Cliente");
+            using (SqlConnection cn = new SqlConnection(Conexión.Cn))
+            {
+                try
+                {
+                    cn.Open();
+
+                    SqlCommand cmd = new SqlCommand(
+                        "select d.ProdcutoID as ID, p.Nombre as Producto, d.Cantidad, d.CostoUnitario as [Precio Unitario], d.Total from Detalle_Compra d inner join Producto p on p.ID = d.ProductoID where CompraID = " + id + " and p.ID = d.ProductoID",
+                        cn
+                        );
+
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
+                    SqlDat.Fill(data);
+
+                }
+                catch (Exception ex)
+                {
+                    data = null;
+                }
+            }
+
+            return data;
         }
 
         private string generaCodFactura()
@@ -305,16 +369,29 @@ namespace ProyectoBDI___SisVent.vista
         {
             if (accionformulario == "crear" || accionformulario == "editar")
             {
+                string[] value = txtProveedor.Text.Split('-');
+                Compra c = new Compra();
+                c.ID = txtCodigoCompra.Text;
+                c.ProveedorID = int.Parse(value[0]);
+                c.TipoPago = tipoPago.SelectedIndex;
+                c.FechaCompra = fechaCompra.Value;
+                c.Monto = decimal.Parse(txtTotalCompra.Text);
 
                 if (accionformulario == "crear")
                 {
-                    try {  }
+                    try {
+                        new EditCompra().InsertarCompra(c);
+                        saveDetalle(1);
+                    }
                     catch (Exception ex) { MessageBox.Show("ERROR: Inserción fallida: " + ex.ToString()); }
                     this.Close();
                 }
                 else
                 {
-                    try {  }
+                    try {
+                        new EditCompra().ActualizarCompra(c);
+                        saveDetalle(0);
+                    }
                     catch (Exception ex) { MessageBox.Show("ERROR: Actualización fallida: " + ex.ToString()); }
                     ReadStatus(true);
                 }
@@ -322,6 +399,24 @@ namespace ProyectoBDI___SisVent.vista
             }
             else
                 this.Close();
+        }
+
+        private void saveDetalle(int tipo)
+        {
+            DetalleCompra d = new DetalleCompra();
+            for (int i = 0; i < detalleCompra.Rows.Count; i++)
+            {
+                d.ProdID = int.Parse(detalleCompra.Rows[i].Cells[0].Value.ToString());
+                d.CompraID = int.Parse(txtCodigoCompra.Text);
+                d.Cant = int.Parse(detalleCompra.Rows[i].Cells[2].Value.ToString());
+                d.UnitPrice = decimal.Parse(detalleCompra.Rows[i].Cells[3].Value.ToString());
+                d.Total = decimal.Parse(detalleCompra.Rows[i].Cells[4].Value.ToString());
+
+                if (tipo == 1)
+                    new editDetalleCompra().InsertarDetail(d);
+                else
+                    new editDetalleCompra().UpdateDetail(d);
+            }
         }
 
         private void editarButton_Click(object sender, EventArgs e)
