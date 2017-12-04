@@ -59,7 +59,7 @@
     <Compile Include="data\Categoria.cs" />
     <Compile Include="data\DataCategory.cs" />
     <Compile Include="data\DetalleCompra.cs" />
-    <Compile Include="data\editDetalleCompra.cs" />
+    <Compile Include="data\EditDetalleCompra.cs" />
     <Compile Include="data\ExtrasContadores.cs" />
     <Compile Include="vista\adminCuentas.cs">
       <SubType>UserControl</SubType>

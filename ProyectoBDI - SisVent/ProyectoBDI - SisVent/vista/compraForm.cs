@@ -413,9 +413,9 @@ namespace ProyectoBDI___SisVent.vista
                 d.Total = decimal.Parse(detalleCompra.Rows[i].Cells[4].Value.ToString());
 
                 if (tipo == 1)
-                    new editDetalleCompra().InsertarDetail(d);
+                    new EditDetalleCompra().InsertarDetail(d);
                 else
-                    new editDetalleCompra().UpdateDetail(d);
+                    new EditDetalleCompra().UpdateDetail(d);
             }
         }
 

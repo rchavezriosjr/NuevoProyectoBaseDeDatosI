@@ -42,12 +42,9 @@ namespace ProyectoBDI___SisVent.vista
             {
                 try
                 {
-                    cn.Open();
+                    //cn.Open();
 
-                    SqlCommand cmd = new SqlCommand(
-                        "select ID, Nombre, FotoPerfil Apellido from Usuario where ID = " + id,
-                        cn
-                        );
+                    SqlCommand cmd = new SqlCommand("Select ID, Nombre, FotoPerfil, Apellido from Usuario where ID = " +id,cn);
 
                     SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
                     SqlDat.Fill(data);

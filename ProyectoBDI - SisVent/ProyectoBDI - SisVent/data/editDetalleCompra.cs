@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoBDI___SisVent.data
 {
-    class editDetalleCompra
+    class EditDetalleCompra
     {
         public void InsertarDetail (DetalleCompra det)
         {
