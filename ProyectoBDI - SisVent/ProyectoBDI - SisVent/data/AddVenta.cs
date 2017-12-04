@@ -12,50 +12,50 @@ namespace ProyectoBDI___SisVent.data
     {
         public void Insertar(Venta vta)
         {
-            SqlConnection Con = new SqlConnection();
-            try
-            {
-                Con.ConnectionString = Conexión.Cn;
-                Con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Con;
-                cmd.CommandText = "AddVenta_Insertar";
-                cmd.CommandType = CommandType.StoredProcedure;
+            //SqlConnection Con = new SqlConnection();
+            //try
+            //{
+            //    Con.ConnectionString = Conexión.Cn;
+            //    Con.Open();
+            //    SqlCommand cmd = new SqlCommand();
+            //    cmd.Connection = Con;
+            //    cmd.CommandText = "AddVenta_Insertar";
+            //    cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter FVta = new SqlParameter();
-                FVta.ParameterName = "@FechaVenta";
-                FVta.SqlDbType = SqlDbType.DateTime;
-                FVta.Value = vta.FechaVenta;
-                cmd.Parameters.Add(FVta);
+            //    SqlParameter FVta = new SqlParameter();
+            //    FVta.ParameterName = "@FechaVenta";
+            //    FVta.SqlDbType = SqlDbType.DateTime;
+            //    FVta.Value = vta.FechaVenta;
+            //    cmd.Parameters.Add(FVta);
 
-                SqlParameter CId = new SqlParameter();
-                CId.ParameterName = "@ClienteId";
-                CId.SqlDbType = SqlDbType.Int;
-                CId.Value = vta.Cliente.C_Id;
-                cmd.Parameters.Add(CId);
+            //    SqlParameter CId = new SqlParameter();
+            //    CId.ParameterName = "@ClienteId";
+            //    CId.SqlDbType = SqlDbType.Int;
+            //    CId.Value = vta.Cliente.C_Id;
+            //    cmd.Parameters.Add(CId);
 
-                SqlParameter MTot = new SqlParameter();
-                MTot.ParameterName = "@MontoTotal";
-                MTot.SqlDbType = SqlDbType.Decimal;
-                MTot.Value = vta.MontoTotal;
-                cmd.Parameters.Add(MTot);
+            //    SqlParameter MTot = new SqlParameter();
+            //    MTot.ParameterName = "@MontoTotal";
+            //    MTot.SqlDbType = SqlDbType.Decimal;
+            //    MTot.Value = vta.MontoTotal;
+            //    cmd.Parameters.Add(MTot);
 
-                SqlParameter UID = new SqlParameter();
-                UID.ParameterName = "@UserId";
-                UID.SqlDbType = SqlDbType.Int;
-                UID.Value = vta.UserId;
-                cmd.Parameters.Add(UID);
+            //    SqlParameter UID = new SqlParameter();
+            //    UID.ParameterName = "@UserId";
+            //    UID.SqlDbType = SqlDbType.Int;
+            //    UID.Value = vta.UserId;
+            //    cmd.Parameters.Add(UID);
 
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("ERROR: Imposible insertar: " + ex.ToString());
-            }
-            finally
-            {
-                if (Con.State == ConnectionState.Open) Con.Close();
-            }
+            //    cmd.ExecuteNonQuery();
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine("ERROR: Imposible insertar: " + ex.ToString());
+            //}
+            //finally
+            //{
+            //    if (Con.State == ConnectionState.Open) Con.Close();
+            //}
         }
     }
 }

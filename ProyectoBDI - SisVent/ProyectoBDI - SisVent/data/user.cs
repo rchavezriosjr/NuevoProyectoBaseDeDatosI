@@ -320,10 +320,10 @@ namespace ProyectoBDI___SisVent.datos
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(dt);
                 //Ejecutamos nuestro comando
-                if (SqlCmd.ExecuteNonQuery() == 1)
-                    new popup("Cuenta eliminada correctamente", popup.AlertType.check);
-                else
-                    new popup("Cuenta no eliminada", popup.AlertType.error); ;
+                //if (SqlCmd.ExecuteNonQuery() == 1)
+                //    new popup("Cuenta eliminada correctamente", popup.AlertType.check);
+                //else
+                //    new popup("Cuenta no eliminada", popup.AlertType.error); ;
             }
             catch (Exception ex)
             {
