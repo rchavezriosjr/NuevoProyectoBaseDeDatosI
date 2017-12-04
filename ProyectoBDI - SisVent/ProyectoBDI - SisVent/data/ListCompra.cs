@@ -41,33 +41,36 @@ namespace ProyectoBDI___SisVent.data
             }
             return dt;
         }
-        public DataSet DeleteCompra(int id)
-        {
-            DataSet dt = new DataSet();
-            SqlConnection Con = new SqlConnection();
-            try
-            {
-                Con.ConnectionString = Conexión.Cn;
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Con;
-                cmd.CommandText = "ListCompra_DeleteCompra";
-                cmd.CommandType = CommandType.StoredProcedure;
+        
 
-                SqlParameter IDCOMPRA = new SqlParameter();
-                IDCOMPRA.ParameterName = "@Id";
-                IDCOMPRA.SqlDbType = SqlDbType.Int;
-                IDCOMPRA.Value = id;
-                cmd.Parameters.Add(IDCOMPRA);
 
-                SqlDataAdapter Data = new SqlDataAdapter(cmd);
-                Data.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
-                dt = null;
-            }
-            return dt;
-        }
+        //public DataSet DeleteCompra(int id)
+        //{
+        //    DataSet dt = new DataSet();
+        //    SqlConnection Con = new SqlConnection();
+        //    try
+        //    {
+        //        Con.ConnectionString = Conexión.Cn;
+        //        SqlCommand cmd = new SqlCommand();
+        //        cmd.Connection = Con;
+        //        cmd.CommandText = "ListCompra_DeleteCompra";
+        //        cmd.CommandType = CommandType.StoredProcedure;
+
+        //        SqlParameter IDCOMPRA = new SqlParameter();
+        //        IDCOMPRA.ParameterName = "@Id";
+        //        IDCOMPRA.SqlDbType = SqlDbType.Int;
+        //        IDCOMPRA.Value = id;
+        //        cmd.Parameters.Add(IDCOMPRA);
+
+        //        SqlDataAdapter Data = new SqlDataAdapter(cmd);
+        //        Data.Fill(dt);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
+        //        dt = null;
+        //    }
+        //    return dt;
+        //}
     }
 }

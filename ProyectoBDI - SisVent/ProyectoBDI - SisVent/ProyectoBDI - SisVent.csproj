@@ -58,6 +58,8 @@
     <Compile Include="data\Categoria.cs" />
     <Compile Include="data\DataCategory.cs" />
     <Compile Include="data\DetalleCompra.cs" />
+    <Compile Include="data\editDetalleCompra.cs" />
+    <Compile Include="data\ExtrasContadores.cs" />
     <Compile Include="vista\adminCuentas.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,7 +153,6 @@
     <Compile Include="data\ListCompra.cs" />
     <Compile Include="data\ListProducto.cs" />
     <Compile Include="data\ListProveedor.cs" />
-    <Compile Include="data\ListVenta.cs" />
     <Compile Include="data\Producto.cs" />
     <Compile Include="data\Proveedor.cs" />
     <Compile Include="data\user.cs" />

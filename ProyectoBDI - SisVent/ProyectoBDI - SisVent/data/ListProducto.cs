@@ -50,7 +50,7 @@ namespace ProyectoBDI___SisVent.data
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "Buscar_Productos";
+                cmd.CommandText = "Busqueda_Productos";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ID = new SqlParameter();
