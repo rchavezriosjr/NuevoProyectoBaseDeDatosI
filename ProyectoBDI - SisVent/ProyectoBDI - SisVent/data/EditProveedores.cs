@@ -25,28 +25,28 @@ namespace ProyectoBDI___SisVent.data
 
                 SqlParameter Name = new SqlParameter();
                 Name.ParameterName = "@Nombre";
-                Name.SqlDbType = SqlDbType.VarChar;
+                Name.SqlDbType = SqlDbType.NVarChar;
                 Name.Size = 200;
                 Name.Value = prov.P_Nombre;
                 cmd.Parameters.Add(Name);
 
                 SqlParameter Dom = new SqlParameter();
                 Dom.ParameterName = "@Domicilio";
-                Dom.SqlDbType = SqlDbType.VarChar;
+                Dom.SqlDbType = SqlDbType.NVarChar;
                 Dom.Size = 200;
                 Dom.Value = prov.P_Domicilio ;
                 cmd.Parameters.Add(Dom);
 
                 SqlParameter Tel = new SqlParameter();
-                Tel.ParameterName = "@Telfono";
-                Tel.SqlDbType = SqlDbType.VarChar;
+                Tel.ParameterName = "@Telefono";
+                Tel.SqlDbType = SqlDbType.NVarChar;
                 Tel.Size = 200;
                 Tel.Value = prov.P_Telefono;
                 cmd.Parameters.Add(Tel);
 
                 SqlParameter Correo = new SqlParameter();
                 Correo.ParameterName = "@Email";
-                Correo.SqlDbType = SqlDbType.VarChar;
+                Correo.SqlDbType = SqlDbType.NVarChar;
                 Correo.Size = 200;
                 Correo.Value = prov.P_Email;
                 cmd.Parameters.Add(Correo);

@@ -16,38 +16,17 @@ namespace ProyectoBDI___SisVent.vista
         ExtrasContadores c = new ExtrasContadores();
         public inicio()
         {
-            
+            cargar();
             InitializeComponent();
         }
 
-        public void Client()
+        public void cargar()
         {
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
-            ds = c.ContClient();
-            dt = ds.Tables[0];
-            DataRow row = dt.Rows[0];
-            label3.Text = row[0].ToString();
-        }
-
-        public void Prod()
-        {
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
-            ds = c.ContProd();
-            dt = ds.Tables[0];
-            DataRow row = dt.Rows[0];
-            label4.Text = row[0].ToString();
-        }
-
-        public void Prov()
-        {
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
-            ds = c.ContProv();
-            dt = ds.Tables[0];
-            DataRow row = dt.Rows[0];
-            label6.Text = row[0].ToString();
+            //label3.Text = new ExtrasContadores().ContClient().ToString();
+            //label6.Text = new ExtrasContadores().ContProv().ToString();
+            //label4.Text = new ExtrasContadores().ContProd().ToString();
+            //label8.Text = new ExtrasContadores().ContVentasMes().ToString();
+            //ultimasVentas.DataSource = new ExtrasContadores().ContUltVta();
         }
 
         //public void Vtas()

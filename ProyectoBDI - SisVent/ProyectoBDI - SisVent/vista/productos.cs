@@ -50,11 +50,11 @@ namespace ProyectoBDI___SisVent.vista
             int nWidthEllipse,
             int nHeightEllipse
         );
-        private void CargarProductos()
+        public void CargarProductos()
         {
             try
             {
-                vistaProductos.DataSource = new Busqueda().MostrarProductos();
+                vistaProductos.DataSource = new ListProducto().GetProductos();
             }
             catch(Exception ex) { }
         }

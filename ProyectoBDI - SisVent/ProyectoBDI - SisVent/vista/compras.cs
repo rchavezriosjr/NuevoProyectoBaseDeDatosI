@@ -63,7 +63,7 @@ namespace ProyectoBDI___SisVent.vista
 
         public void CargarCompras()
         {
-            vistaCompras.DataSource = new Busqueda().MostrarCompras();
+            vistaCompras.DataSource = new ListCompra().GetCompras();
         }
 
         private void txtBuscar_OnTextChange(object sender, EventArgs e)

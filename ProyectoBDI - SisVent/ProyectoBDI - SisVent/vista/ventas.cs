@@ -72,7 +72,7 @@ namespace ProyectoBDI___SisVent.vista
         {
             try
             {
-                vistaVentas.DataSource = new Busqueda().MostrarVentas();
+                vistaVentas.DataSource = new AddVenta().MostrarVentas();
             }
             catch(Exception ex) { }
         }

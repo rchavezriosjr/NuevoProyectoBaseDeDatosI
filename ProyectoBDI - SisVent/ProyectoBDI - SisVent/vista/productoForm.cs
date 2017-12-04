@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoBDI___SisVent.data;
 
 namespace ProyectoBDI___SisVent.vista
 {
@@ -54,10 +55,21 @@ namespace ProyectoBDI___SisVent.vista
         {
             if (accionformulario == "crear" || accionformulario == "editar")
             {
+                Producto p = new Producto();
+                p.CategoriaID = int.Parse( txtIDCategoria.Text);
+                p.Nombre = txtNombreProducto.Text;
+                p.Descripcion = txtDescripcion.Text;
+                p.Stock = int.Parse(txtStock.Text );
+                p.PrecioVenta = decimal.Parse(txtPrecioVenta.Text);
+                if(estadoValor.Checked)
+                    p.Estado = 1;
+                else
+                    p.Estado = 0;
                 
                 if (accionformulario == "crear")
                 {
                     try {
+                        new EditProducto().InsertarProducto(p);
                     }
                     catch (Exception ex) { MessageBox.Show("ERROR: Inserción fallida: " + ex.ToString()); }
                     this.Close();
@@ -65,6 +77,8 @@ namespace ProyectoBDI___SisVent.vista
                 else
                 {
                     try {
+                        p.ID = int.Parse(txtID.Text);
+                        new EditProducto().ActualizarProducto(p);
                     }
                     catch (Exception ex) { MessageBox.Show("ERROR: Actualización fallida: " + ex.ToString()); }
                     ReadStatus(true);

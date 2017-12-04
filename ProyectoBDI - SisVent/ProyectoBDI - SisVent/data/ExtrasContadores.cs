@@ -10,9 +10,9 @@ namespace ProyectoBDI___SisVent.data
 {
     class ExtrasContadores
     {
-        public DataSet ContClient()
+        public int ContClient()
         {
-            DataSet dt = new DataSet();
+            int dt;
             SqlConnection Con = new SqlConnection();
             try
             {
@@ -22,20 +22,19 @@ namespace ProyectoBDI___SisVent.data
                 cmd.CommandText = "TabInicio_Contador_Clientes";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlDataAdapter Data = new SqlDataAdapter(cmd);
-                Data.Fill(dt);
+                dt = (int)cmd.ExecuteScalar();
             }
             catch(Exception ex)
             {
                 Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
-                dt = null;
+                dt = 0;
             }
             return dt;
         }
 
-        public DataSet ContProd()
+        public int ContProd()
         {
-            DataSet dt = new DataSet();
+            int dt;
             SqlConnection Con = new SqlConnection();
             try
             {
@@ -44,20 +43,20 @@ namespace ProyectoBDI___SisVent.data
                 cmd.Connection = Con;
                 cmd.CommandText = "TabInicio_Contador_Productos";
                 cmd.CommandType = CommandType.StoredProcedure;
-            
-                SqlDataAdapter Data = new SqlDataAdapter(cmd);
-                Data.Fill(dt);
+
+                dt = (int)cmd.ExecuteScalar();
             }
+                
             catch (Exception ex)
             {
                 Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
-                dt = null;
+                dt = 0;
             }
             return dt;
         }
-        public DataSet ContProv()
+        public int ContProv()
         {
-            DataSet dt = new DataSet();
+            int dt;
             SqlConnection Con = new SqlConnection();
             try
             {
@@ -67,19 +66,18 @@ namespace ProyectoBDI___SisVent.data
                 cmd.CommandText = "TabInicio_Contador_Proveedores";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlDataAdapter Data = new SqlDataAdapter(cmd);
-                Data.Fill(dt);
+                dt = (int)cmd.ExecuteScalar();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
-                dt = null;
+                dt = 0;
             }
             return dt;
         }
-        public DataSet ContVentasMes(DateTime Fecha)
+        public int ContVentasMes()
         {
-            DataSet dt = new DataSet();
+            int dt;
             SqlConnection Con = new SqlConnection();
             try
             {
@@ -89,19 +87,12 @@ namespace ProyectoBDI___SisVent.data
                 cmd.CommandText = "TabInicio_Contador_VentasMes";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter Date = new SqlParameter();
-                Date.ParameterName = "@Fecha";
-                Date.SqlDbType = SqlDbType.Date;
-                Date.Value = Fecha;
-                cmd.Parameters.Add(Date);
-
-                SqlDataAdapter Data = new SqlDataAdapter(cmd);
-                Data.Fill(dt);
+                dt = (int)cmd.ExecuteScalar();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
-                dt = null;
+                dt = 0;
             }
             return dt;
         }

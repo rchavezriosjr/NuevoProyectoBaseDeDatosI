@@ -26,7 +26,7 @@ namespace ProyectoBDI___SisVent.vista
         ventas ventas = new ventas();
         adminCuentas adminCuentas = new adminCuentas();
 
-        string idvalue;
+        private static string idvalue;
 
         public home(string id)
         {
@@ -44,7 +44,7 @@ namespace ProyectoBDI___SisVent.vista
                 {
                     //cn.Open();
 
-                    SqlCommand cmd = new SqlCommand("Select ID, Nombre, FotoPerfil, Apellido from Usuario where ID = " +id,cn);
+                    SqlCommand cmd = new SqlCommand("Select ID, Nombre, FotoPerfil, Apellido from Usuario where ID = "+idvalue,cn);
 
                     SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
                     SqlDat.Fill(data);
@@ -56,7 +56,8 @@ namespace ProyectoBDI___SisVent.vista
                 }
                 catch (Exception ex)
                 {
-                    new popup("Error al mostrar información", popup.AlertType.error);
+                    //new popup("Error al mostrar información", popup.AlertType.error);
+                    //MessageBox.Show("ERROR: Actualización fallida: " + ex.ToString());
                     //this.Close();
                 }
             }
@@ -71,7 +72,7 @@ namespace ProyectoBDI___SisVent.vista
                 {
                     cn.Open();
                     SqlCommand cmd = new SqlCommand(
-                        "select FotoPerfil from Usuario where ID = " + id,
+                        "select FotoPerfil from Usuario where ID = " + idvalue,
                         cn
                         );
 
@@ -223,6 +224,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "inicio";
                 inicio.BringToFront();
+                inicio.cargar();
             }
         }
 
@@ -233,6 +235,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "clientes";
                 clientes.BringToFront();
+                clientes.CargarClientes();
             }
         }
 
@@ -243,6 +246,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "ventas";
                 ventas.BringToFront();
+                ventas.cargarVentas();
             }
         }
 
@@ -253,6 +257,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "compras";
                 compras.BringToFront();
+                compras.CargarCompras();
             }
         }
 
@@ -263,6 +268,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "productos";
                 productos.BringToFront();
+                productos.CargarProductos();
             }
         }
 
@@ -273,6 +279,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "proveedor";
                 proveedores.BringToFront();
+                proveedores.CargarProveedores();
             }
         }
 
@@ -283,6 +290,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "cuentas";
                 adminCuentas.BringToFront();
+
             }
         }
 

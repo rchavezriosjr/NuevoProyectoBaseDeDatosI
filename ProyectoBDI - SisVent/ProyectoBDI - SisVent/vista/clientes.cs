@@ -25,13 +25,14 @@ namespace ProyectoBDI___SisVent.vista
             InitializeComponent();
         }
 
-        private void CargarClientes()
+        public void CargarClientes()
         {
             vistaClientes.DataSource = new Busqueda().MostrarClientes();
         }
         private void clientes_Load(object sender, EventArgs e)
         {
             CircleBorder();
+            CargarClientes();
         }
 
         public void CircleBorder()

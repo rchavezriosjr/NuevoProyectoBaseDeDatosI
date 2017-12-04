@@ -44,8 +44,8 @@ namespace ProyectoBDI___SisVent.vista
 
         private void txtProveedor_Leave(object sender, EventArgs e)
         {
-            Transition.run(panelDatosCompra, "Height", 160, new TransitionType_EaseInEaseOut(1000));
-            panelDatosCompra.SendToBack();
+            //Transition.run(panelDatosCompra, "Height", 160, new TransitionType_EaseInEaseOut(1000));
+            //panelDatosCompra.SendToBack();
         }
 
         private void txtProveedor_TextChanged(object sender, EventArgs e)
@@ -292,8 +292,8 @@ namespace ProyectoBDI___SisVent.vista
 
         private void txtProducto_Leave(object sender, EventArgs e)
         {
-            Transition.run(panelDatosDetalleCompra, "Height", 100, new TransitionType_EaseInEaseOut(1000));
-            panelDatosDetalleCompra.SendToBack();
+            //Transition.run(panelDatosDetalleCompra, "Height", 100, new TransitionType_EaseInEaseOut(1000));
+            //panelDatosDetalleCompra.SendToBack();
         }
 
         private void agregarProductoDetalle_Click(object sender, EventArgs e)

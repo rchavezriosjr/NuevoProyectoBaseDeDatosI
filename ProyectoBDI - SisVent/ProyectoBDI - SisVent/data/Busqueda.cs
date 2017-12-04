@@ -20,7 +20,7 @@ namespace ProyectoBDI___SisVent.data
                 {
                     cn.Open();
                     SqlCommand cmd = new SqlCommand(
-                        "select* from Usuario where Nombre like %"+ value+ "% or ID like %" + value + "%",
+                        "select * from Usuario where Nombre like %"+ value+ "% or ID like %" + value + "%",
                         cn
                         );
 
@@ -50,9 +50,9 @@ namespace ProyectoBDI___SisVent.data
                     cn.Open();
                     SqlCommand cmd;
                     if (estado == 1)
-                        cmd = new SqlCommand("select* from Categoria where Estado = 1", cn);
+                        cmd = new SqlCommand("select * from Categoria where Estado = 1", cn);
                     else
-                        cmd = new SqlCommand("select* from Categoria", cn);
+                        cmd = new SqlCommand("select * from Categoria", cn);
 
                     SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
                     SqlDat.Fill(dt);
@@ -558,7 +558,7 @@ namespace ProyectoBDI___SisVent.data
                 //Establecer el Comando
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "Mostrar_Proveedores";
+                SqlCmd.CommandText = "Mostar_Proveedores";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 //Asignar valor retornado del procedimiento almacenado en un datatable

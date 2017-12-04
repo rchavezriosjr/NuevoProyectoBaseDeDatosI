@@ -80,8 +80,8 @@ namespace ProyectoBDI___SisVent.vista
 
         private void txtBuscar_OnTextChange(object sender, EventArgs e)
         {
-            if (txtBuscar.text == "")
-                vistaProveedores.DataSource = new Busqueda().MostrarProveedores();
+            if (txtBuscar.text=="")
+                CargarProveedores();
             else
                 vistaProveedores.DataSource = new Busqueda().BusquedaProveedor(txtBuscar.text, metodoBusqueda.SelectedIndex);
         }

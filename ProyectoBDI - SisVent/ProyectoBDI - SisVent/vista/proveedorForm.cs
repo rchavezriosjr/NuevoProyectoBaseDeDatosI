@@ -125,7 +125,7 @@ namespace ProyectoBDI___SisVent
             {
                 try
                 {
-                    cn.Open();
+                    //cn.Open();
 
                     SqlCommand cmd = new SqlCommand(
                         "select * from Proveedor where ID = " + id,

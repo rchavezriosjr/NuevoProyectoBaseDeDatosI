@@ -10,138 +10,171 @@ namespace ProyectoBDI___SisVent.data
 {
     class EditProducto
     {
-        public void ActualizarProducto(Producto Prod)
+        public void InsertarProducto(Producto p)
         {
-            //SqlConnection Con = new SqlConnection();
-            //try
-            //{
-            //    Con.ConnectionString = Conexión.Cn;
-            //    Con.Open();
-            //    SqlCommand cmd = new SqlCommand();
-            //    cmd.Connection = Con;
-            //    cmd.CommandText = "EditProducto_Actualizar";
-            //    cmd.CommandType = CommandType.StoredProcedure;
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexión.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Insertar_Producto";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
 
-            //    SqlParameter ID = new SqlParameter();
-            //    ID.ParameterName = "@Id";
-            //    ID.SqlDbType = SqlDbType.Int;
-            //    ID.Value = Prod.Id;
-            //    cmd.Parameters.Add(ID);
+                // Parámetros del Procedimiento Almacenado
 
-            //    SqlParameter Cod = new SqlParameter();
-            //    Cod.ParameterName = "@Codigo";
-            //    Cod.SqlDbType = SqlDbType.Int;
-            //    Cod.Value = Prod.Codigo;
-            //    cmd.Parameters.Add(Cod);
+                SqlParameter ParUsuario = new SqlParameter();
+                ParUsuario.ParameterName = "@CategoriaID";
+                ParUsuario.SqlDbType = SqlDbType.Int;
+                ParUsuario.Value = p.CategoriaID;
+                SqlCmd.Parameters.Add(ParUsuario);
 
-            //    SqlParameter Desc = new SqlParameter();
-            //    Desc.ParameterName = "@Nombre";
-            //    Desc.SqlDbType = SqlDbType.VarChar;
-            //    Desc.Size = 1000;
-            //    Desc.Value = Prod.Descripcion;
-            //    cmd.Parameters.Add(Desc);
 
-            //    SqlParameter TipoID = new SqlParameter();
-            //    TipoID.ParameterName = "@TipoID";
-            //    TipoID.SqlDbType = SqlDbType.Int;
-            //    TipoID.Value = Prod.Tipo.Id;
-            //    cmd.Parameters.Add(TipoID);
+                SqlParameter ParContraseña = new SqlParameter();
+                ParContraseña.ParameterName = "@Nombre";
+                ParContraseña.SqlDbType = SqlDbType.VarChar;
+                ParContraseña.Size = 200;
+                ParContraseña.Value = p.Nombre;
+                SqlCmd.Parameters.Add(ParContraseña);
 
-            //    SqlParameter ColDesc = new SqlParameter();
-            //    ColDesc.ParameterName = "@ColorDescripcion";
-            //    ColDesc.SqlDbType = SqlDbType.VarChar;
-            //    ColDesc.Size = 200;
-            //    ColDesc.Value = Prod.Color.Descripcion;
-            //    cmd.Parameters.Add(ColDesc);
+                SqlParameter ParNombre = new SqlParameter();
+                ParNombre.ParameterName = "@PecioVenta";
+                ParNombre.SqlDbType = SqlDbType.Decimal;
+                ParNombre.Value = p.PrecioVenta;
+                SqlCmd.Parameters.Add(ParNombre);
 
-            //    SqlParameter TalleID = new SqlParameter();
-            //    TalleID.ParameterName = "@TalleID";
-            //    TalleID.SqlDbType = SqlDbType.Int;
-            //    TalleID.Value = Prod.Talle.Id;
-            //    cmd.Parameters.Add(TalleID);
+                SqlParameter ParApellido = new SqlParameter();
+                ParApellido.ParameterName = "@Stock";
+                ParApellido.SqlDbType = SqlDbType.Int;
+                ParApellido.Value = p.Stock;
+                SqlCmd.Parameters.Add(ParApellido);
 
-            //    SqlParameter PrecioCst = new SqlParameter();
-            //    PrecioCst.ParameterName = "@PrecioCosto";
-            //    PrecioCst.SqlDbType = SqlDbType.Decimal;
-            //    PrecioCst.Value = Prod.PrecioCosto;
-            //    cmd.Parameters.Add(PrecioCst);
 
-            //    SqlParameter PorcGananc = new SqlParameter();
-            //    PorcGananc.ParameterName = "@PorcGanancia";
-            //    PrecioCst.SqlDbType = SqlDbType.Decimal;
-            //    PrecioCst.Value = Prod.PrecioCosto;
-            //    cmd.Parameters.Add(PrecioCst);
+                SqlParameter ParDes = new SqlParameter();
+                ParDes.ParameterName = "@Descripcion";
+                ParDes.SqlDbType = SqlDbType.VarChar;
+                ParDes.Size = 250;
+                ParDes.Value = p.Descripcion;
+                SqlCmd.Parameters.Add(ParDes);
 
-            //    SqlParameter PVta = new SqlParameter();
-            //    PVta.ParameterName = "@PrecioVenta";
-            //    PVta.SqlDbType = SqlDbType.Decimal;
-            //    PVta.Value = Prod.PrecioVenta;
-            //    cmd.Parameters.Add(PVta);
 
-            //    SqlParameter IStock = new SqlParameter();
-            //    IStock.ParameterName = "@StockInicial";
-            //    IStock.SqlDbType = SqlDbType.Decimal;
-            //    IStock.Value = Prod.StockInicial;
-            //    cmd.Parameters.Add(IStock);
+                SqlParameter ParApellid = new SqlParameter();
+                ParApellid.ParameterName = "@Estado";
+                ParApellid.SqlDbType = SqlDbType.Int;
+                ParApellid.Value = p.Estado;
+                SqlCmd.Parameters.Add(ParApellid);
 
-            //    SqlParameter AStock = new SqlParameter();
-            //    AStock.ParameterName = "@StockActual";
-            //    AStock.SqlDbType = SqlDbType.Decimal;
-            //    AStock.Value = Prod.StockActual;
-            //    cmd.Parameters.Add(AStock);
+                //SqlCmd.ExecuteNonQuery();
 
-            //    SqlParameter Descu = new SqlParameter();
-            //    Descu.ParameterName = "@PorcDescuento";
-            //    Descu.SqlDbType = SqlDbType.Decimal;
-            //    Descu.Value = Prod.PorcDescuento;
-            //    cmd.Parameters.Add(Descu);
+                //Ejecutamos nuestro comando
 
-            //    SqlParameter CompID = new SqlParameter();
-            //    CompID.ParameterName = "@CompraID";
-            //    CompID.SqlDbType = SqlDbType.Int;
-            //    CompID.Value = Prod.Compra.Id;
-            //    cmd.Parameters.Add(CompID);
+                if (SqlCmd.ExecuteNonQuery() == 1)
+                    new popup("Usuario creado correctamente", popup.AlertType.check);
+                else
+                    new popup("Usuario no creado", popup.AlertType.error); ;
 
-            //    cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                new popup(ex.Message, popup.AlertType.error);
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
 
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    Console.WriteLine("ERROR: Imposible insertar: " + ex.ToString());
-            //}
-            //finally
-            //{
-            //    if (Con.State == ConnectionState.Open) Con.Close();
-            //}
         }
-        public DataSet GetProducto(Producto prod)
+
+
+
+        public void ActualizarProducto(Producto p)
         {
-            DataSet dt = new DataSet();
-            //SqlConnection Con = new SqlConnection();
-            //try
-            //{
-            //    Con.ConnectionString = Conexión.Cn;
-            //    SqlCommand cmd = new SqlCommand();
-            //    cmd.Connection = Con;
-            //    cmd.CommandText = "EditProducto_GetProducto";
-            //    cmd.CommandType = CommandType.StoredProcedure;
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexión.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Actualizar_Producto";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
 
-            //    SqlParameter ID = new SqlParameter();
-            //    ID.ParameterName = "@Id";
-            //    ID.SqlDbType = SqlDbType.Int;
-            //    ID.Value = prod.Id;
-            //    cmd.Parameters.Add(ID);
+                // Parámetros del Procedimiento Almacenado
 
-            //    SqlDataAdapter Data = new SqlDataAdapter(cmd);
-            //    Data.Fill(dt);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
-            //    dt = null;
-            //}
-            return dt;
+                SqlParameter ParUsuario = new SqlParameter();
+                ParUsuario.ParameterName = "@ID";
+                ParUsuario.SqlDbType = SqlDbType.Int;
+                ParUsuario.Value = p.ID;
+                SqlCmd.Parameters.Add(ParUsuario);
+
+
+                SqlParameter ParUsuari = new SqlParameter();
+                ParUsuari.ParameterName = "@CategoriaID";
+                ParUsuari.SqlDbType = SqlDbType.Int;
+                ParUsuari.Value = p.CategoriaID;
+                SqlCmd.Parameters.Add(ParUsuari);
+
+
+                SqlParameter ParContraseña = new SqlParameter();
+                ParContraseña.ParameterName = "@Nombre";
+                ParContraseña.SqlDbType = SqlDbType.VarChar;
+                ParContraseña.Size = 200;
+                ParContraseña.Value = p.Nombre;
+                SqlCmd.Parameters.Add(ParContraseña);
+
+                SqlParameter ParNombre = new SqlParameter();
+                ParNombre.ParameterName = "@PrecioVenta";
+                ParNombre.SqlDbType = SqlDbType.Decimal;
+                ParNombre.Value = p.PrecioVenta;
+                SqlCmd.Parameters.Add(ParNombre);
+
+                SqlParameter ParApellido = new SqlParameter();
+                ParApellido.ParameterName = "@Stock";
+                ParApellido.SqlDbType = SqlDbType.Int;
+                ParApellido.Value = p.Stock;
+                SqlCmd.Parameters.Add(ParApellido);
+
+
+                SqlParameter ParDes = new SqlParameter();
+                ParDes.ParameterName = "@Descripcion";
+                ParDes.SqlDbType = SqlDbType.VarChar;
+                ParDes.Size = 250;
+                ParDes.Value = p.Descripcion;
+                SqlCmd.Parameters.Add(ParDes);
+
+
+                SqlParameter ParApellid = new SqlParameter();
+                ParApellid.ParameterName = "@Estado";
+                ParApellid.SqlDbType = SqlDbType.Int;
+                ParApellid.Value = p.Estado;
+                SqlCmd.Parameters.Add(ParApellid);
+
+                //SqlCmd.ExecuteNonQuery();
+
+                //Ejecutamos nuestro comando
+
+                if (SqlCmd.ExecuteNonQuery() == 1)
+                    new popup("Usuario creado correctamente", popup.AlertType.check);
+                else
+                    new popup("Usuario no creado", popup.AlertType.error); ;
+
+            }
+            catch (Exception ex)
+            {
+                new popup(ex.Message, popup.AlertType.error);
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+
         }
     }
 }
