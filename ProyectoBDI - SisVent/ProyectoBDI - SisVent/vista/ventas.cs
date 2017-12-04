@@ -48,7 +48,7 @@ namespace ProyectoBDI___SisVent.vista
 
         private void agregarButton_Click(object sender, EventArgs e)
         {
-            new ventaForm("").ShowDialog();
+            new ventaForm().ShowDialog();
         }
 
         private void txtBuscar_OnTextChange(object sender, EventArgs e)

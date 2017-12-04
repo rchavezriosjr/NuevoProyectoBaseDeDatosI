@@ -74,7 +74,7 @@ namespace ProyectoBDI___SisVent
             if (verifica())
             {
                 Console.WriteLine("entra");
-                new viewCarga(viewCarga.type.inicio);
+                new viewCarga(viewCarga.type.inicio, UsernameID);
 
                 this.Hide();
                 new popup("Bienvenido...", popup.AlertType.check);
@@ -89,18 +89,18 @@ namespace ProyectoBDI___SisVent
 
         private bool verifica()
         {
-            user v = new user();
             bool ver = false;
             try
             {   
-                DataTable Datos = v.Verifica(this.username.Text,this.password.Text);
-                if (Datos.Rows.Count != 0)
-                {ver= true;}
+                DataTable Datos = new user.Verifica(this.username.Text,this.password.Text);
+                
+                if (Datos.Rows.Count != 0){ver= true;}
                 else {ver= false;}
+                
                 DataRow row = Datos.Rows[0];
-                UsernameID = row["id"].ToString();
-                NameUser = row["nombre"].ToString();
-                LastNameUser = row["apellido"].ToString();
+                UsernameID = row["ID"].ToString();
+                /*NameUser = row["nombre"].ToString();
+                LastNameUser = row["apellido"].ToString();*/
                 return ver;
             }
             catch (Exception ex)

@@ -166,18 +166,14 @@ namespace ProyectoBDI___SisVent
 
         void saveNew()
         {
-            //user u = new user();
-            //datosUser du = new datosUser();
-
-            //u.Nombre = nombreTxt.Text;
-            //u.Apellido = apellidoTxt.Text;
-            //u.UserName = nomUser.Text;
-            //u.Password = pass.Text;
-            //u.PPic = perfil.Image;
-
-            //du.addUser(u);
-            //Console.WriteLine(du.getUsers()[0].UserName + "  " + du.getUsers()[0].Password);
-            new popup("Usuario creado correctamente", popup.AlertType.check);
+            new user(
+                nombreTxt.Text,
+                apellidoTxt.Text,
+                pass.Text,
+                nomUser.Text,
+                perfil.Image,
+                Accion.insertar
+                );
         }
 
         private void Register_Load(object sender, EventArgs e)
@@ -288,19 +284,14 @@ namespace ProyectoBDI___SisVent
 
         public void editInfo()
         {
-            //user tem = new user();
-            //datosUser du = new datosUser();
-            //home h = new home();
-
-            //tem.Nombre = nombreTxt.Text;
-            //tem.Apellido = apellidoTxt.Text;
-            //tem.UserName = nomUser.Text;
-            //tem.Password = pass.Text;
-            //tem.PPic = perfil.Image;
-
-            //du.getUsers()[index] = tem;
-            //h.setInfo(nombreTxt.Text, apellidoTxt.Text, perfil.Image);
-            new popup("Cambios guardados correctamente", popup.AlertType.check);
+            new user(
+                nombreTxt.Text,
+                apellidoTxt.Text,
+                pass.Text,
+                nomUser.Text,
+                perfil.Image,
+                Accion.editar
+                );
         }
 
         public void CircleUserPicture()

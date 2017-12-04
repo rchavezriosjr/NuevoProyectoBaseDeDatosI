@@ -27,7 +27,7 @@ namespace ProyectoBDI___SisVent.vista
         {
             InitializeComponent();
             accionformulario = "ver";
-            //setDataView(id);
+            setDataView(id);
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -165,7 +165,7 @@ namespace ProyectoBDI___SisVent.vista
                 cantidadVentaProducto.Text = detalleVenta.Rows[count].Cells[2].Value.ToString();
                 txtPrecioVenta.Text = detalleVenta.Rows[count].Cells[3].Value.ToString();
                 descuentoProducto.Text = detalleVenta.Rows[count].Cells[4].Value.ToString();
-                //txtStock.Text = setStock(int.Parse(detalleVenta.Rows[count].Cells[0].Value.ToString()));
+                txtStock.Text = setStock(int.Parse(detalleVenta.Rows[count].Cells[0].Value.ToString()));
                 if (Convert.ToDecimal(detalleVenta.Rows[count].Cells[5].Value.ToString()) != 0)
                     impuestoValue.Checked = true;
                 else
@@ -311,8 +311,8 @@ namespace ProyectoBDI___SisVent.vista
         {
             txtProducto.Text = "";
             cantidadVentaProducto.Text = "";
-            //txtStock.Text = "";
-            //txtPrecioVenta.Text = "";
+            txtStock.Text = "";
+            txtPrecioVenta.Text = "";
             descuentoProducto.Text = "";
             impuestoValue.Checked = true;
         }
