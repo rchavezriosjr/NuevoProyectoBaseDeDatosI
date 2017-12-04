@@ -29,29 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(compras));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.vistaCompras = new System.Windows.Forms.DataGridView();
             this.metodoBusqueda = new iTalk.iTalk_ComboBox();
             this.txtBuscar = new Bunifu.Framework.UI.BunifuTextbox();
             this.agregarButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaCompras)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // vistaCompras
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
-            this.dataGridView1.Location = new System.Drawing.Point(75, 159);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 498);
-            this.dataGridView1.TabIndex = 16;
+            this.vistaCompras.AllowUserToAddRows = false;
+            this.vistaCompras.AllowUserToDeleteRows = false;
+            this.vistaCompras.BackgroundColor = System.Drawing.Color.White;
+            this.vistaCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.vistaCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vistaCompras.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
+            this.vistaCompras.Location = new System.Drawing.Point(75, 159);
+            this.vistaCompras.Name = "vistaCompras";
+            this.vistaCompras.ReadOnly = true;
+            this.vistaCompras.Size = new System.Drawing.Size(800, 498);
+            this.vistaCompras.TabIndex = 16;
+            this.vistaCompras.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vistaCompras_CellDoubleClick);
             // 
             // metodoBusqueda
             // 
@@ -150,7 +151,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.vistaCompras);
             this.Controls.Add(this.metodoBusqueda);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.agregarButton);
@@ -158,14 +159,14 @@
             this.Name = "compras";
             this.Size = new System.Drawing.Size(950, 670);
             this.Load += new System.EventHandler(this.compras_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaCompras)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView vistaCompras;
         private iTalk.iTalk_ComboBox metodoBusqueda;
         private Bunifu.Framework.UI.BunifuTextbox txtBuscar;
         private Bunifu.Framework.UI.BunifuFlatButton agregarButton;

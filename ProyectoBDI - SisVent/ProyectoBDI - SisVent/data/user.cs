@@ -87,13 +87,13 @@ namespace ProyectoBDI___SisVent.datos
                 //Establecer el Comando
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "insertUser";
+                SqlCmd.CommandText = "Insertar_Usuario";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 // Parámetros del Procedimiento Almacenado
 
                 SqlParameter ParUsuario = new SqlParameter();
-                ParUsuario.ParameterName = "@usuario";
+                ParUsuario.ParameterName = "@ID";
                 ParUsuario.SqlDbType = SqlDbType.VarChar;
                 ParUsuario.Size = 10;
                 ParUsuario.Value = UserName;
@@ -101,23 +101,23 @@ namespace ProyectoBDI___SisVent.datos
 
 
                 SqlParameter ParContraseña = new SqlParameter();
-                ParContraseña.ParameterName = "@contraseña";
-                ParContraseña.SqlDbType = SqlDbType.NVarChar;
-                ParContraseña.Size = 40;
+                ParContraseña.ParameterName = "@Contraseña";
+                ParContraseña.SqlDbType = SqlDbType.VarChar;
+                ParContraseña.Size = 50;
                 ParContraseña.Value = Password;
                 SqlCmd.Parameters.Add(ParContraseña);
 
                 SqlParameter ParNombre = new SqlParameter();
-                ParNombre.ParameterName = "@nombre";
+                ParNombre.ParameterName = "@Nombre";
                 ParNombre.SqlDbType = SqlDbType.NVarChar;
-                ParNombre.Size = 25;
+                ParNombre.Size = 50;
                 ParNombre.Value = Nombre;
                 SqlCmd.Parameters.Add(ParNombre);
 
                 SqlParameter ParApellido = new SqlParameter();
-                ParApellido.ParameterName = "@apellido";
-                ParApellido.SqlDbType = SqlDbType.NVarChar;
-                ParApellido.Size = 25;
+                ParApellido.ParameterName = "@Apellido";
+                ParApellido.SqlDbType = SqlDbType.VarChar;
+                ParApellido.Size = 50;
                 ParApellido.Value = Apellido;
                 SqlCmd.Parameters.Add(ParApellido);
 
@@ -125,19 +125,19 @@ namespace ProyectoBDI___SisVent.datos
                 SqlParameter ParPerfilPicture = new SqlParameter();
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 this.PPic.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                ParPerfilPicture.ParameterName = "@perfilPic";
+                ParPerfilPicture.ParameterName = "@FotoPerfil";
                 ParPerfilPicture.SqlDbType = SqlDbType.Image;
                 ParPerfilPicture.Value = ms.GetBuffer();
                 SqlCmd.Parameters.Add(ParPerfilPicture);
 
-                SqlCmd.ExecuteNonQuery();
+                //SqlCmd.ExecuteNonQuery();
 
                 //Ejecutamos nuestro comando
 
-                //if (SqlCmd.ExecuteNonQuery() == 1)
-                //    new popup("Usuario creado correctamente", popup.AlertType.check);
-                //else
-                //    new popup("Usuario no creado", popup.AlertType.error); ;
+                if (SqlCmd.ExecuteNonQuery() == 1)
+                    new popup("Usuario creado correctamente", popup.AlertType.check);
+                else
+                    new popup("Usuario no creado", popup.AlertType.error); ;
 
             }
             catch (Exception ex)
@@ -167,45 +167,47 @@ namespace ProyectoBDI___SisVent.datos
                 //Establecer el Comando
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "editarUsuario";
+                SqlCmd.CommandText = "Actualizar_Usuario";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 // Parámetros del Procedimiento Almacenado
 
                 SqlParameter ParUsuario = new SqlParameter();
-                ParUsuario.ParameterName = "@usuario";
+                ParUsuario.ParameterName = "@ID";
                 ParUsuario.SqlDbType = SqlDbType.VarChar;
                 ParUsuario.Size = 10;
                 ParUsuario.Value = UserName;
                 SqlCmd.Parameters.Add(ParUsuario);
 
 
-                SqlParameter ParID = new SqlParameter();
-                ParID.ParameterName = "@id";
-                ParID.SqlDbType = SqlDbType.NVarChar;
-                ParID.Size = 10;
-                ParID.Value = this.UserName;
-                SqlCmd.Parameters.Add(ParID);
-
                 SqlParameter ParContraseña = new SqlParameter();
-                ParContraseña.ParameterName = "@contraseña";
-                ParContraseña.SqlDbType = SqlDbType.NVarChar;
-                ParContraseña.Size = 40;
+                ParContraseña.ParameterName = "@Contraseña";
+                ParContraseña.SqlDbType = SqlDbType.VarChar;
+                ParContraseña.Size = 50;
                 ParContraseña.Value = this.Password;
                 SqlCmd.Parameters.Add(ParContraseña);
 
+
                 SqlParameter ParNombre = new SqlParameter();
-                ParNombre.ParameterName = "@nombre";
-                ParNombre.SqlDbType = SqlDbType.NVarChar;
-                ParNombre.Size = 25;
+                ParNombre.ParameterName = "@Nombre";
+                ParNombre.SqlDbType = SqlDbType.VarChar;
+                ParNombre.Size = 50;
                 ParNombre.Value = this.Nombre;
                 SqlCmd.Parameters.Add(ParNombre);
+
+
+                SqlParameter ParApellido = new SqlParameter();
+                ParApellido.ParameterName = "@Apellido";
+                ParApellido.SqlDbType = SqlDbType.VarChar;
+                ParApellido.Size = 50;
+                ParApellido.Value = this.Nombre;
+                SqlCmd.Parameters.Add(ParApellido);
 
 
                 SqlParameter ParPerfilPicture = new SqlParameter();
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 this.PPic.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                ParPerfilPicture.ParameterName = "@perfilPic";
+                ParPerfilPicture.ParameterName = "@FotoPerfil";
                 ParPerfilPicture.SqlDbType = SqlDbType.Image;
                 ParPerfilPicture.Value = ms.GetBuffer();
                 SqlCmd.Parameters.Add(ParPerfilPicture);
@@ -246,25 +248,17 @@ namespace ProyectoBDI___SisVent.datos
                 //Establecer el Comando
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "borrarUser";
+                SqlCmd.CommandText = "Deshabilitar_Usuario";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 // Parámetros del Procedimiento Almacenado
 
                 SqlParameter ParID = new SqlParameter();
-                ParID.ParameterName = "@id";
+                ParID.ParameterName = "@ID";
                 ParID.SqlDbType = SqlDbType.NVarChar;
                 ParID.Size = 10;
-                ParID.Value = this.UserName;
+                ParID.Value = UserName;
                 SqlCmd.Parameters.Add(ParID);
-
-                SqlParameter ParContraseña = new SqlParameter();
-                ParContraseña.ParameterName = "@contraseña";
-                ParContraseña.SqlDbType = SqlDbType.NVarChar;
-                ParContraseña.Size = 40;
-                ParContraseña.Value = this.Password;
-                SqlCmd.Parameters.Add(ParContraseña);
-
 
                 //Ejecutamos nuestro comando
 
@@ -298,32 +292,32 @@ namespace ProyectoBDI___SisVent.datos
                 //Establecer el Comando
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "validaUser";
+                SqlCmd.CommandText = "Validar_Usuario";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 // Parámetros del Procedimiento Almacenado
 
                 SqlParameter ParID = new SqlParameter();
-                ParID.ParameterName = "@user";
+                ParID.ParameterName = "@Usuario";
                 ParID.SqlDbType = SqlDbType.VarChar;
-                ParID.Size = 35;
+                ParID.Size = 500;
                 ParID.Value = User;
                 SqlCmd.Parameters.Add(ParID);
 
                 SqlParameter ParContraseña = new SqlParameter();
-                ParContraseña.ParameterName = "@password";
+                ParContraseña.ParameterName = "@Contraseña";
                 ParContraseña.SqlDbType = SqlDbType.VarChar;
-                ParContraseña.Size = 40;
+                ParContraseña.Size = 150;
                 ParContraseña.Value = Pass;
                 SqlCmd.Parameters.Add(ParContraseña);
                 //Asignar valor retornado del procedimiento almacenado en un datatable
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(dt);
                 //Ejecutamos nuestro comando
-                if (SqlCmd.ExecuteNonQuery() == 1)
-                    new popup("Cuenta eliminada correctamente", popup.AlertType.check);
-                else
-                    new popup("Cuenta no eliminada", popup.AlertType.error); ;
+                //if (SqlCmd.ExecuteNonQuery() == 1)
+                //    new popup("Cuenta eliminada correctamente", popup.AlertType.check);
+                //else
+                //    new popup("Cuenta no eliminada", popup.AlertType.error); ;
             }
             catch (Exception ex)
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoBDI___SisVent.data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -60,6 +61,32 @@ namespace ProyectoBDI___SisVent.vista
         private void vistaProductosInhabilitados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             new productoForm(int.Parse(vistaProductosInhabilitados.Rows[e.RowIndex].Cells[0].Value.ToString())).ShowDialog();
+        }
+
+        private void txtBuscarCategoria_OnTextChange(object sender, EventArgs e)
+        {
+            if (mostrarInhabilitados.Checked)
+            {
+                if (txtBuscarCategoria.text == "")
+                    vistaCategorias.DataSource = new Busqueda().MostrarCategoria(0);
+                else
+                    vistaCategorias.DataSource = new Busqueda().BusquedaCategoria(txtBuscarCategoria.text, 0);
+            }
+            else
+            {
+                if (txtBuscarCategoria.text == "")
+                    vistaCategorias.DataSource = new Busqueda().MostrarCategoria(1);
+                else
+                    vistaCategorias.DataSource = new Busqueda().BusquedaCategoria(txtBuscarCategoria.text, 1);
+            }
+        }
+
+        private void txtBuscarProductoInhabilitado_OnTextChange(object sender, EventArgs e)
+        {
+            if (txtBuscarProductoInhabilitado.text == "")
+                vistaProductosInhabilitados.DataSource = new Busqueda().MostrarProductosDeshabilitados();
+            else
+                vistaProductosInhabilitados.DataSource = new Busqueda().BusquedaProductosDeshabilitados(txtBuscarProductoInhabilitado.text, 0);
         }
     }
 }

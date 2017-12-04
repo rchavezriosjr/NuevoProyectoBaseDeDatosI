@@ -41,7 +41,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.erraseButton = new Bunifu.Framework.UI.BunifuImageButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.vistaUsuarios = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new Bunifu.Framework.UI.BunifuTextbox();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
@@ -70,7 +70,7 @@
             this.tabUsuarios.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erraseButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaUsuarios)).BeginInit();
             this.tabInformacion.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -138,7 +138,7 @@
             this.tabUsuarios.Controls.Add(this.agregarButton);
             this.tabUsuarios.Controls.Add(this.panel3);
             this.tabUsuarios.Controls.Add(this.erraseButton);
-            this.tabUsuarios.Controls.Add(this.dataGridView1);
+            this.tabUsuarios.Controls.Add(this.vistaUsuarios);
             this.tabUsuarios.Controls.Add(this.txtBuscar);
             this.tabUsuarios.Location = new System.Drawing.Point(139, 4);
             this.tabUsuarios.Name = "tabUsuarios";
@@ -215,19 +215,21 @@
             this.erraseButton.TabStop = false;
             this.erraseButton.Zoom = 10;
             // 
-            // dataGridView1
+            // vistaUsuarios
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
-            this.dataGridView1.Location = new System.Drawing.Point(105, 144);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(596, 376);
-            this.dataGridView1.TabIndex = 23;
+            this.vistaUsuarios.AllowUserToAddRows = false;
+            this.vistaUsuarios.AllowUserToDeleteRows = false;
+            this.vistaUsuarios.BackgroundColor = System.Drawing.Color.White;
+            this.vistaUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.vistaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vistaUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
+            this.vistaUsuarios.Location = new System.Drawing.Point(105, 144);
+            this.vistaUsuarios.MultiSelect = false;
+            this.vistaUsuarios.Name = "vistaUsuarios";
+            this.vistaUsuarios.ReadOnly = true;
+            this.vistaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.vistaUsuarios.Size = new System.Drawing.Size(596, 376);
+            this.vistaUsuarios.TabIndex = 23;
             // 
             // txtBuscar
             // 
@@ -241,6 +243,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(379, 40);
             this.txtBuscar.TabIndex = 22;
             this.txtBuscar.text = "";
+            this.txtBuscar.OnTextChange += new System.EventHandler(this.txtBuscar_OnTextChange);
             // 
             // tabInformacion
             // 
@@ -258,7 +261,7 @@
             // 
             this.bunifuCards1.BackColor = System.Drawing.Color.White;
             this.bunifuCards1.BorderRadius = 5;
-            this.bunifuCards1.BottomSahddow = true;
+            this.bunifuCards1.BottomSahddow = false;
             this.bunifuCards1.color = System.Drawing.Color.White;
             this.bunifuCards1.Controls.Add(this.panel8);
             this.bunifuCards1.Controls.Add(this.panelGeneral);
@@ -267,7 +270,7 @@
             this.bunifuCards1.LeftSahddow = false;
             this.bunifuCards1.Location = new System.Drawing.Point(75, 59);
             this.bunifuCards1.Name = "bunifuCards1";
-            this.bunifuCards1.RightSahddow = true;
+            this.bunifuCards1.RightSahddow = false;
             this.bunifuCards1.ShadowDepth = 25;
             this.bunifuCards1.Size = new System.Drawing.Size(657, 539);
             this.bunifuCards1.TabIndex = 9;
@@ -498,7 +501,7 @@
             this.tabUsuarios.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.erraseButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaUsuarios)).EndInit();
             this.tabInformacion.ResumeLayout(false);
             this.bunifuCards1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -528,7 +531,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuImageButton erraseButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView vistaUsuarios;
         private Bunifu.Framework.UI.BunifuTextbox txtBuscar;
         private System.Windows.Forms.TabPage tabInformacion;
         private System.Windows.Forms.Panel panel4;

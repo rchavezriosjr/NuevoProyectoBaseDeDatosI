@@ -53,9 +53,7 @@ namespace ProyectoBDI___SisVent.vista
 
         public void CargarProveedores()
         {
-            DataSet ds = new DataSet();
-            ds = lp.GetProveedores();
-            vistaProveedores.DataSource = ds.Tables[0];
+            vistaProveedores.DataSource = new Busqueda().MostrarProveedores();
         }
 
         private void agregarButton_Click(object sender, EventArgs e)
@@ -78,6 +76,14 @@ namespace ProyectoBDI___SisVent.vista
         private void vistaProveedores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             new proveedorForm(int.Parse(vistaProveedores.Rows[e.RowIndex].Cells[0].Value.ToString())).ShowDialog();
+        }
+
+        private void txtBuscar_OnTextChange(object sender, EventArgs e)
+        {
+            if (txtBuscar.text == "")
+                vistaProveedores.DataSource = new Busqueda().MostrarProveedores();
+            else
+                vistaProveedores.DataSource = new Busqueda().BusquedaProveedor(txtBuscar.text, metodoBusqueda.SelectedIndex);
         }
     }
 }

@@ -203,6 +203,7 @@
             this.txtBuscarCategoria.Size = new System.Drawing.Size(200, 35);
             this.txtBuscarCategoria.TabIndex = 0;
             this.txtBuscarCategoria.text = "";
+            this.txtBuscarCategoria.OnTextChange += new System.EventHandler(this.txtBuscarCategoria_OnTextChange);
             // 
             // tabPage2
             // 
@@ -246,6 +247,7 @@
             this.txtBuscarProductoInhabilitado.Size = new System.Drawing.Size(200, 35);
             this.txtBuscarProductoInhabilitado.TabIndex = 7;
             this.txtBuscarProductoInhabilitado.text = "";
+            this.txtBuscarProductoInhabilitado.OnTextChange += new System.EventHandler(this.txtBuscarProductoInhabilitado_OnTextChange);
             // 
             // avanzadoForm
             // 

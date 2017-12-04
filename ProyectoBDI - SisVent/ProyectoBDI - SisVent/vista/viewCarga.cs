@@ -11,9 +11,11 @@ namespace ProyectoBDI___SisVent
         List<string> txt = new List<string>();
         int pos = 0;
         bool c = false;
-        public viewCarga(type t)
+        private string username;
+        public viewCarga(type t, string id)
         {
             InitializeComponent();
+            username = id;
 
             color.Add(Color.MediumSpringGreen);
             color.Add(Color.FromArgb(78,205,196));
@@ -114,8 +116,8 @@ namespace ProyectoBDI___SisVent
             else
             {
                 login l = new login();
-                //home h = new home();
-                //h.Show();
+                new home(username).Show();
+
                 this.Close();
             }
 

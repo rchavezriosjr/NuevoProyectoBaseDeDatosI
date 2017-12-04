@@ -52,12 +52,9 @@ namespace ProyectoBDI___SisVent.vista
         );
         private void CargarProductos()
         {
-            DataSet ds = new DataSet();
-
             try
             {
-                ds = lp.GetProductos();
-                vistaProveedores.DataSource = ds.Tables[0];
+                vistaProductos.DataSource = new Busqueda().MostrarProductos();
             }
             catch(Exception ex) { }
         }
@@ -73,13 +70,18 @@ namespace ProyectoBDI___SisVent.vista
             {
                 if (txtBuscar.text == "")
                     CargarProductos();
-                //else
-                    // aquí va el codigo del método de busqueda
+                else
+                    vistaProductos.DataSource = new Busqueda().BusquedaProductos(txtBuscar.text, metodoBusqueda.SelectedIndex);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar productos. " + ex.ToString());
             }
+        }
+
+        private void vistaProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new productoForm(int.Parse(vistaProductos.Rows[e.RowIndex].Cells[0].Value.ToString()));
         }
     }
 }

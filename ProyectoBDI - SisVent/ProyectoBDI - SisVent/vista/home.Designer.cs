@@ -482,6 +482,7 @@
             // menu
             // 
             this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
+            this.menu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menu.Image = ((System.Drawing.Image)(resources.GetObject("menu.Image")));
             this.menu.ImageActive = null;
             this.menu.Location = new System.Drawing.Point(2, 0);

@@ -41,7 +41,7 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelDatosCompra = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.resultadoProveedor = new System.Windows.Forms.DataGridView();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.fechaCompra = new Bunifu.Framework.UI.BunifuDatepicker();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -58,32 +58,35 @@
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.detalleCompra = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cancelarButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.guardarButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.ID_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.cancelarButton = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.guardarButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.borrarDetalle = new Bunifu.Framework.UI.BunifuImageButton();
             this.cantidadCompraProducto = new iTalk.iTalk_TextBox_Small();
             this.costoUnitarioProducto = new iTalk.iTalk_TextBox_Small();
             this.txtProducto = new iTalk.iTalk_TextBox_Small();
-            this.iTalk_TextBox_Small1 = new iTalk.iTalk_TextBox_Small();
+            this.txtTotalCompra = new iTalk.iTalk_TextBox_Small();
             this.tipoPago = new iTalk.iTalk_ComboBox();
             this.txtCodigoCompra = new iTalk.iTalk_TextBox_Small();
             this.txtProveedor = new iTalk.iTalk_TextBox_Small();
+            this.fechaCompraLectura = new iTalk.iTalk_TextBox_Small();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editarButton)).BeginInit();
             this.panelDatosCompra.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resultadoProveedor)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelDatosDetalleCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vistaProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleCompra)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.borrarDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -109,6 +112,7 @@
             this.editarButton.TabIndex = 5;
             this.editarButton.TabStop = false;
             this.editarButton.Zoom = 10;
+            this.editarButton.Click += new System.EventHandler(this.editarButton_Click);
             // 
             // bunifuCustomLabel1
             // 
@@ -125,10 +129,9 @@
             // 
             this.panelDatosCompra.BackColor = System.Drawing.Color.White;
             this.panelDatosCompra.Controls.Add(this.bunifuCustomLabel7);
-            this.panelDatosCompra.Controls.Add(this.iTalk_TextBox_Small1);
-            this.panelDatosCompra.Controls.Add(this.dataGridView1);
+            this.panelDatosCompra.Controls.Add(this.txtTotalCompra);
+            this.panelDatosCompra.Controls.Add(this.resultadoProveedor);
             this.panelDatosCompra.Controls.Add(this.bunifuCustomLabel6);
-            this.panelDatosCompra.Controls.Add(this.fechaCompra);
             this.panelDatosCompra.Controls.Add(this.bunifuCustomLabel5);
             this.panelDatosCompra.Controls.Add(this.tipoPago);
             this.panelDatosCompra.Controls.Add(this.bunifuCustomLabel4);
@@ -136,6 +139,8 @@
             this.panelDatosCompra.Controls.Add(this.bunifuCustomLabel3);
             this.panelDatosCompra.Controls.Add(this.panel2);
             this.panelDatosCompra.Controls.Add(this.txtProveedor);
+            this.panelDatosCompra.Controls.Add(this.fechaCompra);
+            this.panelDatosCompra.Controls.Add(this.fechaCompraLectura);
             this.panelDatosCompra.Location = new System.Drawing.Point(20, 81);
             this.panelDatosCompra.Name = "panelDatosCompra";
             this.panelDatosCompra.Size = new System.Drawing.Size(640, 161);
@@ -151,22 +156,23 @@
             this.bunifuCustomLabel7.TabIndex = 12;
             this.bunifuCustomLabel7.Text = "Total compra";
             // 
-            // dataGridView1
+            // resultadoProveedor
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
-            this.dataGridView1.Location = new System.Drawing.Point(100, 166);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(485, 150);
-            this.dataGridView1.TabIndex = 10;
+            this.resultadoProveedor.BackgroundColor = System.Drawing.Color.White;
+            this.resultadoProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.resultadoProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.resultadoProveedor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
+            this.resultadoProveedor.Location = new System.Drawing.Point(100, 166);
+            this.resultadoProveedor.Name = "resultadoProveedor";
+            this.resultadoProveedor.Size = new System.Drawing.Size(485, 150);
+            this.resultadoProveedor.TabIndex = 10;
+            this.resultadoProveedor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.resultadoProveedor_CellDoubleClick);
             // 
             // bunifuCustomLabel6
             // 
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(207, 105);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(207, 103);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(75, 13);
             this.bunifuCustomLabel6.TabIndex = 9;
@@ -178,12 +184,13 @@
             this.fechaCompra.BorderRadius = 7;
             this.fechaCompra.ForeColor = System.Drawing.Color.White;
             this.fechaCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaCompra.FormatCustom = null;
-            this.fechaCompra.Location = new System.Drawing.Point(200, 121);
+            this.fechaCompra.FormatCustom = "dd/mm/yyyy";
+            this.fechaCompra.Location = new System.Drawing.Point(200, 119);
             this.fechaCompra.Name = "fechaCompra";
-            this.fechaCompra.Size = new System.Drawing.Size(178, 26);
+            this.fechaCompra.Size = new System.Drawing.Size(178, 28);
             this.fechaCompra.TabIndex = 8;
             this.fechaCompra.Value = new System.DateTime(2017, 11, 24, 15, 30, 34, 680);
+            this.fechaCompra.onValueChanged += new System.EventHandler(this.fechaCompra_onValueChanged);
             // 
             // bunifuCustomLabel5
             // 
@@ -239,9 +246,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.panelDatosDetalleCompra);
             this.panel3.Controls.Add(this.detalleCompra);
             this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.panelDatosDetalleCompra);
             this.panel3.Location = new System.Drawing.Point(20, 266);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(640, 360);
@@ -259,7 +266,7 @@
             this.panelDatosDetalleCompra.Controls.Add(this.bunifuCustomLabel8);
             this.panelDatosDetalleCompra.Controls.Add(this.txtProducto);
             this.panelDatosDetalleCompra.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDatosDetalleCompra.Location = new System.Drawing.Point(0, 25);
+            this.panelDatosDetalleCompra.Location = new System.Drawing.Point(0, 0);
             this.panelDatosDetalleCompra.Name = "panelDatosDetalleCompra";
             this.panelDatosDetalleCompra.Size = new System.Drawing.Size(640, 100);
             this.panelDatosDetalleCompra.TabIndex = 11;
@@ -300,6 +307,7 @@
             this.vistaProducto.Name = "vistaProducto";
             this.vistaProducto.Size = new System.Drawing.Size(485, 150);
             this.vistaProducto.TabIndex = 12;
+            this.vistaProducto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vistaProducto_CellDoubleClick);
             // 
             // agregarProductoDetalle
             // 
@@ -325,6 +333,7 @@
             this.agregarProductoDetalle.Size = new System.Drawing.Size(100, 35);
             this.agregarProductoDetalle.TabIndex = 11;
             this.agregarProductoDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.agregarProductoDetalle.Click += new System.EventHandler(this.agregarProductoDetalle_Click);
             // 
             // bunifuCustomLabel10
             // 
@@ -379,63 +388,26 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.detalleCompra.DefaultCellStyle = dataGridViewCellStyle7;
-            this.detalleCompra.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.detalleCompra.Dock = System.Windows.Forms.DockStyle.Fill;
             this.detalleCompra.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
-            this.detalleCompra.Location = new System.Drawing.Point(0, 131);
+            this.detalleCompra.Location = new System.Drawing.Point(0, 125);
+            this.detalleCompra.MultiSelect = false;
             this.detalleCompra.Name = "detalleCompra";
-            this.detalleCompra.Size = new System.Drawing.Size(640, 229);
+            this.detalleCompra.ReadOnly = true;
+            this.detalleCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.detalleCompra.Size = new System.Drawing.Size(640, 235);
             this.detalleCompra.TabIndex = 10;
-            // 
-            // ID_Producto
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(184)))), ((int)(((byte)(131)))));
-            this.ID_Producto.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ID_Producto.HeaderText = "ID Producto";
-            this.ID_Producto.Name = "ID_Producto";
-            this.ID_Producto.Width = 90;
-            // 
-            // nombreProducto
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(184)))), ((int)(((byte)(131)))));
-            this.nombreProducto.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nombreProducto.HeaderText = "Producto";
-            this.nombreProducto.Name = "nombreProducto";
-            this.nombreProducto.Width = 208;
-            // 
-            // cantidadProducto
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(184)))), ((int)(((byte)(131)))));
-            this.cantidadProducto.DefaultCellStyle = dataGridViewCellStyle4;
-            this.cantidadProducto.HeaderText = "Cantidad";
-            this.cantidadProducto.Name = "cantidadProducto";
-            // 
-            // costoProducto
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(184)))), ((int)(((byte)(131)))));
-            this.costoProducto.DefaultCellStyle = dataGridViewCellStyle5;
-            this.costoProducto.HeaderText = "Costo unitario";
-            this.costoProducto.Name = "costoProducto";
-            // 
-            // costoTotal
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(184)))), ((int)(((byte)(131)))));
-            this.costoTotal.DefaultCellStyle = dataGridViewCellStyle6;
-            this.costoTotal.HeaderText = "Total";
-            this.costoTotal.Name = "costoTotal";
+            this.detalleCompra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.detalleCompra_CellClick);
+            this.detalleCompra.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.detalleCompra_CellDoubleClick);
+            this.detalleCompra.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.detalleCompra_RowsRemoved);
+            this.detalleCompra.Leave += new System.EventHandler(this.detalleCompra_Leave);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.bunifuCustomLabel13);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Location = new System.Drawing.Point(0, 100);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(640, 25);
             this.panel4.TabIndex = 2;
@@ -501,6 +473,71 @@
             this.guardarButton.Size = new System.Drawing.Size(100, 40);
             this.guardarButton.TabIndex = 3;
             this.guardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.guardarButton.Click += new System.EventHandler(this.guardarButton_Click);
+            // 
+            // ID_Producto
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(184)))), ((int)(((byte)(131)))));
+            this.ID_Producto.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ID_Producto.FillWeight = 90F;
+            this.ID_Producto.HeaderText = "ID Producto";
+            this.ID_Producto.Name = "ID_Producto";
+            this.ID_Producto.ReadOnly = true;
+            this.ID_Producto.Width = 90;
+            // 
+            // nombreProducto
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(184)))), ((int)(((byte)(131)))));
+            this.nombreProducto.DefaultCellStyle = dataGridViewCellStyle3;
+            this.nombreProducto.HeaderText = "Producto";
+            this.nombreProducto.Name = "nombreProducto";
+            this.nombreProducto.ReadOnly = true;
+            this.nombreProducto.Width = 208;
+            // 
+            // cantidadProducto
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(184)))), ((int)(((byte)(131)))));
+            this.cantidadProducto.DefaultCellStyle = dataGridViewCellStyle4;
+            this.cantidadProducto.HeaderText = "Cantidad";
+            this.cantidadProducto.Name = "cantidadProducto";
+            this.cantidadProducto.ReadOnly = true;
+            // 
+            // costoProducto
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(184)))), ((int)(((byte)(131)))));
+            this.costoProducto.DefaultCellStyle = dataGridViewCellStyle5;
+            this.costoProducto.HeaderText = "Costo unitario";
+            this.costoProducto.Name = "costoProducto";
+            this.costoProducto.ReadOnly = true;
+            // 
+            // costoTotal
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(184)))), ((int)(((byte)(131)))));
+            this.costoTotal.DefaultCellStyle = dataGridViewCellStyle6;
+            this.costoTotal.HeaderText = "Total";
+            this.costoTotal.Name = "costoTotal";
+            this.costoTotal.ReadOnly = true;
+            // 
+            // borrarDetalle
+            // 
+            this.borrarDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
+            this.borrarDetalle.Image = ((System.Drawing.Image)(resources.GetObject("borrarDetalle.Image")));
+            this.borrarDetalle.ImageActive = null;
+            this.borrarDetalle.Location = new System.Drawing.Point(338, 652);
+            this.borrarDetalle.Name = "borrarDetalle";
+            this.borrarDetalle.Size = new System.Drawing.Size(30, 30);
+            this.borrarDetalle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.borrarDetalle.TabIndex = 5;
+            this.borrarDetalle.TabStop = false;
+            this.borrarDetalle.Zoom = 10;
+            this.borrarDetalle.Click += new System.EventHandler(this.borrarDetalle_Click);
             // 
             // cantidadCompraProducto
             // 
@@ -547,22 +584,23 @@
             this.txtProducto.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtProducto.UseSystemPasswordChar = false;
             this.txtProducto.TextChanged += new System.EventHandler(this.txtProducto_TextChanged);
+            this.txtProducto.Leave += new System.EventHandler(this.txtProducto_Leave);
             // 
-            // iTalk_TextBox_Small1
+            // txtTotalCompra
             // 
-            this.iTalk_TextBox_Small1.BackColor = System.Drawing.Color.White;
-            this.iTalk_TextBox_Small1.Enabled = false;
-            this.iTalk_TextBox_Small1.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.iTalk_TextBox_Small1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
-            this.iTalk_TextBox_Small1.Location = new System.Drawing.Point(496, 119);
-            this.iTalk_TextBox_Small1.MaxLength = 32767;
-            this.iTalk_TextBox_Small1.Multiline = false;
-            this.iTalk_TextBox_Small1.Name = "iTalk_TextBox_Small1";
-            this.iTalk_TextBox_Small1.ReadOnly = false;
-            this.iTalk_TextBox_Small1.Size = new System.Drawing.Size(137, 28);
-            this.iTalk_TextBox_Small1.TabIndex = 11;
-            this.iTalk_TextBox_Small1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.iTalk_TextBox_Small1.UseSystemPasswordChar = false;
+            this.txtTotalCompra.BackColor = System.Drawing.Color.White;
+            this.txtTotalCompra.Enabled = false;
+            this.txtTotalCompra.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtTotalCompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
+            this.txtTotalCompra.Location = new System.Drawing.Point(496, 119);
+            this.txtTotalCompra.MaxLength = 32767;
+            this.txtTotalCompra.Multiline = false;
+            this.txtTotalCompra.Name = "txtTotalCompra";
+            this.txtTotalCompra.ReadOnly = false;
+            this.txtTotalCompra.Size = new System.Drawing.Size(137, 28);
+            this.txtTotalCompra.TabIndex = 11;
+            this.txtTotalCompra.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTotalCompra.UseSystemPasswordChar = false;
             // 
             // tipoPago
             // 
@@ -619,11 +657,28 @@
             this.txtProveedor.TextChanged += new System.EventHandler(this.txtProveedor_TextChanged);
             this.txtProveedor.Leave += new System.EventHandler(this.txtProveedor_Leave);
             // 
+            // fechaCompraLectura
+            // 
+            this.fechaCompraLectura.BackColor = System.Drawing.Color.White;
+            this.fechaCompraLectura.Enabled = false;
+            this.fechaCompraLectura.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.fechaCompraLectura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(149)))), ((int)(((byte)(69)))));
+            this.fechaCompraLectura.Location = new System.Drawing.Point(200, 119);
+            this.fechaCompraLectura.MaxLength = 32767;
+            this.fechaCompraLectura.Multiline = false;
+            this.fechaCompraLectura.Name = "fechaCompraLectura";
+            this.fechaCompraLectura.ReadOnly = false;
+            this.fechaCompraLectura.Size = new System.Drawing.Size(178, 28);
+            this.fechaCompraLectura.TabIndex = 13;
+            this.fechaCompraLectura.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.fechaCompraLectura.UseSystemPasswordChar = false;
+            // 
             // compraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 700);
+            this.Controls.Add(this.borrarDetalle);
             this.Controls.Add(this.cancelarButton);
             this.Controls.Add(this.guardarButton);
             this.Controls.Add(this.panel3);
@@ -639,7 +694,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.editarButton)).EndInit();
             this.panelDatosCompra.ResumeLayout(false);
             this.panelDatosCompra.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resultadoProveedor)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -649,6 +704,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.detalleCompra)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.borrarDetalle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -667,8 +723,8 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private iTalk.iTalk_TextBox_Small txtCodigoCompra;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
-        private iTalk.iTalk_TextBox_Small iTalk_TextBox_Small1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private iTalk.iTalk_TextBox_Small txtTotalCompra;
+        private System.Windows.Forms.DataGridView resultadoProveedor;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private Bunifu.Framework.UI.BunifuDatepicker fechaCompra;
         private System.Windows.Forms.Panel panel3;
@@ -687,11 +743,13 @@
         private Bunifu.Framework.UI.BunifuThinButton2 cancelarButton;
         private iTalk.iTalk_TextBox_Small cantidadCompraProducto;
         private Bunifu.Framework.UI.BunifuThinButton2 crearProducto;
+        private Bunifu.Framework.UI.BunifuImageButton editarButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn costoProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn costoTotal;
-        private Bunifu.Framework.UI.BunifuImageButton editarButton;
+        private Bunifu.Framework.UI.BunifuImageButton borrarDetalle;
+        private iTalk.iTalk_TextBox_Small fechaCompraLectura;
     }
 }

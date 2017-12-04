@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using ProyectoBDI___SisVent.data;
 
 namespace ProyectoBDI___SisVent.vista
 {
@@ -44,6 +45,7 @@ namespace ProyectoBDI___SisVent.vista
         private void compras_Load(object sender, EventArgs e)
         {
             CircleBorder();
+            cargarVentas();
         }
 
         private void agregarButton_Click(object sender, EventArgs e)
@@ -55,15 +57,24 @@ namespace ProyectoBDI___SisVent.vista
         {
             try
             {
-                //if (txtBuscar.text == "")
-                    // codigo para cargar las ventas
-                //else
-                // aquí va el codigo del método de busqueda
+                if (txtBuscar.text == "")
+                    vistaVentas.DataSource = new Busqueda().MostrarVentas();
+                else
+                    vistaVentas.DataSource = new Busqueda().BusquedaVentas(txtBuscar.text, metodoBusqueda.SelectedIndex);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar productos. " + ex.ToString());
             }
+        }
+
+        public void cargarVentas()
+        {
+            try
+            {
+                vistaVentas.DataSource = new Busqueda().MostrarVentas();
+            }
+            catch(Exception ex) { }
         }
     }
 }

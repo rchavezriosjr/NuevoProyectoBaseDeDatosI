@@ -108,6 +108,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(350, 40);
             this.txtBuscar.TabIndex = 4;
             this.txtBuscar.text = "";
+            this.txtBuscar.OnTextChange += new System.EventHandler(this.txtBuscar_OnTextChange);
             // 
             // vistaProveedores
             // 

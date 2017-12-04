@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,10 +26,73 @@ namespace ProyectoBDI___SisVent.vista
         ventas ventas = new ventas();
         adminCuentas adminCuentas = new adminCuentas();
 
-        public home()
+        string idvalue;
+
+        public home(string id)
         {
             InitializeComponent();
+            idvalue = id;
             navbar.Width = 0;
+        }
+
+        private void setInfo(string id){
+            Conexión conexion = new Conexión();
+            DataTable data = new DataTable("Usuario");
+            using (SqlConnection cn = new SqlConnection(Conexión.Cn))
+            {
+                try
+                {
+                    cn.Open();
+
+                    SqlCommand cmd = new SqlCommand(
+                        "select ID, Nombre, FotoPerfil Apellido from Usuario where ID = " + id,
+                        cn
+                        );
+
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
+                    SqlDat.Fill(data);
+
+                    DataRow row = data.Rows[0];
+                    idUsuario.Text = row["ID"].ToString();
+                    nameUser.Text = row["Nombre"].ToString()+" "+row["Apellido"].ToString();
+                    userPicture.Image = obtenerFotoPerfil(id);
+                }
+                catch (Exception ex)
+                {
+                    new popup("Error al mostrar información", popup.AlertType.error);
+                    //this.Close();
+                }
+            }
+        }
+
+        private Image obtenerFotoPerfil(string id)
+        {
+            Conexión conex = new Conexión();
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conexión.Cn))
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(
+                        "select FotoPerfil from Usuario where ID = " + id,
+                        cn
+                        );
+
+                    byte[] arrImg = (byte[])cmd.ExecuteScalar();
+                    cn.Close();
+
+                    MemoryStream ms = new MemoryStream(arrImg);
+                    Image img = Image.FromStream(ms);
+
+                    ms.Close();
+
+                    return img;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         // evt carga del form
@@ -43,6 +108,7 @@ namespace ProyectoBDI___SisVent.vista
             this.contenedor.Controls.Add(ventas);
             this.contenedor.Controls.Add(adminCuentas);
 
+            setInfo(idvalue);
             inicio.BringToFront();
             timerTab.Start();
         }
