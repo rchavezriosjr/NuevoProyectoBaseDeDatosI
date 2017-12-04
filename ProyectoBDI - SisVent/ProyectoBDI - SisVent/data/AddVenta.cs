@@ -77,6 +77,7 @@ namespace ProyectoBDI___SisVent.data
                 Tot.SqlDbType = SqlDbType.Decimal;
                 Tot.Value = vta.MontoTotal;
                 cmd.Parameters.Add(Tot);
+<<<<<<< HEAD
             //SqlConnection Con = new SqlConnection();
             //try
             //{
@@ -113,6 +114,10 @@ namespace ProyectoBDI___SisVent.data
 
 
             cmd.ExecuteNonQuery();
+=======
+
+                cmd.ExecuteNonQuery();
+>>>>>>> a84072ab22f05bd1008a47995ef72e0c5dd0b94c
             }
             catch (Exception ex)
             {

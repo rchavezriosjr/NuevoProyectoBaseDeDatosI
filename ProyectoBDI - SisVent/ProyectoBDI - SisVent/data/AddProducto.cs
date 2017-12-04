@@ -12,7 +12,6 @@ namespace ProyectoBDI___SisVent.data
     {
         public void Insertar(Producto Prod)
         {
-<<<<<<< HEAD
             //SqlConnection Con = new SqlConnection();
             //try
             //{
@@ -109,7 +108,6 @@ namespace ProyectoBDI___SisVent.data
             //{
             //    if (Con.State == ConnectionState.Open) Con.Close();
             //}
-=======
             SqlConnection Con = new SqlConnection();
             try
             {
@@ -170,7 +168,6 @@ namespace ProyectoBDI___SisVent.data
             {
                 if (Con.State == ConnectionState.Open) Con.Close();
             }
->>>>>>> 8ce7c2861ccfce7989db8e030881c11aecb38b8b
         }
 
         public void Actualizar(Producto Prod)
