@@ -16,9 +16,12 @@ namespace ProyectoBDI___SisVent.vista
     {
         Region rg = new Region();
         Region rg2 = new Region();
+        DataCategory dc = new DataCategory();
         public avanzadoForm()
         {
+            
             InitializeComponent();
+            vistaCategorias.DataSource = new DataCategory().ShowCategory(1);
             CircleBorder();
         }
 
@@ -68,16 +71,16 @@ namespace ProyectoBDI___SisVent.vista
             if (mostrarInhabilitados.Checked)
             {
                 if (txtBuscarCategoria.text == "")
-                    vistaCategorias.DataSource = new Busqueda().MostrarCategoria(0);
+                { vistaCategorias.DataSource =  dc.ShowCategory(0); }
                 else
-                    vistaCategorias.DataSource = new Busqueda().BusquedaCategoria(txtBuscarCategoria.text, 0);
+                { vistaCategorias.DataSource = dc.SearchCategory(txtBuscarCategoria.text, 0); }
             }
             else
             {
                 if (txtBuscarCategoria.text == "")
-                    vistaCategorias.DataSource = new Busqueda().MostrarCategoria(1);
+                { vistaCategorias.DataSource = dc.ShowCategory(1); }
                 else
-                    vistaCategorias.DataSource = new Busqueda().BusquedaCategoria(txtBuscarCategoria.text, 1);
+                { vistaCategorias.DataSource = dc.SearchCategory(txtBuscarCategoria.text, 1); }
             }
         }
 

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProyectoBDI___SisVent.data
 {
@@ -18,20 +19,18 @@ namespace ProyectoBDI___SisVent.data
             {
                 using (SqlConnection cn = new SqlConnection(Conexión.Cn))
                 {
-                    cn.Open();
                     SqlCommand cmd = new SqlCommand(
-                        "select * from Usuario where Nombre like %"+ value+ "% or ID like %" + value + "%",
+                        "select * from Usuario where Nombre like "+ value+ " or ID like " + value,
                         cn
                         );
 
                     SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
                     SqlDat.Fill(dt);
-
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                MessageBox.Show("Problemas: " + ex.ToString());
                 dt = null;
             }
 

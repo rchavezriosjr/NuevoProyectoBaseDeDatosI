@@ -22,6 +22,16 @@ namespace ProyectoBDI___SisVent.vista
 
         public clientes()
         {
+            try
+            {
+                vistaClientes.DataSource = new Busqueda().MostrarClientes();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
             InitializeComponent();
         }
 

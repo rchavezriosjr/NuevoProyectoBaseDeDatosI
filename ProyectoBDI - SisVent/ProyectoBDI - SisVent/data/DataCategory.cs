@@ -64,7 +64,7 @@ namespace ProyectoBDI___SisVent.data
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "Insertar_Categoria";
+                cmd.CommandText = "Actualizar_Categoria";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ID = new SqlParameter();
@@ -122,6 +122,34 @@ namespace ProyectoBDI___SisVent.data
                 ID.Size = 100;
                 ID.Value = valor;
                 cmd.Parameters.Add(ID);
+
+                SqlParameter Key = new SqlParameter();
+                Key.ParameterName = "@estado";
+                Key.SqlDbType = SqlDbType.Int;
+                Key.Value = state;
+                cmd.Parameters.Add(Key);
+
+                SqlDataAdapter Data = new SqlDataAdapter(cmd);
+                Data.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
+                dt = null;
+            }
+            return dt;
+        }
+        public DataSet ShowCategory(int state)
+        {
+            DataSet dt = new DataSet();
+            SqlConnection Con = new SqlConnection();
+            try
+            {
+                Con.ConnectionString = Conexión.Cn;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Con;
+                cmd.CommandText = "Mostrar_Categorias";
+                cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter Key = new SqlParameter();
                 Key.ParameterName = "@estado";

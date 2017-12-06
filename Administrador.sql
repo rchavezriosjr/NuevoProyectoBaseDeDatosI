@@ -1,4 +1,4 @@
-﻿create database Administrador
+create database Administrador
 	go
 use Administrador
 	go
@@ -182,10 +182,10 @@ end
 	go
 
 create procedure [Insertar_Proveedor](
-	@Nombre varchar(200),
-	@Domicilio varchar(200),
-	@Telefono varchar(200),
-	@Email varchar(200)
+	@Nombre nvarchar(200),
+	@Domicilio nvarchar(200),
+	@Telefono nvarchar(200),
+	@Email nvarchar(200)
 )
 as
 begin
@@ -631,7 +631,7 @@ create procedure [Busqueda_Productos](
 as
 begin
 	if @clave = 0
-		select * from Producto where (Nombre like '%'+@valor+'%' or ID like '%'+@valor+'%') and Estado = 1
+		select * from Producto where (Nombre like @valor or ID like '%'+@valor+'%') and Estado = 1
 	else
 		if @clave = 1
 			select * from Producto  where (CategoriaID like '%'+@valor+'%') and Estado = 1
@@ -712,6 +712,15 @@ begin
 end
 
 	go
+
+Create Procedure Mostrar_Categorias(@estado int)
+as
+begin
+if @estado=1
+Select * from Categoria where Estado=1
+else
+Select * from Categoria where Estado=0
+end
 
 create procedure [Mostar_Ventas]
 as
