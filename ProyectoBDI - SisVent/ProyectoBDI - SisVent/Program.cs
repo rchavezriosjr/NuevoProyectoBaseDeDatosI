@@ -17,7 +17,7 @@ namespace ProyectoBDI___SisVent
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new home(" "));
+            Application.Run(new home());
         }
     }
 }

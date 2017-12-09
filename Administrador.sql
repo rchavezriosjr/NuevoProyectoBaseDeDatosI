@@ -631,7 +631,7 @@ create procedure [Busqueda_Productos](
 as
 begin
 	if @clave = 0
-		select * from Producto where (Nombre like @valor or ID like '%'+@valor+'%') and Estado = 1
+		select * from Producto where (Nombre like '%'+@valor+'%' or ID like '%'+@valor+'%') and Estado = 1
 	else
 		if @clave = 1
 			select * from Producto  where (CategoriaID like '%'+@valor+'%') and Estado = 1

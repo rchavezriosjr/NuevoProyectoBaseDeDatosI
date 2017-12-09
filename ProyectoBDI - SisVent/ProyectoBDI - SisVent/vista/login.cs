@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoBDI___SisVent.datos;
+using ProyectoBDI___SisVent.Utilidades;
+using ProyectoBDI___SisVent.vista;
+using Transitions;
 
 namespace ProyectoBDI___SisVent
 {
     public partial class login : Form
     {
+        bool passvisible = false;
+        List<string> txt = new List<string>();
         public login()
         {
             InitializeComponent();
@@ -27,30 +32,19 @@ namespace ProyectoBDI___SisVent
 
         private void login_Load(object sender, EventArgs e)
         {
+            txt.Add("Iniciando");
+            txt.Add("Iniciando .");
+            txt.Add("Iniciando . .");
+            txt.Add("Iniciando . . .");
 
-            try {
-                Console.WriteLine("antes de cargar");
-                //Console.WriteLine(s.Cargar().getDatosUser().getUsers()[0].UserName);
-                Console.WriteLine("despues de cargar");
-
-                //Console.WriteLine("-- " + du.getUsers()[0].UserName + "  " + du.getUsers()[0].Password);
-
-            } catch(NullReferenceException nre){
-                new popup(nre.Message, popup.AlertType.error);
-            }
-            
-
+            loading.Height = 0;
+            roundborders();
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            loginDiag d = new loginDiag("¿Desea salir?", true, false, true);
-            d.ShowDialog();
-        }
-
-        private void password_Enter(object sender, EventArgs e)
-        {
-            
+            if (new loginDiag("¿ Desea salir ?", true, false, true).ShowDialog() == DialogResult.OK)
+                Environment.Exit(0);
         }
 
         private void username_KeyPress(object sender, KeyPressEventArgs e)
@@ -70,21 +64,21 @@ namespace ProyectoBDI___SisVent
 
         private void ingresar_Click(object sender, EventArgs e)
         {
+            showPreloader();   
+            //if (verifica())
+            //{
+            //    Console.WriteLine("entra");
+            //    new viewCarga(viewCarga.type.inicio, UsernameID);
 
-            if (verifica())
-            {
-                Console.WriteLine("entra");
-                new viewCarga(viewCarga.type.inicio, UsernameID);
-
-                this.Hide();
-                new popup("Bienvenido...", popup.AlertType.check);
-            }
-            else
-            {
-                //loginDiag d = new loginDiag("Error, usuario o contraseña incorrectos", false, true, false);
-                //d.Show();
-                new popup("Usuario o contraseña incorrectos", popup.AlertType.error);
-            }
+            //    this.Hide();
+            //    new popup("Bienvenido...", popup.AlertType.check);
+            //}
+            //else
+            //{
+            //    //loginDiag d = new loginDiag("Error, usuario o contraseña incorrectos", false, true, false);
+            //    //d.Show();
+            //    new popup("Usuario o contraseña incorrectos", popup.AlertType.error);
+            //}
         }
 
         private bool verifica()
@@ -112,7 +106,54 @@ namespace ProyectoBDI___SisVent
 
         private void password_OnValueChanged(object sender, EventArgs e)
         {
+            if (!passvisible)
+                password.isPassword = true;
+        }
+
+        int i = 0;
+        private void texto_Tick(object sender, EventArgs e)
+        {
+            label.Text = txt[i];
+
+            if (i < txt.Count - 1)
+                i++;
+            else
+                i = 0;
+        }
+
+        private void duracion_Tick(object sender, EventArgs e)
+        {
+            new home().Show();
+
+            duracion.Stop();
+            this.Hide();
+        }
+
+        private void showPreloader()
+        {
+            Transition.run(this, "Left", (this.Left + 185), new TransitionType_EaseInEaseOut(1000));
+            Transition.run(this, "Width", 370, new TransitionType_EaseInEaseOut(1200));
+            Transition.run(loading, "Height", 503, new TransitionType_EaseInEaseOut(1500));
+            texto.Start();
+            duracion.Start();
+        }
+
+        private void roundborders()
+        {
+            contentUser.Region = new region().RoundBorder(280, 35, 30);
+            contentPassword.Region = new region().RoundBorder(280, 35, 30);
+        }
+
+        private void viewpass_MouseDown(object sender, MouseEventArgs e)
+        {
+            password.isPassword = false;
+            passvisible = true;
+        }
+
+        private void viewpass_MouseUp(object sender, MouseEventArgs e)
+        {
             password.isPassword = true;
+            passvisible = false;
         }
     }
 }

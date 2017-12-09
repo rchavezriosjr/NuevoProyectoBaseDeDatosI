@@ -57,7 +57,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(390, 185);
+            this.panel1.Size = new System.Drawing.Size(390, 174);
             this.panel1.TabIndex = 2;
             // 
             // yes
@@ -78,7 +78,7 @@
             this.yes.IdleFillColor = System.Drawing.Color.SpringGreen;
             this.yes.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.yes.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.yes.Location = new System.Drawing.Point(23, 126);
+            this.yes.Location = new System.Drawing.Point(23, 108);
             this.yes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.yes.Name = "yes";
             this.yes.Size = new System.Drawing.Size(92, 45);
@@ -100,7 +100,7 @@
             this.mensaje.LineIdleColor = System.Drawing.Color.SeaGreen;
             this.mensaje.LineMouseHoverColor = System.Drawing.Color.SeaGreen;
             this.mensaje.LineThickness = 2;
-            this.mensaje.Location = new System.Drawing.Point(13, 38);
+            this.mensaje.Location = new System.Drawing.Point(13, 20);
             this.mensaje.Margin = new System.Windows.Forms.Padding(4);
             this.mensaje.Name = "mensaje";
             this.mensaje.Size = new System.Drawing.Size(364, 61);
@@ -126,7 +126,7 @@
             this.aceptar.IdleFillColor = System.Drawing.Color.SpringGreen;
             this.aceptar.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.aceptar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.aceptar.Location = new System.Drawing.Point(148, 126);
+            this.aceptar.Location = new System.Drawing.Point(148, 108);
             this.aceptar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aceptar.Name = "aceptar";
             this.aceptar.Size = new System.Drawing.Size(92, 45);
@@ -152,7 +152,7 @@
             this.no.IdleFillColor = System.Drawing.Color.SpringGreen;
             this.no.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.no.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.no.Location = new System.Drawing.Point(275, 126);
+            this.no.Location = new System.Drawing.Point(275, 108);
             this.no.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.no.Name = "no";
             this.no.Size = new System.Drawing.Size(92, 45);
@@ -173,7 +173,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Violet;
-            this.ClientSize = new System.Drawing.Size(390, 185);
+            this.ClientSize = new System.Drawing.Size(390, 174);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

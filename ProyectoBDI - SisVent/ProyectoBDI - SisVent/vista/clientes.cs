@@ -29,7 +29,7 @@ namespace ProyectoBDI___SisVent.vista
             catch (Exception)
             {
 
-                throw;
+                //throw;
             }
             
             InitializeComponent();

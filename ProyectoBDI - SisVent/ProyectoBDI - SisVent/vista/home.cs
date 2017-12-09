@@ -28,10 +28,9 @@ namespace ProyectoBDI___SisVent.vista
 
         private static string idvalue;
 
-        public home(string id)
+        public home()
         {
             InitializeComponent();
-            idvalue = id;
             navbar.Width = 0;
         }
 
@@ -106,7 +105,7 @@ namespace ProyectoBDI___SisVent.vista
             this.contenedor.Controls.Add(ventas);
             this.contenedor.Controls.Add(adminCuentas);
 
-            setInfo(idvalue);
+            //setInfo(idvalue);
             inicio.BringToFront();
             timerTab.Start();
         }
@@ -137,7 +136,8 @@ namespace ProyectoBDI___SisVent.vista
         // evt close button
         private void closeButton_Click(object sender, EventArgs e)
         {
-            new loginDiag("¿Desea salir?", true, false, true).ShowDialog();
+            if (new loginDiag("¿ Desea salir ?", true, false, true).ShowDialog() == DialogResult.OK)
+                Environment.Exit(0);
         }
 
 
@@ -224,7 +224,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "inicio";
                 inicio.BringToFront();
-                inicio.cargar();
+                //inicio.cargar();
             }
         }
 
@@ -297,6 +297,15 @@ namespace ProyectoBDI___SisVent.vista
         private void userPicture_Click(object sender, EventArgs e)
         {
             new Register(idUsuario.Text).ShowDialog();
+        }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            if(new loginDiag("¿ Cerrar sesión ?", true, false, true).ShowDialog() == DialogResult.OK)
+            {
+                new login().Show();
+                this.Hide();
+            }
         }
     }
 }

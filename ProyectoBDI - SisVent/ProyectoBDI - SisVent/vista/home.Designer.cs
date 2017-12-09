@@ -47,6 +47,7 @@
             this.VentasTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.productosTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.toppanel = new System.Windows.Forms.Panel();
+            this.logout = new Bunifu.Framework.UI.BunifuImageButton();
             this.minButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.closeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.menu = new Bunifu.Framework.UI.BunifuImageButton();
@@ -57,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.userPicture)).BeginInit();
             this.panel4.SuspendLayout();
             this.toppanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menu)).BeginInit();
@@ -273,6 +275,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.logout);
             this.panel1.Controls.Add(this.idUsuario);
             this.panel1.Controls.Add(this.nameUser);
             this.panel1.Controls.Add(this.userPicture);
@@ -449,19 +452,34 @@
             this.toppanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.toppanel_MouseMove);
             this.toppanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.toppanel_MouseUp);
             // 
+            // logout
+            // 
+            this.logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.logout.Image = ((System.Drawing.Image)(resources.GetObject("logout.Image")));
+            this.logout.ImageActive = null;
+            this.logout.Location = new System.Drawing.Point(0, 0);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(20, 20);
+            this.logout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logout.TabIndex = 5;
+            this.logout.TabStop = false;
+            this.logout.Zoom = 8;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
             // minButton
             // 
             this.minButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
             this.minButton.Image = ((System.Drawing.Image)(resources.GetObject("minButton.Image")));
             this.minButton.ImageActive = null;
-            this.minButton.Location = new System.Drawing.Point(658, 12);
+            this.minButton.Location = new System.Drawing.Point(652, 10);
             this.minButton.Name = "minButton";
-            this.minButton.Size = new System.Drawing.Size(25, 25);
-            this.minButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.minButton.Size = new System.Drawing.Size(30, 30);
+            this.minButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.minButton.TabIndex = 4;
             this.minButton.TabStop = false;
-            this.minButton.Zoom = 15;
+            this.minButton.Zoom = 5;
             this.minButton.Click += new System.EventHandler(this.minButton_Click);
             // 
             // closeButton
@@ -470,13 +488,13 @@
             this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
             this.closeButton.ImageActive = null;
-            this.closeButton.Location = new System.Drawing.Point(693, 12);
+            this.closeButton.Location = new System.Drawing.Point(687, 10);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(25, 25);
-            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.closeButton.Size = new System.Drawing.Size(30, 30);
+            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.closeButton.TabIndex = 3;
             this.closeButton.TabStop = false;
-            this.closeButton.Zoom = 15;
+            this.closeButton.Zoom = 5;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // menu
@@ -528,7 +546,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.toppanel.ResumeLayout(false);
-            this.toppanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menu)).EndInit();
@@ -560,5 +578,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton inicioTab;
         private System.Windows.Forms.Timer timerTab;
         private System.Windows.Forms.Panel contenedor;
+        private Bunifu.Framework.UI.BunifuImageButton logout;
     }
 }

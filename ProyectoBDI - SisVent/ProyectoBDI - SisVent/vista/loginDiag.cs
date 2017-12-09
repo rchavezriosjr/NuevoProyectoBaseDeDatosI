@@ -34,7 +34,8 @@ namespace ProyectoBDI___SisVent
 
         private void yes_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void aceptar_Click(object sender, EventArgs e)
@@ -44,6 +45,7 @@ namespace ProyectoBDI___SisVent
 
         private void no_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }

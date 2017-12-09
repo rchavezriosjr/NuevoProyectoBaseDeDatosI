@@ -61,6 +61,13 @@
     <Compile Include="data\DetalleCompra.cs" />
     <Compile Include="data\EditDetalleCompra.cs" />
     <Compile Include="data\ExtrasContadores.cs" />
+    <Compile Include="vista\login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\login.designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\region.cs" />
     <Compile Include="vista\adminCuentas.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -185,12 +192,6 @@
       <DependentUpon>inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="vista\italk_theme_-_c#.cs" />
-    <Compile Include="vista\login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="vista\login.designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
-    </Compile>
     <Compile Include="vista\loginDiag.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,12 +204,9 @@
     <Compile Include="vista\popup.designer.cs">
       <DependentUpon>popup.cs</DependentUpon>
     </Compile>
-    <Compile Include="vista\viewCarga.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="vista\viewCarga.designer.cs">
-      <DependentUpon>viewCarga.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="vista\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vista\adminCuentas.resx">
       <DependentUpon>adminCuentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,17 +268,11 @@
     <EmbeddedResource Include="vista\inicio.resx">
       <DependentUpon>inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vista\login.resx">
-      <DependentUpon>login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="vista\loginDiag.resx">
       <DependentUpon>loginDiag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\popup.resx">
       <DependentUpon>popup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="vista\viewCarga.resx">
-      <DependentUpon>viewCarga.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
