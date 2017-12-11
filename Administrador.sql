@@ -1,3 +1,5 @@
+/*  DESKTOP-6NVT70E  -> servidor Harold  */
+
 create database Administrador
 	go
 use Administrador
