@@ -126,6 +126,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "popup";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.popup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

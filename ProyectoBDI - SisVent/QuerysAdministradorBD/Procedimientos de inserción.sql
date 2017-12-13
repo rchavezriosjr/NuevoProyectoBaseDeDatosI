@@ -6,8 +6,8 @@ use Administrador
 	go
 
 	-- Usuario
-create procedure [Insertar_Usuario](
-	@ID varchar(10),
+alter procedure [Insertar_Usuario](
+	@ID varchar(15),
 	@Contraseña varchar(50),
 	@Nombre varchar(50),
 	@Apellido varchar(50),
@@ -16,7 +16,7 @@ create procedure [Insertar_Usuario](
 as
 begin
 	insert into Usuario
-	values(@ID, @Contraseña, @Nombre, @Apellido, @FotoPerfil)	
+	values(@ID, @contraseña, @Nombre, @Apellido, @FotoPerfil)	
 end
 
  go

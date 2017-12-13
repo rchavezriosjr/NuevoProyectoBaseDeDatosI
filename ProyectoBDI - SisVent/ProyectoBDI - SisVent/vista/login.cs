@@ -18,6 +18,7 @@ namespace ProyectoBDI___SisVent
     {
         bool passvisible = false;
         List<string> txt = new List<string>();
+        home home = new home();
         public login()
         {
             InitializeComponent();
@@ -50,7 +51,9 @@ namespace ProyectoBDI___SisVent
         private void username_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
                 password.Focus();
+            }
         }
 
         private void password_KeyPress(object sender, KeyPressEventArgs e)
@@ -64,21 +67,15 @@ namespace ProyectoBDI___SisVent
 
         private void ingresar_Click(object sender, EventArgs e)
         {
-            showPreloader();   
-            //if (verifica())
-            //{
-            //    Console.WriteLine("entra");
-            //    new viewCarga(viewCarga.type.inicio, UsernameID);
-
-            //    this.Hide();
-            //    new popup("Bienvenido...", popup.AlertType.check);
-            //}
-            //else
-            //{
-            //    //loginDiag d = new loginDiag("Error, usuario o contraseña incorrectos", false, true, false);
-            //    //d.Show();
-            //    new popup("Usuario o contraseña incorrectos", popup.AlertType.error);
-            //}
+            if (verifica())
+            {
+                showPreloader();
+                new popup("Bienvenido...", popup.AlertType.check);
+            }
+            else
+            {
+                new popup("Usuario o contraseña incorrectos", popup.AlertType.error);
+            }
         }
 
         private bool verifica()
@@ -90,11 +87,7 @@ namespace ProyectoBDI___SisVent
                 
                 if (Datos.Rows.Count != 0){ver= true;}
                 else {ver= false;}
-                
-                DataRow row = Datos.Rows[0];
-                UsernameID = row["ID"].ToString();
-                /*NameUser = row["nombre"].ToString();
-                LastNameUser = row["apellido"].ToString();*/
+            
                 return ver;
             }
             catch (Exception ex)
@@ -123,7 +116,8 @@ namespace ProyectoBDI___SisVent
 
         private void duracion_Tick(object sender, EventArgs e)
         {
-            new home().Show();
+            home.setInfo(username.Text);
+            home.Show();
 
             duracion.Stop();
             this.Hide();
@@ -142,6 +136,7 @@ namespace ProyectoBDI___SisVent
         {
             contentUser.Region = new region().RoundBorder(280, 35, 30);
             contentPassword.Region = new region().RoundBorder(280, 35, 30);
+            picture.Region = new region().Circle(picture.Width, picture.Height);
         }
 
         private void viewpass_MouseDown(object sender, MouseEventArgs e)
@@ -154,6 +149,12 @@ namespace ProyectoBDI___SisVent
         {
             password.isPassword = true;
             passvisible = false;
+        }
+
+        private void password_Enter(object sender, EventArgs e)
+        {
+            if (username.Text != "")
+                picture.Image = new user().obtenerFoto(username.Text);
         }
     }
 }

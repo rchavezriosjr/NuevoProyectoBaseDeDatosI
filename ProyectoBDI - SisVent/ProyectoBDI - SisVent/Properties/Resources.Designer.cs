@@ -93,6 +93,16 @@ namespace ProyectoBDI___SisVent.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loginpicture {
+            get {
+                object obj = ResourceManager.GetObject("loginpicture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Menu_40px {
             get {
                 object obj = ResourceManager.GetObject("Menu_40px", resourceCulture);

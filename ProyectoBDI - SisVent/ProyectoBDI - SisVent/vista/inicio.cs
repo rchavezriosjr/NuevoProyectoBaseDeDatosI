@@ -16,30 +16,30 @@ namespace ProyectoBDI___SisVent.vista
         ExtrasContadores c = new ExtrasContadores();
         public inicio()
         {
-            cargar();
             InitializeComponent();
         }
 
         public void cargar()
         {
-            //label3.Text = new ExtrasContadores().ContClient().ToString();
-            //label6.Text = new ExtrasContadores().ContProv().ToString();
-            //label4.Text = new ExtrasContadores().ContProd().ToString();
-            //label8.Text = new ExtrasContadores().ContVentasMes().ToString();
-            //ultimasVentas.DataSource = new ExtrasContadores().ContUltVta();
+            DataRow row = new ExtrasContadores().Contadores().Rows[0];
+            try { 
+                label3.Text = row["Cliente"].ToString();
+                label6.Text = row["Proveedor"].ToString();
+                label4.Text = row["Producto"].ToString();
+                label8.Text = row["Venta"].ToString();
+
+                ultimasVentas.DataSource = new ExtrasContadores().ultimasVentas();
+                productosMasVendidos.DataSource = new ExtrasContadores().productosMasVendidos();
+                mejoresClientes.DataSource = new ExtrasContadores().topClientes();
+            }
+            catch (Exception ex) { }
         }
 
-        //public void Vtas()
-        //{
-        //    DataSet ds = new DataSet();
-        //    DataTable dt = new DataTable();
-        //    DateTime Año =  new DateTime();
-        //    ds = c.ContVentasMes(Año.Year);
-        //    dt = ds.Tables[0];
-        //    DataRow row = dt.Rows[0];
-        //    label4.Text = row[0].ToString();
-        //}
+        private void inicio_Load(object sender, EventArgs e)
+        {
+            cargar();
+        }
 
-
+        
     }
 }

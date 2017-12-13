@@ -44,6 +44,7 @@ namespace ProyectoBDI___SisVent
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
@@ -56,11 +57,12 @@ namespace ProyectoBDI___SisVent
                 if (pass.Text.Equals(confirPass.Text)){
 
                     if (accionformulario == "editar"){
-                        confirmarActualizarPerfil();
+                        editInfo();
                     }else{
                         saveNew();
                     }
-                    
+
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
 
                 }else{
@@ -192,7 +194,7 @@ namespace ProyectoBDI___SisVent
                     cn.Open();
 
                     SqlCommand cmd = new SqlCommand(
-                        "select ID, Nombre, Apellido, Contraseña from Usuario where ID = " + id,
+                        "select ID, Nombre, Apellido, Contraseña, FotoPerfil from Usuario where ID = '" + id+"'",
                         cn
                         );
 
@@ -205,7 +207,10 @@ namespace ProyectoBDI___SisVent
                     apellidoTxt.Text = row["Apellido"].ToString();
                     pass.Text = row["Contraseña"].ToString();
                     confirPass.Text = row["Contraseña"].ToString();
-                    perfil.Image = obtenerFotoPerfil(id);
+
+                    byte[] img = (byte[])row["FotoPerfil"];
+                    MemoryStream ms = new MemoryStream(img);
+                    perfil.Image = Image.FromStream(ms);
                 }
                 catch (Exception ex)
                 {
@@ -231,7 +236,7 @@ namespace ProyectoBDI___SisVent
 
                     int cont = (int)cmd.ExecuteScalar();
                     if (cont <= 9)
-                        codigo+="00"+cont;
+                        codigo += "00" + cont;
                     if (cont <= 99)
                         codigo += "0" + cont;
                     if (cont <= 999)
@@ -241,37 +246,6 @@ namespace ProyectoBDI___SisVent
             }
 
             return codigo;
-        }
-
-        // función para obtener la foto del usuario desde la BD
-        private Image obtenerFotoPerfil(string id)
-        {
-            Conexión conex = new Conexión();
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(Conexión.Cn))
-                {
-                    cn.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "select FotoPerfil from Usuario where ID = " + id,
-                        cn
-                        );
-
-                    byte[] arrImg = (byte[])cmd.ExecuteScalar();
-                    cn.Close();
-
-                    MemoryStream ms = new MemoryStream(arrImg);
-                    Image img = Image.FromStream(ms);
-
-                    ms.Close();
-
-                    return img;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
 
         private void perfil_Click(object sender, EventArgs e)

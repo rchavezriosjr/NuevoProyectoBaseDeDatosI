@@ -33,7 +33,7 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picture = new System.Windows.Forms.PictureBox();
             this.exitButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.ingresar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -53,7 +53,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.viewpass = new Bunifu.Framework.UI.BunifuImageButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitButton)).BeginInit();
             this.panel1.SuspendLayout();
             this.loading.SuspendLayout();
@@ -84,16 +84,16 @@
             this.bunifuElipse2.ElipseRadius = 20;
             this.bunifuElipse2.TargetControl = this;
             // 
-            // pictureBox1
+            // picture
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(125, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.picture.BackColor = System.Drawing.Color.Transparent;
+            this.picture.Image = global::ProyectoBDI___SisVent.Properties.Resources.loginpicture;
+            this.picture.Location = new System.Drawing.Point(125, 70);
+            this.picture.Name = "picture";
+            this.picture.Size = new System.Drawing.Size(120, 120);
+            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picture.TabIndex = 10;
+            this.picture.TabStop = false;
             // 
             // exitButton
             // 
@@ -116,7 +116,7 @@
             this.ingresar.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
             this.ingresar.ActiveForecolor = System.Drawing.Color.White;
             this.ingresar.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(100)))), ((int)(((byte)(239)))));
-            this.ingresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(59)))), ((int)(((byte)(66)))));
+            this.ingresar.BackColor = System.Drawing.Color.GhostWhite;
             this.ingresar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ingresar.BackgroundImage")));
             this.ingresar.ButtonText = "Ingresar";
             this.ingresar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -220,7 +220,7 @@
             // 
             // duracion
             // 
-            this.duracion.Interval = 6000;
+            this.duracion.Interval = 4000;
             this.duracion.Tick += new System.EventHandler(this.duracion_Tick);
             // 
             // contentUser
@@ -242,8 +242,8 @@
             this.username.BorderThickness = 1;
             this.username.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.username.Dock = System.Windows.Forms.DockStyle.Right;
-            this.username.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(59)))), ((int)(((byte)(66)))));
+            this.username.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username.ForeColor = System.Drawing.Color.White;
             this.username.isPassword = false;
             this.username.Location = new System.Drawing.Point(35, 0);
             this.username.Margin = new System.Windows.Forms.Padding(4);
@@ -285,8 +285,8 @@
             this.password.BorderThickness = 3;
             this.password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.password.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.password.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(59)))), ((int)(((byte)(66)))));
+            this.password.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password.ForeColor = System.Drawing.Color.White;
             this.password.isPassword = false;
             this.password.Location = new System.Drawing.Point(35, 0);
             this.password.Margin = new System.Windows.Forms.Padding(4);
@@ -295,6 +295,7 @@
             this.password.TabIndex = 12;
             this.password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.password.OnValueChanged += new System.EventHandler(this.password_OnValueChanged);
+            this.password.Enter += new System.EventHandler(this.password_Enter);
             this.password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.password_KeyPress);
             // 
             // pictureBox3
@@ -329,10 +330,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(59)))), ((int)(((byte)(66)))));
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(740, 503);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picture);
             this.Controls.Add(this.ingresar);
             this.Controls.Add(this.contentUser);
             this.Controls.Add(this.contentPassword);
@@ -344,7 +345,7 @@
             this.Text = "iTalk_ThemeContainer1";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.Load += new System.EventHandler(this.login_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitButton)).EndInit();
             this.panel1.ResumeLayout(false);
             this.loading.ResumeLayout(false);
@@ -366,7 +367,7 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picture;
         public Bunifu.Framework.UI.BunifuImageButton exitButton;
         public Bunifu.Framework.UI.BunifuThinButton2 ingresar;
         private System.Windows.Forms.Panel panel1;

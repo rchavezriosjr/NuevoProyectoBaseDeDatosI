@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoBDI___SisVent.datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,6 @@ namespace ProyectoBDI___SisVent.vista
         ventas ventas = new ventas();
         adminCuentas adminCuentas = new adminCuentas();
 
-        private static string idvalue;
 
         public home()
         {
@@ -34,16 +34,16 @@ namespace ProyectoBDI___SisVent.vista
             navbar.Width = 0;
         }
 
-        private void setInfo(string id){
+        public void setInfo(string id){
             Conexión conexion = new Conexión();
             DataTable data = new DataTable("Usuario");
             using (SqlConnection cn = new SqlConnection(Conexión.Cn))
             {
                 try
                 {
-                    //cn.Open();
+                    cn.Open();
 
-                    SqlCommand cmd = new SqlCommand("Select ID, Nombre, FotoPerfil, Apellido from Usuario where ID = "+idvalue,cn);
+                    SqlCommand cmd = new SqlCommand("Select ID, Nombre, Apellido from Usuario where ID = '"+id+"'",cn);
 
                     SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
                     SqlDat.Fill(data);
@@ -51,44 +51,16 @@ namespace ProyectoBDI___SisVent.vista
                     DataRow row = data.Rows[0];
                     idUsuario.Text = row["ID"].ToString();
                     nameUser.Text = row["Nombre"].ToString()+" "+row["Apellido"].ToString();
-                    userPicture.Image = obtenerFotoPerfil(id);
+                    userPicture.Image = new user().obtenerFoto(id);
                 }
                 catch (Exception ex)
                 {
-                    //new popup("Error al mostrar información", popup.AlertType.error);
-                    //MessageBox.Show("ERROR: Actualización fallida: " + ex.ToString());
-                    //this.Close();
+                    new popup("Error al mostrar información", popup.AlertType.error);
                 }
-            }
-        }
-
-        private Image obtenerFotoPerfil(string id)
-        {
-            Conexión conex = new Conexión();
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(Conexión.Cn))
+                finally
                 {
-                    cn.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "select FotoPerfil from Usuario where ID = " + idvalue,
-                        cn
-                        );
-
-                    byte[] arrImg = (byte[])cmd.ExecuteScalar();
                     cn.Close();
-
-                    MemoryStream ms = new MemoryStream(arrImg);
-                    Image img = Image.FromStream(ms);
-
-                    ms.Close();
-
-                    return img;
                 }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
             }
         }
 
@@ -105,7 +77,6 @@ namespace ProyectoBDI___SisVent.vista
             this.contenedor.Controls.Add(ventas);
             this.contenedor.Controls.Add(adminCuentas);
 
-            //setInfo(idvalue);
             inicio.BringToFront();
             timerTab.Start();
         }
@@ -224,7 +195,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "inicio";
                 inicio.BringToFront();
-                //inicio.cargar();
+                inicio.cargar();
             }
         }
 
@@ -296,7 +267,8 @@ namespace ProyectoBDI___SisVent.vista
 
         private void userPicture_Click(object sender, EventArgs e)
         {
-            new Register(idUsuario.Text).ShowDialog();
+            if (new Register(idUsuario.Text).ShowDialog() == DialogResult.OK)
+                setInfo(idUsuario.Text);
         }
 
         private void logout_Click(object sender, EventArgs e)

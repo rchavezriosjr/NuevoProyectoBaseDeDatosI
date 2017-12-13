@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 
 namespace ProyectoBDI___SisVent.datos
 {
@@ -95,7 +96,7 @@ namespace ProyectoBDI___SisVent.datos
                 SqlParameter ParUsuario = new SqlParameter();
                 ParUsuario.ParameterName = "@ID";
                 ParUsuario.SqlDbType = SqlDbType.VarChar;
-                ParUsuario.Size = 10;
+                ParUsuario.Size = 15;
                 ParUsuario.Value = UserName;
                 SqlCmd.Parameters.Add(ParUsuario);
 
@@ -175,7 +176,7 @@ namespace ProyectoBDI___SisVent.datos
                 SqlParameter ParUsuario = new SqlParameter();
                 ParUsuario.ParameterName = "@ID";
                 ParUsuario.SqlDbType = SqlDbType.VarChar;
-                ParUsuario.Size = 10;
+                ParUsuario.Size = 15;
                 ParUsuario.Value = UserName;
                 SqlCmd.Parameters.Add(ParUsuario);
 
@@ -200,16 +201,19 @@ namespace ProyectoBDI___SisVent.datos
                 ParApellido.ParameterName = "@Apellido";
                 ParApellido.SqlDbType = SqlDbType.VarChar;
                 ParApellido.Size = 50;
-                ParApellido.Value = this.Nombre;
+                ParApellido.Value = this.Apellido;
                 SqlCmd.Parameters.Add(ParApellido);
 
+
+                //ImageConverter c = new ImageConverter();
+                //byte[] aByte = (byte[])c.ConvertTo(PPic, typeof(byte[]));
 
                 SqlParameter ParPerfilPicture = new SqlParameter();
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 this.PPic.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                 ParPerfilPicture.ParameterName = "@FotoPerfil";
                 ParPerfilPicture.SqlDbType = SqlDbType.Image;
-                ParPerfilPicture.Value = ms.GetBuffer();
+                ParPerfilPicture.Value = ms.ToArray();
                 SqlCmd.Parameters.Add(ParPerfilPicture);
 
 
@@ -224,7 +228,8 @@ namespace ProyectoBDI___SisVent.datos
             }
             catch (Exception ex)
             {
-                new popup(ex.Message, popup.AlertType.error);
+                //new popup("error", popup.AlertType.error);
+                Console.WriteLine("El error es: "+ex.Message);
             }
             finally
             {
@@ -300,14 +305,14 @@ namespace ProyectoBDI___SisVent.datos
                 SqlParameter ParID = new SqlParameter();
                 ParID.ParameterName = "@Usuario";
                 ParID.SqlDbType = SqlDbType.VarChar;
-                ParID.Size = 500;
+                ParID.Size = 15;
                 ParID.Value = User;
                 SqlCmd.Parameters.Add(ParID);
 
                 SqlParameter ParContraseña = new SqlParameter();
                 ParContraseña.ParameterName = "@Contraseña";
                 ParContraseña.SqlDbType = SqlDbType.VarChar;
-                ParContraseña.Size = 150;
+                ParContraseña.Size = 50;
                 ParContraseña.Value = Pass;
                 SqlCmd.Parameters.Add(ParContraseña);
                 //Asignar valor retornado del procedimiento almacenado en un datatable
@@ -330,5 +335,37 @@ namespace ProyectoBDI___SisVent.datos
             }
             return dt;
         }
+
+        public Image obtenerFoto(string id)
+        {
+            Conexión conex = new Conexión();
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conexión.Cn))
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(
+                        "select FotoPerfil from Usuario where ID = '"+ id+"'",
+                        cn
+                        );
+
+                    byte[] arrImg = (byte[])cmd.ExecuteScalar();
+                    cn.Close();
+
+                    MemoryStream ms = new MemoryStream(arrImg);
+                    Image img = Image.FromStream(ms);
+
+                    ms.Close();
+
+                    return img;
+                }
+            }
+            catch (Exception ex)
+            {
+                new popup("Usuario no válido", popup.AlertType.error);
+                return ProyectoBDI___SisVent.Properties.Resources.loginpicture;
+            }
+        }
+
     }
 }

@@ -1,6 +1,8 @@
 ﻿using ProyectoBDI___SisVent.vista;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,9 +17,26 @@ namespace ProyectoBDI___SisVent
         [STAThread]
         static void Main()
         {
+            //Conexión conexion = new Conexión();
+            //string rpa = "";
+            //SqlConnection cn = new SqlConnection(Conexión.Cn);
+            //    try
+            //    {
+            //        cn.Open();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        rpa = ex.Message;
+            //    }
+
+            //if (cn.State == ConnectionState.Open)
+            //    Console.WriteLine("Test correcto");
+            //else
+            //    Console.WriteLine("Error: "+rpa);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new home());
+            Application.Run(new login());
         }
     }
 }

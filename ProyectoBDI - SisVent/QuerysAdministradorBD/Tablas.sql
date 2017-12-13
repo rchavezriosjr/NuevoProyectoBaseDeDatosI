@@ -8,7 +8,7 @@ use Administrador
 /* Creación de las tablas */
 
 create table Usuario(
-	ID varchar(10) primary key not null,
+	ID varchar(15) primary key not null,
 	Contraseña varchar(50),
 	Nombre varchar(50),
 	Apellido varchar(50),

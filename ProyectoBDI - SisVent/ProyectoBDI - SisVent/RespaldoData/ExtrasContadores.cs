@@ -10,102 +10,84 @@ namespace ProyectoBDI___SisVent.data
 {
     class ExtrasContadores
     {
-        public int ContClient()
+        public DataTable Contadores()
         {
-            int dt;
+            DataTable dt = new DataTable("Acceso");
             SqlConnection Con = new SqlConnection();
             try
             {
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "TabInicio_Contador_Clientes";
+                cmd.CommandText = "contadores_tab_inicio";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                dt = (int)cmd.ExecuteScalar();
+                SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
+                SqlDat.Fill(dt);
             }
             catch(Exception ex)
             {
                 Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
-                dt = 0;
             }
             return dt;
         }
 
-        public int ContProd()
+        public DataTable ultimasVentas()
         {
-            int dt;
+            DataTable dt = new DataTable();
             SqlConnection Con = new SqlConnection();
             try
             {
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "TabInicio_Contador_Productos";
+                cmd.CommandText = "ultimas_ventas";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                dt = (int)cmd.ExecuteScalar();
-            }
-                
-            catch (Exception ex)
-            {
-                Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
-                dt = 0;
-            }
-            return dt;
-        }
-        public int ContProv()
-        {
-            int dt;
-            SqlConnection Con = new SqlConnection();
-            try
-            {
-                Con.ConnectionString = Conexión.Cn;
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Con;
-                cmd.CommandText = "TabInicio_Contador_Proveedores";
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                dt = (int)cmd.ExecuteScalar();
+                SqlDataAdapter Data = new SqlDataAdapter(cmd);
+                Data.Fill(dt);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
-                dt = 0;
+                dt = null;
             }
             return dt;
         }
-        public int ContVentasMes()
+
+        public DataTable productosMasVendidos()
         {
-            int dt;
+            DataTable dt = new DataTable();
             SqlConnection Con = new SqlConnection();
             try
             {
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "TabInicio_Contador_VentasMes";
+                cmd.CommandText = "productos_mas_vendidos";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                dt = (int)cmd.ExecuteScalar();
+                SqlDataAdapter Data = new SqlDataAdapter(cmd);
+                Data.Fill(dt);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Consulta realizada sin exito: " + ex.ToString());
-                dt = 0;
+                dt = null;
             }
             return dt;
         }
-        public DataSet ContUltVta()
+
+        public DataTable topClientes()
         {
-            DataSet dt = new DataSet();
+            DataTable dt = new DataTable();
             SqlConnection Con = new SqlConnection();
             try
             {
                 Con.ConnectionString = Conexión.Cn;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Con;
-                cmd.CommandText = "TabInicio_UltimasVentas";
+                cmd.CommandText = "top_clientes";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter Data = new SqlDataAdapter(cmd);

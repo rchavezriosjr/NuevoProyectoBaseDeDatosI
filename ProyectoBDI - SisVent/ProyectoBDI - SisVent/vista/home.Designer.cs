@@ -37,6 +37,7 @@
             this.clientesTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.comprasTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.logout = new Bunifu.Framework.UI.BunifuImageButton();
             this.idUsuario = new System.Windows.Forms.Label();
             this.nameUser = new System.Windows.Forms.Label();
             this.userPicture = new System.Windows.Forms.PictureBox();
@@ -47,7 +48,6 @@
             this.VentasTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.productosTab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.toppanel = new System.Windows.Forms.Panel();
-            this.logout = new Bunifu.Framework.UI.BunifuImageButton();
             this.minButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.closeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.menu = new Bunifu.Framework.UI.BunifuImageButton();
@@ -55,10 +55,10 @@
             this.contenedor = new System.Windows.Forms.Panel();
             this.navbar.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userPicture)).BeginInit();
             this.panel4.SuspendLayout();
             this.toppanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menu)).BeginInit();
@@ -105,7 +105,7 @@
             this.inicioTab.IconVisible = true;
             this.inicioTab.IconZoom = 65D;
             this.inicioTab.IsTab = false;
-            this.inicioTab.Location = new System.Drawing.Point(3, 214);
+            this.inicioTab.Location = new System.Drawing.Point(0, 214);
             this.inicioTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.inicioTab.Name = "inicioTab";
             this.inicioTab.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
@@ -143,7 +143,7 @@
             this.proveedorTab.IconVisible = true;
             this.proveedorTab.IconZoom = 65D;
             this.proveedorTab.IsTab = false;
-            this.proveedorTab.Location = new System.Drawing.Point(3, 504);
+            this.proveedorTab.Location = new System.Drawing.Point(0, 504);
             this.proveedorTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.proveedorTab.Name = "proveedorTab";
             this.proveedorTab.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
@@ -181,7 +181,7 @@
             this.adminCuentasTab.IconVisible = true;
             this.adminCuentasTab.IconZoom = 65D;
             this.adminCuentasTab.IsTab = false;
-            this.adminCuentasTab.Location = new System.Drawing.Point(3, 562);
+            this.adminCuentasTab.Location = new System.Drawing.Point(0, 562);
             this.adminCuentasTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.adminCuentasTab.Name = "adminCuentasTab";
             this.adminCuentasTab.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
@@ -219,7 +219,7 @@
             this.clientesTab.IconVisible = true;
             this.clientesTab.IconZoom = 65D;
             this.clientesTab.IsTab = false;
-            this.clientesTab.Location = new System.Drawing.Point(3, 272);
+            this.clientesTab.Location = new System.Drawing.Point(0, 272);
             this.clientesTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.clientesTab.Name = "clientesTab";
             this.clientesTab.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
@@ -257,7 +257,7 @@
             this.comprasTab.IconVisible = true;
             this.comprasTab.IconZoom = 65D;
             this.comprasTab.IsTab = false;
-            this.comprasTab.Location = new System.Drawing.Point(3, 388);
+            this.comprasTab.Location = new System.Drawing.Point(0, 388);
             this.comprasTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comprasTab.Name = "comprasTab";
             this.comprasTab.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
@@ -281,12 +281,27 @@
             this.panel1.Controls.Add(this.userPicture);
             this.panel1.Location = new System.Drawing.Point(3, 56);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(237, 148);
+            this.panel1.Size = new System.Drawing.Size(240, 148);
             this.panel1.TabIndex = 2;
+            // 
+            // logout
+            // 
+            this.logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.logout.Image = ((System.Drawing.Image)(resources.GetObject("logout.Image")));
+            this.logout.ImageActive = null;
+            this.logout.Location = new System.Drawing.Point(3, 0);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(20, 20);
+            this.logout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logout.TabIndex = 5;
+            this.logout.TabStop = false;
+            this.logout.Zoom = 8;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // idUsuario
             // 
-            this.idUsuario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
             this.idUsuario.Location = new System.Drawing.Point(-3, 120);
             this.idUsuario.Name = "idUsuario";
@@ -297,7 +312,7 @@
             // 
             // nameUser
             // 
-            this.nameUser.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameUser.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.nameUser.Location = new System.Drawing.Point(-3, 95);
             this.nameUser.Name = "nameUser";
@@ -308,10 +323,11 @@
             // 
             // userPicture
             // 
+            this.userPicture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userPicture.Image = ((System.Drawing.Image)(resources.GetObject("userPicture.Image")));
-            this.userPicture.Location = new System.Drawing.Point(81, 3);
+            this.userPicture.Location = new System.Drawing.Point(80, 3);
             this.userPicture.Name = "userPicture";
-            this.userPicture.Size = new System.Drawing.Size(70, 70);
+            this.userPicture.Size = new System.Drawing.Size(80, 80);
             this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.userPicture.TabIndex = 2;
             this.userPicture.TabStop = false;
@@ -383,7 +399,7 @@
             this.VentasTab.IconVisible = true;
             this.VentasTab.IconZoom = 65D;
             this.VentasTab.IsTab = false;
-            this.VentasTab.Location = new System.Drawing.Point(3, 330);
+            this.VentasTab.Location = new System.Drawing.Point(0, 330);
             this.VentasTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.VentasTab.Name = "VentasTab";
             this.VentasTab.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
@@ -421,7 +437,7 @@
             this.productosTab.IconVisible = true;
             this.productosTab.IconZoom = 65D;
             this.productosTab.IsTab = false;
-            this.productosTab.Location = new System.Drawing.Point(3, 446);
+            this.productosTab.Location = new System.Drawing.Point(0, 446);
             this.productosTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.productosTab.Name = "productosTab";
             this.productosTab.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
@@ -452,21 +468,6 @@
             this.toppanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.toppanel_MouseMove);
             this.toppanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.toppanel_MouseUp);
             // 
-            // logout
-            // 
-            this.logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
-            this.logout.Image = ((System.Drawing.Image)(resources.GetObject("logout.Image")));
-            this.logout.ImageActive = null;
-            this.logout.Location = new System.Drawing.Point(0, 0);
-            this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(20, 20);
-            this.logout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logout.TabIndex = 5;
-            this.logout.TabStop = false;
-            this.logout.Zoom = 8;
-            this.logout.Click += new System.EventHandler(this.logout_Click);
-            // 
             // minButton
             // 
             this.minButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -479,7 +480,7 @@
             this.minButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.minButton.TabIndex = 4;
             this.minButton.TabStop = false;
-            this.minButton.Zoom = 5;
+            this.minButton.Zoom = 10;
             this.minButton.Click += new System.EventHandler(this.minButton_Click);
             // 
             // closeButton
@@ -494,7 +495,7 @@
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.closeButton.TabIndex = 3;
             this.closeButton.TabStop = false;
-            this.closeButton.Zoom = 5;
+            this.closeButton.Zoom = 10;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // menu
@@ -509,7 +510,7 @@
             this.menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.menu.TabIndex = 2;
             this.menu.TabStop = false;
-            this.menu.Zoom = 25;
+            this.menu.Zoom = 10;
             this.menu.Click += new System.EventHandler(this.menu_Click);
             // 
             // timerTab
@@ -542,11 +543,11 @@
             this.Load += new System.EventHandler(this.home_Load);
             this.navbar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userPicture)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.toppanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menu)).EndInit();

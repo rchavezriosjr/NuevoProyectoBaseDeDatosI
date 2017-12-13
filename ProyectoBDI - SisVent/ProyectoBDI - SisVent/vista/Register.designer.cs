@@ -354,13 +354,17 @@
             // 
             // perfil
             // 
+            this.perfil.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.perfil.BackColor = System.Drawing.Color.Transparent;
+            this.perfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTransition1.SetDecoration(this.perfil, BunifuAnimatorNS.DecorationType.None);
             this.perfil.Image = global::ProyectoBDI___SisVent.Properties.Resources.Circled_User_Male_85px;
             this.perfil.Location = new System.Drawing.Point(147, 65);
             this.perfil.Name = "perfil";
             this.perfil.Size = new System.Drawing.Size(100, 100);
-            this.perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.perfil.TabIndex = 22;
             this.perfil.TabStop = false;
             this.perfil.Click += new System.EventHandler(this.perfil_Click);

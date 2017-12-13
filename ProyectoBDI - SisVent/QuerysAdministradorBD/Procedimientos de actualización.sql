@@ -1,13 +1,13 @@
 /*                                     *
  *   Procedimientos de actualización   *
  *                                     */
-
+ select * from Usuario
  use Administrador
  go
 
 -- Usuario
-create procedure [Actualizar_Usuario](
-	@ID varchar(10),
+alter procedure [Actualizar_Usuario](
+	@ID varchar(15),
 	@Contraseña varchar(50),
 	@Nombre varchar(50),
 	@Apellido varchar(50),
@@ -17,11 +17,25 @@ as
 begin
 	Update Usuario
 		Set
-			Contraseña = @Contraseña,
+			Contraseña = @contraseña,
 			Nombre = @Nombre,
 			Apellido = @Apellido,
 			FotoPerfil = @FotoPerfil
 	where ID = @ID
+end
+
+	go
+
+-- Validar usuario
+create procedure [Validar_Usuario](
+	@Usuario varchar(15),
+	@Contraseña varchar (50)
+)
+as begin
+	Select 
+		ID 
+	from Usuario  
+	where ID =  @Usuario and Contraseña = @Contraseña
 end
 
 	go
