@@ -24,8 +24,6 @@ namespace ProyectoBDI___SisVent.vista
 
         public void CircleBorder()
         {
-            //System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            //gp.AddEllipse (0, 0, buscarButton.Width - 3, buscarButton.Height - 3);
             rg = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 150, 40, 10, 10));
             rg2 = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 35, 35, 35, 35));
 
@@ -45,7 +43,7 @@ namespace ProyectoBDI___SisVent.vista
         private void compras_Load(object sender, EventArgs e)
         {
             CircleBorder();
-            cargarVentas();
+            cargar();
         }
 
         private void agregarButton_Click(object sender, EventArgs e)
@@ -58,21 +56,21 @@ namespace ProyectoBDI___SisVent.vista
             try
             {
                 if (txtBuscar.text == "")
-                    vistaVentas.DataSource = new Busqueda().MostrarVentas();
+                    cargar();
                 else
-                    vistaVentas.DataSource = new Busqueda().BusquedaVentas(txtBuscar.text, metodoBusqueda.SelectedIndex);
+                    vistaVentas.DataSource = new venta().Buscar(txtBuscar.text, metodoBusqueda.SelectedIndex);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar productos. " + ex.ToString());
+                new popup("Error al cargar productos", popup.AlertType.error);
             }
         }
 
-        public void cargarVentas()
+        public void cargar()
         {
             try
             {
-                vistaVentas.DataSource = new AddVenta().MostrarVentas();
+                vistaVentas.DataSource = new venta().Mostrar();
             }
             catch(Exception ex) { }
         }

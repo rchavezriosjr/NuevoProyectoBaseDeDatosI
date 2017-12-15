@@ -16,7 +16,7 @@ namespace ProyectoBDI___SisVent.vista
 {
     public partial class compraForm : Form
     {
-        int count, index;
+        int count, index, idproveedor=0, idproducto;
         decimal totalCompra = 0;
         string accionformulario;
         public compraForm()
@@ -44,38 +44,38 @@ namespace ProyectoBDI___SisVent.vista
 
         private void txtProveedor_Leave(object sender, EventArgs e)
         {
-            //Transition.run(panelDatosCompra, "Height", 160, new TransitionType_EaseInEaseOut(1000));
-            //panelDatosCompra.SendToBack();
+            if(!resultadoProveedor.ContainsFocus)
+                Transition.run(panelDatosCompra, "Height", 28, new TransitionType_EaseInEaseOut(1000));
         }
 
         private void txtProveedor_TextChanged(object sender, EventArgs e)
         {
-            if (txtProveedor.Text != "")
+            if (txtProveedor.Text == "")
             {
-                Transition.run(panelDatosCompra, "Height", 323, new TransitionType_EaseInEaseOut(1000));
-                panelDatosCompra.BringToFront();
+                panelDatosCompra.Height = 28;
             }
             else
             {
-                Transition.run(panelDatosCompra, "Height", 160, new TransitionType_EaseInEaseOut(1000));
-                panelDatosCompra.SendToBack();
-                resultadoProveedor.DataSource = new Busqueda().BusquedaProveedor(txtProveedor.Text, 0);
+                Transition.run(panelDatosCompra, "Height", 114, new TransitionType_EaseInEaseOut(1000));
+                resultadoProveedor.DataSource = new Proveedor().Buscar(txtProveedor.Text, 0);
             }
+
+            idproveedor = -1;
         }
 
         private void txtProducto_TextChanged(object sender, EventArgs e)
         {
-            if (txtProducto.Text != "")
+            if (txtProducto.Text == "")
             {
-                Transition.run(panelDatosDetalleCompra, "Height", 260, new TransitionType_EaseInEaseOut(1000));
-                panelDatosDetalleCompra.BringToFront();
+                panelDatosDetalleCompra.Height = 28;
             }
             else
             {
-                Transition.run(panelDatosDetalleCompra, "Height", 100, new TransitionType_EaseInEaseOut(1000));
-                panelDatosDetalleCompra.SendToBack();
-                vistaProducto.DataSource = new Busqueda().BusquedaProductos(txtProducto.Text, 0);
+                Transition.run(panelDatosDetalleCompra, "Height", 91, new TransitionType_EaseInEaseOut(1000));
+                vistaProducto.DataSource = new Producto().Buscar(txtProducto.Text, 0);
             }
+
+            idproducto = -1;
         }
 
         private void cancelarButton_Click(object sender, EventArgs e)
@@ -83,7 +83,10 @@ namespace ProyectoBDI___SisVent.vista
             if (accionformulario == "crear")
                 this.Close();
             else
+            {
                 ReadStatus(true);
+                setDataView(txtCodigoCompra.Text);
+            }
         }
 
         private void crearProducto_Click(object sender, EventArgs e)
@@ -96,14 +99,13 @@ namespace ProyectoBDI___SisVent.vista
             
             borrarDetalle.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 30, 30, 30, 30));
             borrarDetalle.Visible = false;
-            fechaCompra.Value = DateTime.Now;
 
             if (accionformulario == "crear")
             {
                 txtCodigoCompra.Text = generaCodFactura();
                 editarButton.Visible = false;
                 guardarButton.ButtonText = "Guardar";
-                fechaCompra.BringToFront();
+                fechaCompra.Value = DateTime.Now;
             }
             else if (accionformulario == "ver")
             {
@@ -122,20 +124,18 @@ namespace ProyectoBDI___SisVent.vista
 
                 txtProveedor.Enabled = false;
                 tipoPago.Enabled = false;
-                fechaCompraLectura.BringToFront();
-                fechaCompra.Visible = false;
-                Transition.run(panelDatosDetalleCompra, "Height", 0, new TransitionType_EaseInEaseOut(1000));
+                fechaCompra.Enabled = false;
+                Transition.run(panelDDC, "Height", 0, new TransitionType_EaseInEaseOut(1000));
             }
             else
             {
                 accionformulario = "editar";
                 txtProveedor.Enabled = true;
                 tipoPago.Enabled = true;
-                fechaCompra.BringToFront();
-                fechaCompra.Visible = true;
+                fechaCompra.Enabled = true;
                 crearProducto.Visible = false;
-                Transition.run(panelDatosDetalleCompra, "Height", 100, new TransitionType_EaseInEaseOut(1000));
-                panelDatosDetalleCompra.SendToBack();
+                Transition.run(panelDDC, "Height", 100, new TransitionType_EaseInEaseOut(1000));
+                panelDDC.SendToBack();
 
                 editarButton.Visible = false;
                 cancelarButton.Visible = true;
@@ -154,7 +154,7 @@ namespace ProyectoBDI___SisVent.vista
                     cn.Open();
 
                     SqlCommand cmd = new SqlCommand(
-                        "select * from Compra where ID = " + id,
+                        "select * from Compra where ID = '" + id+"'",
                         cn
                         );
 
@@ -168,7 +168,7 @@ namespace ProyectoBDI___SisVent.vista
                     fechaCompra.Value = DateTime.Parse(row["FechaCompra"].ToString());
                     txtTotalCompra.Text = row["Monto"].ToString();
                     
-                    detalleCompra.DataSource = getDetalleCompra(txtCodigoCompra.Text);
+                    getDetalleCompra(txtCodigoCompra.Text);
                 }
                 catch (Exception ex)
                 {
@@ -198,7 +198,8 @@ namespace ProyectoBDI___SisVent.vista
                     SqlDat.Fill(data);
 
                     DataRow row = data.Rows[0];
-                    value = row["ID"].ToString() + "-" + row["Nombre"].ToString();
+                    idproveedor = int.Parse(row["ID"].ToString());
+                    value = row["Nombre"].ToString();
                 }
                 catch (Exception ex)
                 {
@@ -209,31 +210,45 @@ namespace ProyectoBDI___SisVent.vista
             }
         }
 
-        private DataTable getDetalleCompra(string id)
+        private void getDetalleCompra(string id)
         {
             DataTable data = new DataTable("Cliente");
             using (SqlConnection cn = new SqlConnection(Conexión.Cn))
             {
                 try
                 {
-                    cn.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = cn;
+                    cmd.CommandText = "Mostrar_Detalle_Compra";
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    SqlCommand cmd = new SqlCommand(
-                        "select d.ProdcutoID as ID, p.Nombre as Producto, d.Cantidad, d.CostoUnitario as [Precio Unitario], d.Total from Detalle_Compra d inner join Producto p on p.ID = d.ProductoID where CompraID = " + id + " and p.ID = d.ProductoID",
-                        cn
-                        );
+                    SqlParameter ID = new SqlParameter();
+                    ID.ParameterName = "@id";
+                    ID.SqlDbType = SqlDbType.VarChar;
+                    ID.Size = 15;
+                    ID.Value = id;
+                    cmd.Parameters.Add(ID);
 
                     SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
                     SqlDat.Fill(data);
 
+                    foreach (DataRow row in data.Rows)
+                    {
+                        string pid, n, c, cu, t;
+                        pid = Convert.ToString(row[0]);
+                        n = Convert.ToString(row[1]);
+                        c = Convert.ToString(row[2]);
+                        cu = Convert.ToString(row[3]);
+                        t = Convert.ToString(row[4]);
+                        detalleCompra.Rows.Add(pid, n, c, cu, t);
+                    }
+
                 }
                 catch (Exception ex)
                 {
-                    data = null;
                 }
             }
 
-            return data;
         }
 
         private string generaCodFactura()
@@ -249,9 +264,12 @@ namespace ProyectoBDI___SisVent.vista
 
         private void resultadoProveedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtProveedor.Text = setData(int.Parse(resultadoProveedor.Rows[e.RowIndex].Cells[0].Value.ToString()), "Proveedor");
-            panelDatosCompra.Height = 160;
-            panelDatosCompra.SendToBack();
+            try
+            {
+                txtProveedor.Text = setData(int.Parse(resultadoProveedor.Rows[e.RowIndex].Cells[0].Value.ToString()), "Proveedor");
+                panelDatosCompra.Height = 28;
+            }
+            catch (Exception ex) { new popup("Selección no valida", popup.AlertType.info); }
         }
 
         private String setData(int id, string tabla)
@@ -265,7 +283,7 @@ namespace ProyectoBDI___SisVent.vista
                     cn.Open();
 
                     SqlCommand cmd = new SqlCommand(
-                        "select ID, Nombre from " + tabla + " where ID = " + id,
+                        "select ID, Nombre from " + tabla + " where ID = '" + id+"'",
                         cn
                         );
 
@@ -273,7 +291,12 @@ namespace ProyectoBDI___SisVent.vista
                     SqlDat.Fill(data);
 
                     DataRow row = data.Rows[0];
-                    return row["ID"].ToString() + "-" + row["Nombre"].ToString();
+                    if (tabla == "Proveedor")
+                        idproveedor = int.Parse(row["ID"].ToString());
+                    else
+                        idproducto = int.Parse(row["ID"].ToString());
+
+                    return  row["Nombre"].ToString();
                 }
                 catch (Exception ex)
                 {
@@ -285,36 +308,47 @@ namespace ProyectoBDI___SisVent.vista
 
         private void vistaProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtProducto.Text = setData(int.Parse(vistaProducto.Rows[e.RowIndex].Cells[0].Value.ToString()), "Producto");
-            panelDatosDetalleCompra.Height = 100;
-            panelDatosDetalleCompra.SendToBack();
+            try
+            {
+                txtProducto.Text = setData(int.Parse(vistaProducto.Rows[e.RowIndex].Cells[0].Value.ToString()), "Producto");
+                panelDatosDetalleCompra.Height = 28;
+            }
+            catch (Exception ex) { new popup("Selección no valida", popup.AlertType.info); }
+
         }
 
         private void txtProducto_Leave(object sender, EventArgs e)
         {
-            //Transition.run(panelDatosDetalleCompra, "Height", 100, new TransitionType_EaseInEaseOut(1000));
-            //panelDatosDetalleCompra.SendToBack();
+            if (!vistaProducto.ContainsFocus)
+                Transition.run(panelDatosDetalleCompra, "Height", 28, new TransitionType_EaseInEaseOut(1000));
         }
 
         private void agregarProductoDetalle_Click(object sender, EventArgs e)
         {
-            if(count == -1){
-                count = detalleCompra.Rows.Count - 1;
-                detalleCompra.Rows.Add(1);
+            if (idproducto != -1)
+            {
+                if (count == -1)
+                {
+                    count = detalleCompra.Rows.Count - 1;
+                    detalleCompra.Rows.Add(1);
+                }
+                //string[] value = txtProducto.Text.Split('-');
+                costoUnitarioProducto.Text = costoUnitarioProducto.Text.Replace('.', ',');
+
+                detalleCompra.Rows[count].Cells[0].Value = idproducto;
+                detalleCompra.Rows[count].Cells[1].Value = txtProducto;
+                detalleCompra.Rows[count].Cells[2].Value = cantidadCompraProducto.Text;
+                detalleCompra.Rows[count].Cells[3].Value = costoUnitarioProducto.Text;
+                detalleCompra.Rows[count].Cells[4].Value = int.Parse(cantidadCompraProducto.Text) * Convert.ToDecimal(costoUnitarioProducto.Text);
+
+                count = -1;
+                idproducto = -1;
+
+                clearTextboxDetalle();
+                txtTotalCompra.Text = calculoTotalCompra().ToString();
             }
-            string[] value = txtProducto.Text.Split('-');
-            costoUnitarioProducto.Text = costoUnitarioProducto.Text.Replace('.', ',');
-
-            detalleCompra.Rows[count].Cells[0].Value = value[0];
-            detalleCompra.Rows[count].Cells[1].Value = value[1];
-            detalleCompra.Rows[count].Cells[2].Value = cantidadCompraProducto.Text;
-            detalleCompra.Rows[count].Cells[3].Value = costoUnitarioProducto.Text;
-            detalleCompra.Rows[count].Cells[4].Value = int.Parse(cantidadCompraProducto.Text) * Convert.ToDecimal(costoUnitarioProducto.Text);
-
-            count = -1;
-
-            clearTextboxDetalle();
-            txtTotalCompra.Text = calculoTotalCompra().ToString();
+            else
+                new popup("Error al agregar", popup.AlertType.error);
         }
 
         private void clearTextboxDetalle()
@@ -330,12 +364,12 @@ namespace ProyectoBDI___SisVent.vista
             {
                 count = e.RowIndex;
 
-                txtProducto.Text = detalleCompra.Rows[count].Cells[0].Value.ToString() + "-" + detalleCompra.Rows[count].Cells[1].Value.ToString();
+                idproducto = int.Parse(detalleCompra.Rows[count].Cells[0].Value.ToString());
+                txtProducto.Text = detalleCompra.Rows[count].Cells[1].Value.ToString();
                 cantidadCompraProducto.Text = detalleCompra.Rows[count].Cells[2].Value.ToString();
                 costoUnitarioProducto.Text = detalleCompra.Rows[count].Cells[3].Value.ToString();
 
-                Transition.run(panelDatosDetalleCompra, "Height", 100, new TransitionType_EaseInEaseOut(1000));
-                panelDatosDetalleCompra.SendToBack();
+                panelDatosDetalleCompra.Height = 28;
             }
         }
 
@@ -369,33 +403,39 @@ namespace ProyectoBDI___SisVent.vista
         {
             if (accionformulario == "crear" || accionformulario == "editar")
             {
-                string[] value = txtProveedor.Text.Split('-');
-                Compra c = new Compra();
-                c.ID = txtCodigoCompra.Text;
-                c.ProveedorID = int.Parse(value[0]);
-                c.TipoPago = tipoPago.SelectedIndex;
-                c.FechaCompra = fechaCompra.Value;
-                c.Monto = decimal.Parse(txtTotalCompra.Text);
-
-                if (accionformulario == "crear")
+                if (idproveedor != -1)
                 {
-                    try {
-                        new EditCompra().InsertarCompra(c);
-                        saveDetalle(1);
+                    //string[] value = txtProveedor.Text.Split('-');
+                    Compra c = new Compra();
+                    c.ID = txtCodigoCompra.Text;
+                    c.ProveedorID = idproveedor;
+                    c.TipoPago = tipoPago.SelectedIndex;
+                    c.FechaCompra = fechaCompra.Value;
+                    c.Monto = decimal.Parse(txtTotalCompra.Text);
+
+                    if (accionformulario == "crear")
+                    {
+                        try
+                        {
+                            c.Insertar();
+                            saveDetalle(1);
+                        }
+                        catch (Exception ex) { MessageBox.Show("ERROR: Inserción fallida: " + ex.ToString()); }
+                        this.Close();
                     }
-                    catch (Exception ex) { MessageBox.Show("ERROR: Inserción fallida: " + ex.ToString()); }
-                    this.Close();
+                    else
+                    {
+                        try
+                        {
+                            c.Editar();
+                            saveDetalle(0);
+                        }
+                        catch (Exception ex) { MessageBox.Show("ERROR: Actualización fallida: " + ex.ToString()); }
+                        ReadStatus(true);
+                    }
                 }
                 else
-                {
-                    try {
-                        new EditCompra().ActualizarCompra(c);
-                        saveDetalle(0);
-                    }
-                    catch (Exception ex) { MessageBox.Show("ERROR: Actualización fallida: " + ex.ToString()); }
-                    ReadStatus(true);
-                }
-
+                    new popup("No se pudo guardar la compra", popup.AlertType.error);
             }
             else
                 this.Close();
@@ -413,10 +453,49 @@ namespace ProyectoBDI___SisVent.vista
                 d.Total = decimal.Parse(detalleCompra.Rows[i].Cells[4].Value.ToString());
 
                 if (tipo == 1)
-                    new EditDetalleCompra().InsertarDetail(d);
+                    d.Insertar();
                 else
-                    new EditDetalleCompra().UpdateDetail(d);
+                    d.Editar();
             }
+        }
+
+        private void cantidadCompraProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsNumber(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back))
+                e.Handled = true;
+        }
+
+        private void costoUnitarioProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.')
+                e.KeyChar = ',';
+
+            if (Char.IsDigit(e.KeyChar))
+                e.Handled = false;
+            else if (e.KeyChar == ',' && !costoUnitarioProducto.Text.Contains(e.KeyChar.ToString()))
+            {
+                if (costoUnitarioProducto.Text == "")
+                {
+                    costoUnitarioProducto.Text += "0,";
+                    e.Handled = true;
+                }
+                else
+                    e.Handled = false;
+            }
+            else if (e.KeyChar == Convert.ToChar(Keys.Back))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void vistaProducto_Leave(object sender, EventArgs e)
+        {
+            panelDatosDetalleCompra.Height = 28;
+        }
+
+        private void resultadoProveedor_Leave(object sender, EventArgs e)
+        {
+            panelDatosCompra.Height = 28;
         }
 
         private void editarButton_Click(object sender, EventArgs e)
@@ -426,7 +505,6 @@ namespace ProyectoBDI___SisVent.vista
 
         private void fechaCompra_onValueChanged(object sender, EventArgs e)
         {
-            fechaCompraLectura.Text = fechaCompra.Value.ToString();
         }
 
         private void detalleCompra_CellClick(object sender, DataGridViewCellEventArgs e)

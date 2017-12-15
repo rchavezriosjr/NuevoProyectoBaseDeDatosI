@@ -1,17 +1,25 @@
 use Administrador
 go
 
-create procedure [contadores_tab_inicio]
+alter procedure [contadores_tab_inicio]
 as begin
-	declare @cventas int
-	set @cventas = ( select count(ID) from Venta where month(FechaVenta) = month(getdate()) and year(FechaVenta) = year(getdate()) )
+	declare 
+		@ventas int,
+		@clientes int,
+		@proveedores int,
+		@producto int
+
+	set @ventas = ( select count(ID) from Venta where month(FechaVenta) = month(getdate()) and year(FechaVenta) = year(getdate()) )
+	set @clientes = ( select count(ID) from Cliente )
+	set @proveedores = ( select count(ID) from Proveedor )
+	set @producto = ( select count(ID) from Producto )
 
 	select 
-		count(c.ID) as Cliente,
-		count(p.ID) as Proveedor,
-		count(pr.ID) as Producto,
-		@cventas/*count(v.ID)*/ as Venta
-	from Cliente c, Proveedor p, Producto pr, Venta v
+		@clientes as Cliente,
+		@proveedores as Proveedor,
+		@producto as Producto,
+		@ventas as Venta
+	--from Cliente c, Proveedor p, Producto pr--, Venta v
 end
 exec contadores_tab_inicio
 	go

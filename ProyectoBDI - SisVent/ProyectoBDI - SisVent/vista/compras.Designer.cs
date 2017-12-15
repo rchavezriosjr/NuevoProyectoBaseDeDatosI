@@ -43,13 +43,17 @@
             // 
             this.vistaCompras.AllowUserToAddRows = false;
             this.vistaCompras.AllowUserToDeleteRows = false;
+            this.vistaCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vistaCompras.BackgroundColor = System.Drawing.Color.White;
             this.vistaCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.vistaCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vistaCompras.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
             this.vistaCompras.Location = new System.Drawing.Point(75, 159);
+            this.vistaCompras.MultiSelect = false;
             this.vistaCompras.Name = "vistaCompras";
             this.vistaCompras.ReadOnly = true;
+            this.vistaCompras.RowHeadersVisible = false;
+            this.vistaCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vistaCompras.Size = new System.Drawing.Size(800, 498);
             this.vistaCompras.TabIndex = 16;
             this.vistaCompras.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vistaCompras_CellDoubleClick);

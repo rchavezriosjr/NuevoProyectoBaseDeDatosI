@@ -232,7 +232,7 @@ namespace ProyectoBDI___SisVent
                 {
                     cn.Open();
 
-                    SqlCommand cmd = new SqlCommand("select count(*) + 1 from Usuario s where substring(s.ID, 1, 7) = " + codigo, cn);
+                    SqlCommand cmd = new SqlCommand("select count(*) + 1 from Usuario s where substring(s.ID, 1, 7) = '" + codigo+"'", cn);
 
                     int cont = (int)cmd.ExecuteScalar();
                     if (cont <= 9)

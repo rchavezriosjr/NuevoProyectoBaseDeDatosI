@@ -14,8 +14,6 @@ namespace ProyectoBDI___SisVent
 {
     public partial class proveedorForm : Form
     {
-        Proveedor p = new Proveedor();
-        EditProveedores np = new EditProveedores();
         string accionformulario;
         public proveedorForm()
         {
@@ -37,13 +35,17 @@ namespace ProyectoBDI___SisVent
             if (accionformulario == "crear")
                 this.Close();
             else
+            {
                 ReadStatus(true);
+                setDataView(int.Parse(txtID.Text));
+            }
         }
 
         private void guardar_Click(object sender, EventArgs e)
         {
             if (accionformulario == "crear" || accionformulario == "editar")
             {
+                Proveedor p = new Proveedor();
                 p.P_Nombre = txtNombre.Text;
                 p.P_Domicilio = txtDireccion.Text;
                 p.P_Email = txtEmail.Text;
@@ -51,7 +53,7 @@ namespace ProyectoBDI___SisVent
 
                 if (accionformulario == "crear")
                 {
-                    try { np.InsertarProveedor(p); }
+                    try { p.Insertar(); }
                     catch (Exception ex) { MessageBox.Show("ERROR: Inserción fallida: " + ex.ToString()); }
                     this.Close();
                 }
@@ -59,9 +61,10 @@ namespace ProyectoBDI___SisVent
                 {
                     try {
                         p.P_Id = int.Parse(txtID.Text);
-                        np.ActualizaProveedor(p); }
+                        p.Editar(); }
                     catch (Exception ex) { MessageBox.Show("ERROR: Actualización fallida: " + ex.ToString()); }
                     ReadStatus(true);
+                    setDataView(int.Parse(txtID.Text));
                 }
 
             }
@@ -128,7 +131,7 @@ namespace ProyectoBDI___SisVent
                     //cn.Open();
 
                     SqlCommand cmd = new SqlCommand(
-                        "select * from Proveedor where ID = " + id,
+                        "select * from Proveedor where ID = '" + id+"'",
                         cn
                         );
 

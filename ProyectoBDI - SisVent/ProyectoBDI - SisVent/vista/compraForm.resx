@@ -150,17 +150,16 @@
   </metadata>
   <data name="crearProducto.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAKIAAAAjCAYAAAAXHtFmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAICSURBVHhe7ds7S1xBAEDh/E+bNDap0qSxsUggiIWFgmiR
-        wiKEQFJYSSCRRRFRwYgiEhOwMMEHYjC+UGTkjDuXLPtIUHd2ivPBwOKrOszMnTs+CVIBDFFFMEQVwRBV
-        BENUEQxRRegY4tXNdVj4tRHG1j6GV0tT4XltNPTNvHQ4/mvQC92MrL4Ptd2v4ez6ol5Ws7Yhrh1+j3+I
-        CIlx82gnHJwf178r/Ru90M3y/laYWJ+OPRFkK00hUi2/NLTyNvy+/FP/qvRwndpqCJEfHFiYbFut9BhY
-        bQcX3zSssA0hUqsRKgeWbPaPSRUilTJlSrm8+/YlTP+Yj59jiDwds5F0T6ic6I6t4M/Tw7sQWY5ZlqXc
-        mBGZGWOInPPwiC3ltnOyF2fFGOKLufE4PUq5sTw//fT6LsT+z8MdT72lbuItTAyRD1KvGKKKUIXIGs1a
-        LfVCFSJniF5oUK9UIfJGhTcrUm6c1nBqE0NMh4pSbullSgyRZZkq3Scqt/QyJYaID9u1OKRc0u1/VCEy
-        G3ItZ/t4t/4VqXu4YMMqnF6kVCGCjWO6DSF1CxEy6XEnMWkIEcyIxJjuiUmPif0gM+HfEaIpRLBM8xRN
-        tTzVeE9RD8Hym/aDPJy0utfQMsSEanm0fjY7Eg8dHY77DC7VpP8GbadjiFIuhqgiGKKKYIgqgiGqACHc
-        Apu5ZF77M4wOAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAIkAAAAjCAYAAACgoylBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHsSURBVHhe7dvNKwRhAMdx/6eLi4uTi4uLAyU5OFDi4OAg
+        KQ57kkIbbUKxkWSpPSxh08p7Nj36PjvP9Iydneds5vepKa2Xy3x73mb0GZEARSJBikSCFIkEKRIJUiQS
+        lBnJ90/bVO7OzVx1w0wcLpvh8qzp3xzXlYOLe8k9nTlZM+XGqXlvf0Z3vVvPSKrNa/uHCIRQLp7q5vGj
+        FX1X/jvuJff06OHSLJyV7L0mljRdkVAUvzR1vGKev16jTyXvsu57IhJ+cLSy2LMoyT9mkLGDpcSskYiE
+        khSIMA2xXnHiSCiIoUYEq1c7pnSzb7+2kbCLYeGiNYg4NMHS4/at2YmEKYapRsTHSMKIYiNhr8xWSMRX
+        f7m3o4mNZGRv3g4rIj6mnIGtyU4kg9vTmSduUlycztpI+EIkjSKRoDgS5h3mH5G/4kg4I9HDO0kTR8JJ
+        KyeuIj52vOx8bSTu0ETE5w5ZbSRMNRSjdYn43CGrjQTrtbK9RODeSEQcCaMIj4drrUb0iRQVD3qZWdwB
+        axwJWKi4J39STATCYME7JU4iEjCSEIp7l0CKg/UHI4gfCLoiAVMPux2KYoWr90zyiynFrT9YqKY9w0uN
+        xKEotkBDuzP2UEVX/i4e7rr/iOglMxIRKBIJUiQSpEgkSJFIgDG/GCELZe5jhloAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="agregarProductoDetalle.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

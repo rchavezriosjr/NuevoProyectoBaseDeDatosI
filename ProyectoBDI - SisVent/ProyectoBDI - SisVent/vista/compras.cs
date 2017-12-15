@@ -16,19 +16,11 @@ namespace ProyectoBDI___SisVent.vista
     {
         Region rg = new Region();
         Region rg2 = new Region();
-        ListCompra lcmp= new ListCompra();
 
         public compras()
         {
             InitializeComponent();
-            try
-            {
-                CargarCompras();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar compras. " + ex.ToString());
-            }
+            Cargar();
         }
 
         public void CircleBorder()
@@ -61,9 +53,13 @@ namespace ProyectoBDI___SisVent.vista
             new compraForm().ShowDialog();
         }
 
-        public void CargarCompras()
+        public void Cargar()
         {
-            vistaCompras.DataSource = new ListCompra().GetCompras();
+            try
+            {
+                vistaCompras.DataSource = new Compra().Mostrar();
+            }
+            catch (Exception ex) { }
         }
 
         private void txtBuscar_OnTextChange(object sender, EventArgs e)
@@ -71,9 +67,9 @@ namespace ProyectoBDI___SisVent.vista
             try
             {
                 if (txtBuscar.text == "")
-                    CargarCompras();
+                    Cargar();
                 else
-                    vistaCompras.DataSource = new Busqueda().BusquedaCompras(txtBuscar.text, metodoBusqueda.SelectedIndex);
+                    vistaCompras.DataSource = new Compra().Buscar(txtBuscar.text, metodoBusqueda.SelectedIndex);
             }
             catch (Exception ex)
             {

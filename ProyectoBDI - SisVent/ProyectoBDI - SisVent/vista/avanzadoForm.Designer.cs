@@ -134,9 +134,9 @@
             this.agregarCategoria.Iconimage_Selected = null;
             this.agregarCategoria.IconMarginLeft = 0;
             this.agregarCategoria.IconMarginRight = 0;
-            this.agregarCategoria.IconRightVisible = true;
+            this.agregarCategoria.IconRightVisible = false;
             this.agregarCategoria.IconRightZoom = 0D;
-            this.agregarCategoria.IconVisible = true;
+            this.agregarCategoria.IconVisible = false;
             this.agregarCategoria.IconZoom = 60D;
             this.agregarCategoria.IsTab = false;
             this.agregarCategoria.Location = new System.Drawing.Point(262, 18);
@@ -157,6 +157,7 @@
             // 
             this.vistaCategorias.AllowUserToAddRows = false;
             this.vistaCategorias.AllowUserToDeleteRows = false;
+            this.vistaCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vistaCategorias.BackgroundColor = System.Drawing.Color.White;
             this.vistaCategorias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.vistaCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -165,6 +166,7 @@
             this.vistaCategorias.MultiSelect = false;
             this.vistaCategorias.Name = "vistaCategorias";
             this.vistaCategorias.ReadOnly = true;
+            this.vistaCategorias.RowHeadersVisible = false;
             this.vistaCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vistaCategorias.Size = new System.Drawing.Size(503, 272);
             this.vistaCategorias.TabIndex = 4;
@@ -222,6 +224,7 @@
             // 
             this.vistaProductosInhabilitados.AllowUserToAddRows = false;
             this.vistaProductosInhabilitados.AllowUserToDeleteRows = false;
+            this.vistaProductosInhabilitados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vistaProductosInhabilitados.BackgroundColor = System.Drawing.Color.White;
             this.vistaProductosInhabilitados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.vistaProductosInhabilitados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -230,6 +233,7 @@
             this.vistaProductosInhabilitados.MultiSelect = false;
             this.vistaProductosInhabilitados.Name = "vistaProductosInhabilitados";
             this.vistaProductosInhabilitados.ReadOnly = true;
+            this.vistaProductosInhabilitados.RowHeadersVisible = false;
             this.vistaProductosInhabilitados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vistaProductosInhabilitados.Size = new System.Drawing.Size(503, 272);
             this.vistaProductosInhabilitados.TabIndex = 8;

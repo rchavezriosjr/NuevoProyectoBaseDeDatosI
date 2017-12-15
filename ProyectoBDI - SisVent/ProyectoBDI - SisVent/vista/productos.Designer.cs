@@ -112,13 +112,17 @@
             // 
             this.vistaProductos.AllowUserToAddRows = false;
             this.vistaProductos.AllowUserToDeleteRows = false;
+            this.vistaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vistaProductos.BackgroundColor = System.Drawing.Color.White;
             this.vistaProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.vistaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vistaProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
             this.vistaProductos.Location = new System.Drawing.Point(75, 146);
+            this.vistaProductos.MultiSelect = false;
             this.vistaProductos.Name = "vistaProductos";
             this.vistaProductos.ReadOnly = true;
+            this.vistaProductos.RowHeadersVisible = false;
+            this.vistaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vistaProductos.Size = new System.Drawing.Size(800, 498);
             this.vistaProductos.TabIndex = 7;
             this.vistaProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vistaProductos_CellDoubleClick);

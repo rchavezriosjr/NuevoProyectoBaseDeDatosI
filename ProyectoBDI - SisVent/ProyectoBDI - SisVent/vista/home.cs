@@ -206,7 +206,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "clientes";
                 clientes.BringToFront();
-                clientes.CargarClientes();
+                clientes.Cargar();
             }
         }
 
@@ -217,7 +217,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "ventas";
                 ventas.BringToFront();
-                ventas.cargarVentas();
+                ventas.cargar();
             }
         }
 
@@ -228,7 +228,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "compras";
                 compras.BringToFront();
-                compras.CargarCompras();
+                compras.Cargar();
             }
         }
 
@@ -239,7 +239,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "productos";
                 productos.BringToFront();
-                productos.CargarProductos();
+                productos.Cargar();
             }
         }
 
@@ -250,7 +250,7 @@ namespace ProyectoBDI___SisVent.vista
                 clearColorTabs();
                 tabActiva = "proveedor";
                 proveedores.BringToFront();
-                proveedores.CargarProveedores();
+                proveedores.Cargar();
             }
         }
 

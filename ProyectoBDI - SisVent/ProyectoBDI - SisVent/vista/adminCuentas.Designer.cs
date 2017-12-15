@@ -219,6 +219,7 @@
             // 
             this.vistaUsuarios.AllowUserToAddRows = false;
             this.vistaUsuarios.AllowUserToDeleteRows = false;
+            this.vistaUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vistaUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.vistaUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.vistaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -227,6 +228,7 @@
             this.vistaUsuarios.MultiSelect = false;
             this.vistaUsuarios.Name = "vistaUsuarios";
             this.vistaUsuarios.ReadOnly = true;
+            this.vistaUsuarios.RowHeadersVisible = false;
             this.vistaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vistaUsuarios.Size = new System.Drawing.Size(596, 376);
             this.vistaUsuarios.TabIndex = 23;

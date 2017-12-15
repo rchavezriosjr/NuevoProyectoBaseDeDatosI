@@ -17,8 +17,6 @@ namespace ProyectoBDI___SisVent.vista
     {
         Region rg = new Region();
         Region rg2 = new Region();
-        ListProveedor lp = new ListProveedor();
-
         public proveedores()
         {
             InitializeComponent();
@@ -51,26 +49,18 @@ namespace ProyectoBDI___SisVent.vista
             int nHeightEllipse
         );
 
-        public void CargarProveedores()
+        public void Cargar()
         {
-            vistaProveedores.DataSource = new Busqueda().MostrarProveedores();
+            try
+            {
+                vistaProveedores.DataSource = new Proveedor().Mostrar();
+            }
+            catch (Exception ex) { }
         }
 
         private void agregarButton_Click(object sender, EventArgs e)
         {
             new proveedorForm().ShowDialog();
-        }
-
-        private void listarButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                CargarProveedores();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar proveedores. " + ex.ToString());
-            }
         }
 
         private void vistaProveedores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -81,9 +71,9 @@ namespace ProyectoBDI___SisVent.vista
         private void txtBuscar_OnTextChange(object sender, EventArgs e)
         {
             if (txtBuscar.text=="")
-                CargarProveedores();
+                Cargar();
             else
-                vistaProveedores.DataSource = new Busqueda().BusquedaProveedor(txtBuscar.text, metodoBusqueda.SelectedIndex);
+                vistaProveedores.DataSource = new Proveedor().Buscar(txtBuscar.text, metodoBusqueda.SelectedIndex);
         }
     }
 }

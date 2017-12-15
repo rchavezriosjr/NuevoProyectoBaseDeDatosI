@@ -17,8 +17,6 @@ namespace ProyectoBDI___SisVent.vista
     {
         Region rg = new Region();
         Region rg2 = new Region();
-        proveedorForm proveedorForm = new proveedorForm();
-        ListProducto lp = new ListProducto();
 
         public productos()
         {
@@ -28,7 +26,7 @@ namespace ProyectoBDI___SisVent.vista
         private void clientes_Load(object sender, EventArgs e)
         {
             CircleBorder();
-            CargarProductos();
+            Cargar();
         }
 
         public void CircleBorder()
@@ -50,11 +48,11 @@ namespace ProyectoBDI___SisVent.vista
             int nWidthEllipse,
             int nHeightEllipse
         );
-        public void CargarProductos()
+        public void Cargar()
         {
             try
             {
-                vistaProductos.DataSource = new ListProducto().GetProductos();
+                vistaProductos.DataSource = new Producto().Mostrar();
             }
             catch(Exception ex) { }
         }
@@ -69,13 +67,13 @@ namespace ProyectoBDI___SisVent.vista
             try
             {
                 if (txtBuscar.text == "")
-                    CargarProductos();
+                    Cargar();
                 else
-                    vistaProductos.DataSource = new Busqueda().BusquedaProductos(txtBuscar.text, metodoBusqueda.SelectedIndex);
+                    vistaProductos.DataSource = new Producto().Buscar(txtBuscar.text, metodoBusqueda.SelectedIndex);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar productos. " + ex.ToString());
+                //MessageBox.Show("Error al cargar productos. " + ex.ToString());
             }
         }
 

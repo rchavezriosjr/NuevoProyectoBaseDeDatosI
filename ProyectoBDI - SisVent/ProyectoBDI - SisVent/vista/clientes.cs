@@ -17,32 +17,24 @@ namespace ProyectoBDI___SisVent.vista
     {
         Region rg = new Region();
         Region rg2 = new Region();
-        clienteForm clienteForm = new clienteForm();
-        ListCliente lc = new ListCliente();
 
         public clientes()
-        {
-            try
-            {
-                vistaClientes.DataSource = new Busqueda().MostrarClientes();
-            }
-            catch (Exception)
-            {
-
-                //throw;
-            }
-            
+        {   
             InitializeComponent();
         }
 
-        public void CargarClientes()
+        public void Cargar()
         {
-            vistaClientes.DataSource = new Busqueda().MostrarClientes();
+            try
+            {
+                vistaClientes.DataSource = new Cliente().Mostrar();
+            }
+            catch (Exception ex) { }
         }
         private void clientes_Load(object sender, EventArgs e)
         {
             CircleBorder();
-            CargarClientes();
+            Cargar();
         }
 
         public void CircleBorder()
@@ -69,19 +61,7 @@ namespace ProyectoBDI___SisVent.vista
 
         private void agregarButton_Click(object sender, EventArgs e)
         {
-            clienteForm.ShowDialog();
-        }
-
-        private void listarButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                CargarClientes();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar clientes " + ex.ToString());
-            }
+            new clienteForm().ShowDialog();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -92,9 +72,9 @@ namespace ProyectoBDI___SisVent.vista
         private void txtBuscar_OnTextChange(object sender, EventArgs e)
         {
             if (txtBuscar.text == "")
-                vistaClientes.DataSource = new Busqueda().MostrarClientes();
+                Cargar();
             else
-                vistaClientes.DataSource = new Busqueda().BusquedaCliente(txtBuscar.text, metodoBusqueda.SelectedIndex);
+                vistaClientes.DataSource = new Cliente().Buscar(txtBuscar.text, metodoBusqueda.SelectedIndex);
         }
     }
 }

@@ -298,12 +298,17 @@
             // 
             // productosMasVendidos
             // 
+            this.productosMasVendidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.productosMasVendidos.BackgroundColor = System.Drawing.Color.White;
             this.productosMasVendidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.productosMasVendidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productosMasVendidos.GridColor = System.Drawing.Color.RoyalBlue;
             this.productosMasVendidos.Location = new System.Drawing.Point(0, 28);
+            this.productosMasVendidos.MultiSelect = false;
             this.productosMasVendidos.Name = "productosMasVendidos";
+            this.productosMasVendidos.ReadOnly = true;
+            this.productosMasVendidos.RowHeadersVisible = false;
+            this.productosMasVendidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.productosMasVendidos.Size = new System.Drawing.Size(284, 318);
             this.productosMasVendidos.TabIndex = 2;
             // 
@@ -340,12 +345,17 @@
             // 
             // ultimasVentas
             // 
+            this.ultimasVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ultimasVentas.BackgroundColor = System.Drawing.Color.White;
             this.ultimasVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ultimasVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ultimasVentas.GridColor = System.Drawing.Color.RoyalBlue;
             this.ultimasVentas.Location = new System.Drawing.Point(0, 28);
+            this.ultimasVentas.MultiSelect = false;
             this.ultimasVentas.Name = "ultimasVentas";
+            this.ultimasVentas.ReadOnly = true;
+            this.ultimasVentas.RowHeadersVisible = false;
+            this.ultimasVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ultimasVentas.Size = new System.Drawing.Size(284, 315);
             this.ultimasVentas.TabIndex = 3;
             // 
@@ -380,12 +390,17 @@
             // 
             // mejoresClientes
             // 
+            this.mejoresClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.mejoresClientes.BackgroundColor = System.Drawing.Color.White;
             this.mejoresClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mejoresClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mejoresClientes.GridColor = System.Drawing.Color.RoyalBlue;
             this.mejoresClientes.Location = new System.Drawing.Point(0, 28);
+            this.mejoresClientes.MultiSelect = false;
             this.mejoresClientes.Name = "mejoresClientes";
+            this.mejoresClientes.ReadOnly = true;
+            this.mejoresClientes.RowHeadersVisible = false;
+            this.mejoresClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mejoresClientes.Size = new System.Drawing.Size(284, 315);
             this.mejoresClientes.TabIndex = 3;
             // 

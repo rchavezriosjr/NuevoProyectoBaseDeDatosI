@@ -33,7 +33,10 @@ namespace ProyectoBDI___SisVent.vista
             if (accionformulario == "crear")
                 this.Close();
             else
+            {
                 ReadStatus(true);
+                setDataView(int.Parse(txtID.Text));
+            }
         }
 
         private void productoForm_Load(object sender, EventArgs e)
@@ -69,7 +72,7 @@ namespace ProyectoBDI___SisVent.vista
                 if (accionformulario == "crear")
                 {
                     try {
-                        new EditProducto().InsertarProducto(p);
+                        p.Insertar();
                     }
                     catch (Exception ex) { MessageBox.Show("ERROR: Inserción fallida: " + ex.ToString()); }
                     this.Close();
@@ -78,10 +81,11 @@ namespace ProyectoBDI___SisVent.vista
                 {
                     try {
                         p.ID = int.Parse(txtID.Text);
-                        new EditProducto().ActualizarProducto(p);
+                        p.Editar();
                     }
                     catch (Exception ex) { MessageBox.Show("ERROR: Actualización fallida: " + ex.ToString()); }
                     ReadStatus(true);
+                    setDataView(int.Parse(txtID.Text));
                 }
 
             }
@@ -132,7 +136,7 @@ namespace ProyectoBDI___SisVent.vista
                     cn.Open();
 
                     SqlCommand cmd = new SqlCommand(
-                        "select * from Producto where ID = " + id,
+                        "select * from Producto where ID = '" + id+"'",
                         cn
                         );
 

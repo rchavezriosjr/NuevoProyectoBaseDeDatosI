@@ -15,7 +15,6 @@ namespace ProyectoBDI___SisVent
 {
     public partial class clienteForm : Form
     {
-        EditCliente c = new EditCliente();
         string accionformulario;
         public clienteForm()
         {
@@ -37,7 +36,11 @@ namespace ProyectoBDI___SisVent
             if (accionformulario == "crear")
                 this.Close();
             else
+            {
                 ReadStatus(true);
+                setDataView(int.Parse(txtID.Text));
+            }
+                
         }
 
         private void guardar_Click(object sender, EventArgs e)
@@ -52,18 +55,19 @@ namespace ProyectoBDI___SisVent
 
                 if (accionformulario == "crear")
                 {
-                    try { c.InsertarCliente(Client); }
+                    try { Client.Insertar(); }
                     catch (Exception ex) { MessageBox.Show("ERROR: Inserción fallida: " + ex.ToString()); }
                     this.Close();
                 }
                 else
                 {
                     try {
-                        Client.C_Id = int.Parse(txtID.Text); 
-                        c.Actualizar(Client);
+                        Client.C_Id = int.Parse(txtID.Text);
+                        Client.Editar();
                     }
                     catch (Exception ex) { MessageBox.Show("ERROR: Actualización fallida: " + ex.ToString()); }
                     ReadStatus(true);
+                    setDataView(int.Parse(txtID.Text));
                 }
 
             }
@@ -128,7 +132,7 @@ namespace ProyectoBDI___SisVent
                     cn.Open();
 
                     SqlCommand cmd = new SqlCommand(
-                        "select * from Cliente where ID = " + id,
+                        "select * from Cliente where ID = '" + id+"'",
                         cn
                         );
 
