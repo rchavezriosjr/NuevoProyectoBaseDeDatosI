@@ -21,8 +21,9 @@ namespace ProyectoBDI___SisVent.vista
 
         public void cargar()
         {
-            DataRow row = new ExtrasContadores().Contadores().Rows[0];
-            try { 
+            
+            try {
+                DataRow row = new ExtrasContadores().Contadores().Rows[0];
                 label3.Text = row["Cliente"].ToString();
                 label6.Text = row["Proveedor"].ToString();
                 label4.Text = row["Producto"].ToString();
@@ -32,7 +33,7 @@ namespace ProyectoBDI___SisVent.vista
                 productosMasVendidos.DataSource = new ExtrasContadores().productosMasVendidos();
                 mejoresClientes.DataSource = new ExtrasContadores().topClientes();
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { Console.WriteLine("Consulta realizada sin exito: " + ex.ToString()); }
         }
 
         private void inicio_Load(object sender, EventArgs e)

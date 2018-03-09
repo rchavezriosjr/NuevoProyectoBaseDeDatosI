@@ -723,7 +723,7 @@ Select * from Categoria where Estado=1
 else
 Select * from Categoria where Estado=0
 end
-
+go
 create procedure [Mostar_Ventas]
 as
 begin
@@ -745,13 +745,13 @@ as
 begin
 	delete from Usuario where ID = @ID
 end
-
+go
 create procedure [Deshabilitar_Cliente] @ID int
 as
 begin
 	delete from Cliente where ID = @ID
 end
-
+go
 create procedure [Deshabilitar_Proveedor] @ID int
 as
 begin

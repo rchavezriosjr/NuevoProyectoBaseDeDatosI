@@ -216,7 +216,7 @@ namespace ProyectoBDI___SisVent.data
                 //Establecer el Comando
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "Mostrar_Ventas";
+                SqlCmd.CommandText = "Mostar_Ventas";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 //Asignar valor retornado del procedimiento almacenado en un datatable
