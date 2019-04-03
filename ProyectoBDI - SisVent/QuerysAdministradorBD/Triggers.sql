@@ -33,8 +33,8 @@ on [Detalle_Compra]
 for update
 as
 	declare
-		@ActualizaStock as int
-		set @ActualizaStock = (select 
+		@ActualizaStocks as int
+		set @ActualizaStocks = (select 
 							       d.Cantidad 
 							   from Detalle_Compra d
 							       inner join updated u
@@ -43,19 +43,18 @@ as
 							       d.CompraID = u.CompraID and d.ProductoID = u.ProductoID)
 
 	Update p
-		set p.Stock = p.Stock + (u.Cantidad - @ActualizaStock)
+		set p.Stock = p.Stock + (u.Cantidad - @ActualizaStocks)
 	from Producto p
 		inner join updated u
 			on p.ID = u.ProductoID
-
 -- Actualiza el stock despues de actualizar detalle venta
 create trigger [Actualiza_Stock_A_DV]
 on [Detalle_Venta]
 for update
 as
 	declare
-		@ActualizaStock as int
-		set @ActualizaStock = (select 
+		@ActualizaStock1 as int
+		set @ActualizaStock1 = (select 
 							       d.Cantidad 
 							   from Detalle_Venta d
 							       inner join updated u
@@ -64,7 +63,7 @@ as
 							       d.VentaID = u.VentaID and d.ProductoID = u.ProductoID)
 
 	Update p
-		set p.Stock = p.Stock - (u.Cantidad - @ActualizaStock)
+		set p.Stock = p.Stock - (u.Cantidad - @ActualizaStock1)
 	from Producto p
 		inner join updated u
 			on p.ID = u.ProductoID

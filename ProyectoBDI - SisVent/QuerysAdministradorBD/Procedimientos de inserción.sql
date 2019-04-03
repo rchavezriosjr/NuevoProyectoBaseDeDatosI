@@ -6,7 +6,7 @@ use Administrador
 	go
 
 	-- Usuario
-alter procedure [Insertar_Usuario](
+create procedure [Insertar_Usuario](
 	@ID varchar(15),
 	@Contraseña varchar(50),
 	@Nombre varchar(50),

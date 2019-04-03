@@ -6,7 +6,7 @@
  go
 
 -- Usuario
-alter procedure [Actualizar_Usuario](
+create procedure [Actualizar_Usuario](
 	@ID varchar(15),
 	@Contraseña varchar(50),
 	@Nombre varchar(50),

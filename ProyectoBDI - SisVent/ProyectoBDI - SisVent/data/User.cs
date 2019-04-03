@@ -110,7 +110,7 @@ namespace ProyectoBDI___SisVent.datos
 
                 SqlParameter ParNombre = new SqlParameter();
                 ParNombre.ParameterName = "@Nombre";
-                ParNombre.SqlDbType = SqlDbType.NVarChar;
+                ParNombre.SqlDbType = SqlDbType.VarChar;
                 ParNombre.Size = 50;
                 ParNombre.Value = Nombre;
                 SqlCmd.Parameters.Add(ParNombre);

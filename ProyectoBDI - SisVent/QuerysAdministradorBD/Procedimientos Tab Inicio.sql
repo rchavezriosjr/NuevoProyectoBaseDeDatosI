@@ -1,7 +1,7 @@
 use Administrador
 go
 
-alter procedure [contadores_tab_inicio]
+create procedure [contadores_tab_inicio]
 as begin
 	declare 
 		@ventas int,
